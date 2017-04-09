@@ -6,5 +6,16 @@
 </head>
 <body>
     <h1> Hello , {{name}}! </h1>
+    <h1> Value from a list , {{ value[3] }}!</h1>
+
+    {% macro render_comment(comment) %}
+        <li>{{ comment }}</li>
+    {% endmacro %}
+
+    <ul id="navigation">
+    {% for comment in comments %}
+        {{ render_comment(comment) }}
+    {% endfor %}
+    </ul>
 </body>
 </html>

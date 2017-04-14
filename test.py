@@ -1,16 +1,23 @@
 from flask import *
 from flask_appconfig import AppConfig
 from flask_bootstrap import Bootstrap
+from wtforms import StringField,SubmitField
+from wtforms.validators import *
+from flask_wtf import Form
 
 
 app = Flask(__name__)
-AppConfig(app)
 Bootstrap(app)
 app.config['BOOTSTRAP_SERVE_LOCAL'] = True
-
-
+app.config['SECRET_KEY'] = 'hard to guess string'
 
 my1list = [1, 2, 3, 4, 5, 6]
+
+#Web form
+class NameForm(Form):
+	name = StringField('What is your name', validators=[Required()])
+	submit = SubmitField('Submit')
+
 
 @app.route('/')
 def index():
@@ -20,11 +27,19 @@ def index():
 	#user_agent = request.headers.get('User-Agent')
 	return render_template('index.html')
 
-@app.route('/navbar')
+@app.route('/navbar', methods=['POST','GET'])
 def navbar():
-	return render_template('navbar.html')
+	form = NameForm()
+	if form.validate_on_submit():
+		old_name = session.get('name')
+		if old_name is not None and old_name != form.name.data:
+			flash('Change your name?')
+		session['name'] = form.name.data
+		print("submit success")
+		return redirect(url_for('navbar'))
+	return render_template('navbar.html', form=form, name=session.get('name'))
 
-@app.route('/navbar2')
+@app.route('/navbar2',methods=['POST','GET'])
 def navbar2():
 	return render_template('navbar2.html')
 
@@ -39,8 +54,6 @@ def extend():
 @app.route("/login",methods=['POST','GET'])
 def login():
 	error = None
-
-
 	if request.method == 'POST':
 		if request.form['username'] != 'admin' or request.form['password'] != 'admin123':
 			error = "sorry"

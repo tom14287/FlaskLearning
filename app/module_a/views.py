@@ -14,4 +14,4 @@ def index_view():
 @app.route("/link")
 def link_view():
 	print 'module_a link'
-	return redirect(url_for('about.html'))
+	return render_template("about.html")

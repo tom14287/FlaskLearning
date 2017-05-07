@@ -26,11 +26,11 @@ def create_app(configfile=None):
 
 	#blueprint
 
-	from module_a import app as DesignerPrint
-	app.register_blueprint(DesignerPrint, url_prefix='/module_a')
+	from module_a import module_a_ as ModuleAPrint
+	app.register_blueprint(ModuleAPrint, url_prefix='/module_a')
 
-	from module_b import app as GamerPrint
-	app.register_blueprint(GamerPrint, url_prefix='/module_b')
+	from module_b import module_b_ as ModuleBPrint
+	app.register_blueprint(ModuleBPrint, url_prefix='/module_b')
 
 	return app
 

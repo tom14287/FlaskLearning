@@ -1,1 +1,1 @@
-from .views import app
+from .views import module_b_

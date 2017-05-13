@@ -11,16 +11,19 @@ mail = Mail()
 moment = Moment()
 db = SQLAlchemy()
 pagedown = PageDown()
+lm = LoginManager()
 
 
 def create_app(configfile=None):
 	app = Flask(__name__)
-
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root:123456@localhost:3306/TYMT?charset=utf8'
 	bootstrap.init_app(app)
 	mail.init_app(app)
 	moment.init_app(app)
 	db.init_app(app)
 	pagedown.init_app(app)
+	lm.init_app(app)
+	lm.login_view = 'login'
 
 	app.config['BOOTSTRAP_SERVE_LOCAL'] = True
 
@@ -31,6 +34,9 @@ def create_app(configfile=None):
 
 	from module_b import module_b_ as ModuleBPrint
 	app.register_blueprint(ModuleBPrint, url_prefix='/module_b')
+
+	from auth import auth_ as LoginPrint
+	app.register_blueprint(LoginPrint, url_prefix='/auth')
 
 	return app
 

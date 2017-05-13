@@ -12,16 +12,15 @@ moment = Moment()
 db = SQLAlchemy()
 pagedown = PageDown()
 lm = LoginManager()
-
+app = Flask(__name__)
 
 def create_app(configfile=None):
-	app = Flask(__name__)
-	app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root:123456@localhost:3306/TYMT?charset=utf8'
-	app.config['MAIL_SERVER'] = 'smtp.qq.com'
-	app.config['MAIL_PORT'] = 587
-	app.config['MAIL_USE_TLS'] = True
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://kiinghom:atpatpatp@localhost:3306/TYMT?charset=utf8'
+	app.config['MAIL_SERVER'] = 'smtp.163.com'
+	app.config['MAIL_PORT'] = 465
+	app.config['MAIL_USE_SSL'] = True
 	app.config['MAIL_USERNAME'] = 'TYMT_SevenLords@163.com'
-	app.config['MAIL_PASSWORD'] = 'TYMT_SevenLord'
+	app.config['MAIL_PASSWORD'] = '123456q'
 	app.config['SECURITY_PASSWORD_SALT'] = 'my_precious_two'
 	app.config['SECRET_KEY'] = 'notsecret'
 	bootstrap.init_app(app)
@@ -42,7 +41,7 @@ def create_app(configfile=None):
 	from module_b import module_b_ as ModuleBPrint
 	app.register_blueprint(ModuleBPrint, url_prefix='/module_b')
 
-	from auth import auth_ as AuthPrint
+	from app.auth.views import auth_ as AuthPrint
 	app.register_blueprint(AuthPrint, url_prefix='/auth')
 
 	return app

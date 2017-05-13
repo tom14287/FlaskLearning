@@ -30,7 +30,7 @@ def register():
         db.session.commit()
         token = generate_confirmation_token(user.UserEmail)
         confirm_url = url_for('auth.confirm_email', token=token, _external=True)
-        html = render_template('activate.html', confirm_url=confirm_url)
+        html = render_template('auth/activate.html', confirm_url=confirm_url)
         subject = "Please confirm your email"
         send_email(user.UserEmail, subject, html)
 
@@ -65,7 +65,7 @@ def unconfirmed():
     if current_user.UserConfirm:
         return render_template('index.html')
     flash('Please confirm your account!', 'warning')
-    return render_template('unconfirmed.html')
+    return render_template('auth/unconfirmed.html')
 
 
 @auth_.route('/login', methods = ["GET", "POST"])

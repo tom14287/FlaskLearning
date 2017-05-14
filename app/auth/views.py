@@ -1,5 +1,5 @@
 from flask_login import login_user, logout_user, current_user, login_required
-from flask import Blueprint, g, flash
+from flask import Blueprint, g, flash, session
 from app import lm, db, app
 from app.auth.email import send_email
 from app.auth.token import generate_confirmation_token, confirm_token
@@ -84,18 +84,37 @@ def login():
     form = LoginForm(request.form)
     if form.validate_on_submit():
         user = User.query.filter_by(UserEmail=form.email.data).first()
+        print request.form.get("email"), request.form.get("password")
         if user and check_password_hash(
                 user.UserPassword, request.form['password']):
             login_user(user)
             flash('Welcome.', 'success')
+            session['userid'] = user.UserID
+            session['usertype'] = user.UserType
             return redirect(url_for('module_a.index_view'))
         else:
             flash('Invalid email and/or password.', 'danger')
-            return render_template('auth/login.html', form=form)
-    return render_template('auth/login.html', form=form)
+            return render_template('login.html', form=form)
+    return render_template('login.html', form=form)
 
 @auth_.route('/logout', methods = ['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('module_a.index_view'))
+
+@auth_.route('/change_password', methods= ['POST'])
+@login_required
+def change_password():
+    user = g.user
+    form = ChangePasswordForm(request.form)
+    if form.validate_on_submit():
+        if user and check_password_hash(
+            user.UserPassword, request.form['old_password']):
+            user.UserPassword = generate_password_hash(form.password)
+            db.session.add(user)
+            db.session.commit()
+        return redirect(url_for("auth.login"))
+    return render_template('auth/change_password.html', form=form)
+
+

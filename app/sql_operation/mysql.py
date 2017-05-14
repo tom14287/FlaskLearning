@@ -87,3 +87,50 @@ class CompetitiveBid(db.Model):
     DSDESC = db.Column(db.String(200))
     SubmitTime = db.Column(db.DateTime)
     DSState = db.Column(db.Enum('Waiting', 'Reject', 'Accept'))
+
+class UserAddress(db.Model):
+    __tablename__ = 'UserAddress'
+    UserID = db.Column(db.Integer, primary_key = True)
+    DeliveryAddress = db.Column(db.String(200))
+
+
+class DecorationForm(db.Model):
+    __tablename__ = 'DecorationForm'
+    DcFormID = db.Column(db.Integer, primary_key = True)
+    ConsumerID = db.Column(db.Integer)
+    DcFormDESC = db.Column(db.String(200))
+    DcFormState = db.Column(db.Enum('Waiting', 'Success', 'Overtime', 'Error', 'Compete', 'Cancel'))
+    DcFormCreateTime = db.Column(db.DateTime)
+
+class DesignerScheme(db.Model):
+    __tablename__ = 'DesignerScheme'
+    SchemeID = db.Column(db.Integer, primary_key = True)
+    DesignerID = db.Column(db.Integer)
+    CompanyID = db.Column(db.Integer)
+    SchemeDESC = db.Column(db.String(200))
+    SchemeImage = db.Column(db.BLOB)
+
+class Furniture(db.Model):
+    __tableanme__ = 'Furniture'
+    FurnitureID = db.Column(db.Integer, primary_key = True)
+    CompanyID = db.Column(db.Integer)
+    FurnitureName = db.Column(db.String(45))
+    FurnitureNum = db.Column(db.Integer)
+    FurniturePrice = db.Column(db.Integer)
+    FurnitureDESC = db.Column(db.String(200))
+    FurnitureImage = db.Column(db.BLOB)
+
+class OrderForm(db.Model):
+    __tablename__ = 'OrderForm'
+    OrderFormID = db.Column(db.Integer, primary_key = True)
+    UserID = db.Column(db.Integer)
+    OerderFormState = db.Column(db.Enum('Waiting', 'Success', 'Fail', 'Cancel'))
+    CreateTime = db.Column(db.DateTime)
+
+class OrderItem(db.Model):
+    __tablename__ = 'OrderItem'
+    OrderItemID = db.Column(db.Integer, primary_key = True)
+    OrderFormID = db.Column(db.Integer)
+    FurnitureID = db.Column(db.Integer)
+    OrderItemNum = db.Column(db.Integer)
+

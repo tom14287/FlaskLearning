@@ -44,5 +44,8 @@ def create_app(configfile=None):
 	from app.auth.views import auth_ as AuthPrint
 	app.register_blueprint(AuthPrint, url_prefix='/auth')
 
+	from consumer import consumer_ as CS
+	app.register_blueprint(CS, url_prefix='/consumer')
+
 	return app
 

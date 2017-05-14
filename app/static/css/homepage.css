@@ -1,0 +1,84 @@
+/*==============================================
+    MENU STYLES    
+    =============================================*/
+#main-menu i.fa{
+    margin-right:15px!important;
+
+}
+.navbar-inverse {
+background-color: #FFF;
+border-color: #F3F3F3;
+}
+    .navbar a:hover{
+        color:#000!important;
+    }
+.arrow {
+    float: right;
+}
+
+.fa.arrow:before {
+    content: "\f104";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+
+.nav-second-level li,
+.nav-third-level li {
+    border-bottom: none !important;
+}
+
+.nav-second-level li a {
+    padding-left: 37px;
+}
+
+.nav-third-level li a {
+    padding-left: 55px;
+}
+.sidebar-collapse , .sidebar-collapse .nav{
+	background:none;
+}
+.sidebar-collapse .nav {
+	padding:0;
+}
+.sidebar-collapse .nav > li > a {
+background: #FFFFFF;
+text-shadow: none;
+color:#000;
+}
+.sidebar-collapse > .nav > li > a {
+	padding: 25px 10px;
+}
+.sidebar-collapse > .nav > li {
+	border-bottom: 1px solid rgba(240, 240, 240, 1) !important;
+}
+.sidebar-collapse .nav > li > a:hover,
+.sidebar-collapse .nav > li > a:focus {
+	
+	background:#E7E7E7;
+	outline:0;
+}
+.nav-second-level  > li:last-child > a:after,
+.nav-third-level  > li:last-child > a:after {
+	height:50%;
+}
+.nav-third-level > li > a:after,
+.nav-third-level > li > a:before  {
+	left:40px;
+}
+.navbar-side {
+	border:none;
+	background-color: #f3f3f3;
+    padding-left: 0;
+    padding-right: 25px;
+	
+}
+.navbar-toggle {
+    background-color: black;
+}
+.navbar {
+ min-height: 0px!important; 
+ margin-bottom: 0px!important; 
+}

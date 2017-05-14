@@ -30,8 +30,8 @@
       <file leaf-file-name="mysql.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/sql_operation/mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-353">
-              <caret line="116" column="28" lean-forward="false" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+            <state relative-caret-position="25">
+              <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -794,7 +794,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494759712306</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="mysql.py修改">
+      <created>1494759756680</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1494759756680</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -849,7 +856,8 @@
     <MESSAGE value="ljh push test" />
     <MESSAGE value="ReadME.mmp" />
     <MESSAGE value="写了邮箱验证和登录注册的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="写了邮箱验证和登录注册的问题" />
+    <MESSAGE value="mysql.py修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="mysql.py修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1112,8 +1120,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/sql_operation/mysql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="116" column="28" lean-forward="false" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+        <state relative-caret-position="25">
+          <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

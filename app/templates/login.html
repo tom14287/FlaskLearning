@@ -1,4 +1,8 @@
-﻿<% include header.html %>
+﻿{% extends "base.html" %}
+
+{% block title %}LOGIN IN{% endblock %}
+
+{% block page_content %}
 		<div class="breadcrumb-area">
 			<div class="container">
 				<ol class="breadcrumb">
@@ -46,7 +50,5 @@
 				</div>
 			</div>
 		</div>
-		<% include footer.html %>
-		
-		<% include social.html %>
+{% endblock %}
 

@@ -7,7 +7,8 @@ app = create_app()
 
 @app.route('/')
 def info():
-    return render_template('index.html')
+    return render_template('login.html')
+
 
 
 if __name__ == '__main__':

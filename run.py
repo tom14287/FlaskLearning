@@ -7,7 +7,7 @@ app = create_app()
 
 @app.route('/')
 def info():
-    return render_template('customer.html')
+    return render_template('consumer.html')
 
 
 

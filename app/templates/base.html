@@ -5,7 +5,7 @@
 
 		<link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" >
 		<!-- Place favicon.ico in the root directory -->
-						
+
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 		<!-- font-awesome.min.css -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
@@ -22,6 +22,7 @@
 		<!-- responsive.css -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/amazeui.css') }}">
 		<script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
 
 		<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.0.min.js') }}"></script>
@@ -38,11 +39,13 @@
 		<!-- jquery.scrollup.min.js-->
 		<script src="{{ url_for('static', filename='js/jquery.scrollup.min.js') }}"></script>
 		<!-- owl.carousel.min.js -->
-		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>		
+		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
 		<!-- plugins.js -->
 		<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
 		<!-- main.js -->
 		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+		<script src="{{ url_for('static', filename='js/amazeui.js') }}"></script>
 
 {% endblock %}
 
@@ -61,7 +64,7 @@
 									<li class="slide-toggle"><a href="#"><i class="fa fa-user"></i> My Account</a>
 										<ul class="show-toggle">
 											<li><a href="#">register</a></li>
-											<li><a href="#">login</a></li>	
+											<li><a href="#">login</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -74,7 +77,7 @@
 											<li><a href="#"><i class="fa fa-eur"></i> EUR</a></li>
 											<li><a href="#"><i class="fa fa-gbp"></i> GBP</a></li>
 											<li><a href="#"><i class="fa fa-usd"></i> USD</a></li>
-										</ul>	
+										</ul>
 									</li>
 								</ul>
 								<ul>
@@ -82,7 +85,7 @@
 										<ul class="show-toggle-3">
 											<li><a href="#">en-gb</a></li>
 											<li><a href="#">fr-ca</a></li>
-										</ul>	
+										</ul>
 									</li>
 								</ul>
 							</div>
@@ -147,12 +150,12 @@
 											<option value="66">Watches</option>
 											<option value="67">Books</option>
 											<option value="68">Sports</option>
-											<option value="69">Gifts</option>											
+											<option value="69">Gifts</option>
 										</select>
 										<input type="text" placeholder="Search...">
 										<button><i class="fa fa-search"></i></button>
 									</form>
-								</div>								
+								</div>
 							</div>
 							<div class="header-bottom-right">
 								<div class="left-cart">
@@ -215,15 +218,15 @@
                                                 <div class="cart-actions">
                                                     <button><span>Checkout</span></button>
                                                 </div>
-                                            </div>											
+                                            </div>
 										</div>
 									</div>
 								</div>
-							</div>							
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 
 {% endblock %}
 
@@ -278,7 +281,7 @@
 												<a href="#">Windows 7</a>
 												<a href="#">Windows 8.1</a>
 											</span>
-										</div>										
+										</div>
 									</li>
 									<li>
 										<a href="#" class="hover-icon"><img src="{{ url_for('static', filename='img/menu-l/12.png') }}" alt="" />Sports & Outdoors</a>
@@ -311,7 +314,7 @@
 												<a href="#">Pedestal </a>
 												<a href="#">Top-Load </a>
 											</span>
-										</div>										
+										</div>
 									</li>
 									<li>
 										<a href="#" class="hover-icon"><img src="{{ url_for('static', filename='img/menu-l/7.png') }}" alt="" />Smartphone & Tablets</a>
@@ -330,7 +333,7 @@
 												<a href="#">Mens</a>
 												<a href="#">Womens</a>
 											</span>
-										</div>	
+										</div>
 									</li>
 									<li>
 										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/8.png') }}" alt="" />Health & Beauty</a>
@@ -352,7 +355,7 @@
 									</li>
 								</ul>
 							</div>
-						</div>	
+						</div>
 					</div>
 					<div class="col-lg-9 col-md-9">
 						<div class="mainmenu">
@@ -363,11 +366,11 @@
 							<li><a href="shop.html">Shop</a></li>
 							<li><a href="cart.html">Cart</a></li>
 							<li><a href="login.html">Login</a></li>
-							<li><a href="account.html">My Account</a></li>								
+							<li><a href="account.html">My Account</a></li>
 							<li><a href="contact-us.html">Contact Us</a></li>
 								</ul>
 							</nav>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>
@@ -388,9 +391,9 @@
 									<li><a href="shop.html">Shop</a></li>
 									<li><a href="cart.html">Cart</a></li>
 									<li><a href="login.html">Login</a></li>
-									<li><a href="account.html">My Account</a></li>								
+									<li><a href="account.html">My Account</a></li>
 									<li><a href="contact-us.html">Contact Us</a></li>
-								</ul>	
+								</ul>
 							</nav>
 						</div>
 					</div>
@@ -415,7 +418,7 @@
 						<div class="subscribe-form">
 							<form action="#">
 								<input placeholder="Email address..." type="text">
-								<button class="subscribe">Subscribe</button>							
+								<button class="subscribe">Subscribe</button>
 							</form>
 						</div>
 					</div>
@@ -510,7 +513,7 @@
 							<div class="footer-title">
 								<h4>Instagram</h4>
 							</div>
-							<div class="footer-widget">	
+							<div class="footer-widget">
 								<div class="footer-widget-img">
 									<div class="single-img">
 										<a href="#"><img src="{{ url_for('static', filename='img/footer/1.jpg') }}" alt="" /></a>
@@ -540,7 +543,7 @@
 
 {% block copyright_area %}
 <div class="copyright-area text-center bg-color-3">
-            <div class="container"> 
+            <div class="container">
                 <div class="copyright-border ptb-30">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -571,4 +574,3 @@
 			</ul>
 		</div>
 {% endblock %}
-

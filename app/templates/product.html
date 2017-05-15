@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Product{% endblock %}
+
+<!doctype html>
+
+{% block page_content %}
+		<!-- breadcrumb start -->
+		<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">Product</li>
+				</ol>
+			</div>
+		</div>
+		<!-- breadcrumb end -->
+		<!-- shop-area start -->
+		<div class="shop-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-8">
+            <div class="single-product  shop-single-product mb-30 white-bg" style="margin-top: 25px">
+                <div class="product-img pt-20">
+                  <a href="#"><img src={{product_img}} alt="" /></a>
+                </div>
+                <div class="product-content">
+                  <div class="pro-title" style="font-size:35px">
+                    <h4><a href="#">{{product.name}}</a></h4>
+                  </div>
+                  <div class="pro-rating mb-20">
+                    <a href="#"><i class="fa fa-star"></i></a>
+                    <a href="#"><i class="fa fa-star"></i></a>
+                    <a href="#"><i class="fa fa-star"></i></a>
+                    <a href="#"><i class="fa fa-star"></i></a>
+                    <a href="#"><i class="fa fa-star-o"></i></a>
+                  </div>
+                  <p>{{product.description}}</p>
+                  <div class="price-box">
+                    <span class="price product-price">{{product.price}}</span>
+                  </div>
+                  <div class="product-icon">
+                    <div class="product-icon-gw f-left" style="margin-top:30px">
+                      <a href="#" style="font-size: 20px"><i class="fa fa-shopping-cart" style="font-size: 30px" ></i>Add to Cart</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="am-tabs" data-am-tabs style="margin-bottom:40px">
+  							<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
+  								<li class="am-active" style="font-size:20px;">
+  									<a href="#">
+  										<span class="index-needs-dt-txt">商家信息</span></a>
+  								</li>
+                  <li style="font-size:20px;">
+                    <a href="#">
+                      <span class="index-needs-dt-txt">评价</span></a>
+                  </li>
+  							</ul>
+
+  							<div class="am-tabs-bd">
+                  <div class="am-tab-panel am-fade am-in am-active">
+  									<div class="J_Brand">
+
+  										<div class="attr-list-hd tm-clear" style="margin-top:20px">
+  											<p style="text-indent:2em">{{product.procedure}}</p>
+                      </div>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+  							</div>
+  							<div class="am-tab-panel am-fade">
+                  {% macro render_comment(conmment) %}
+                    <li class="am-comment">
+                    <!-- 评论容器 -->
+                    <a href="">
+                      <img class="am-comment-avatar" src="{{ url_for('static', filename='img/hwbn40x40.jpg') }}" />
+                      <!-- 评论者头像 -->
+                    </a>
+
+                    <div class="am-comment-main">
+                      <!-- 评论内容容器 -->
+                      <header class="am-comment-hd">
+                        <!--<h3 class="am-comment-title">评论标题</h3>-->
+                        <div class="am-comment-meta">
+                          <!-- 评论元数据 -->
+                          <a href="#link-to-user" class="am-comment-author">{{comment.name}}</a>
+                          <!-- 评论者 -->
+                          评论于
+                          <time datetime="">{{comment.time}}</time>
+                        </div>
+                      </header>
+
+                      <div class="am-comment-bd">
+                        <div class="tb-rev-item " data-id="255776406962">
+                          <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
+                            {{comment.content}}
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 评论内容 -->
+                    </div>
+                  </li>
+                  {% endmacro %}
+  								<ul class="am-comments-list am-comments-list-flip">
+                      {% for comment in comments %}
+                        {{ render_comment(comment) }}
+                      {% endfor %}
+                  </ul>
+  								<div class="clear"></div>
+  								</div>
+  							</div>
+  						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- shop-area end -->
+{% endblock %}

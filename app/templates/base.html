@@ -5,6 +5,7 @@
 
 		<link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" >
 		<!-- Place favicon.ico in the root directory -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/amazeui.css') }}">
 						
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 		<!-- font-awesome.min.css -->
@@ -22,27 +23,6 @@
 		<!-- responsive.css -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
-		<script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
-
-		<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.0.min.js') }}"></script>
-		<!-- bootstrap.min.js -->
-		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-		<!-- nivo.slider.js -->
-		<script src="{{ url_for('static', filename='js/jquery.nivo.slider.pack.js') }}"></script>
-		<!-- jquery-ui.min.js -->
-		<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
-		<!-- jquery.magnific-popup.min.js -->
-		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
-		<!-- jquery.meanmenu.min.js -->
-		<script src="{{ url_for('static', filename='js/jquery.meanmenu.js') }}"></script>
-		<!-- jquery.scrollup.min.js-->
-		<script src="{{ url_for('static', filename='js/jquery.scrollup.min.js') }}"></script>
-		<!-- owl.carousel.min.js -->
-		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>		
-		<!-- plugins.js -->
-		<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
-		<!-- main.js -->
-		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 {% endblock %}
 
@@ -359,12 +339,9 @@
 							<nav>
 								<ul>
 									<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
 							<li><a href="shop.html">Shop</a></li>
-							<li><a href="cart.html">Cart</a></li>
-							<li><a href="login.html">Login</a></li>
-							<li><a href="account.html">My Account</a></li>								
-							<li><a href="contact-us.html">Contact Us</a></li>
+							<li><a href="setting.html">Setting</a></li>	
+							<li><a href="about.html">About</a></li>						
 								</ul>
 							</nav>
 						</div>	
@@ -570,5 +547,32 @@
 				<li class="pinterest"><a href="#">pinterest</a></li>
 			</ul>
 		</div>
+
+		<script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+		<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.0.min.js') }}"></script>
+		<!-- bootstrap.min.js -->
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<!-- nivo.slider.js -->
+		<script src="{{ url_for('static', filename='js/jquery.nivo.slider.pack.js') }}"></script>
+		<!-- jquery-ui.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+		<!-- jquery.magnific-popup.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<!-- jquery.meanmenu.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery.meanmenu.js') }}"></script>
+		<!-- jquery.scrollup.min.js-->
+		<script src="{{ url_for('static', filename='js/jquery.scrollup.min.js') }}"></script>
+		<!-- owl.carousel.min.js -->
+		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>		
+		<!-- plugins.js -->
+		<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+		<!-- main.js -->
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+		
+        <script src="{{ url_for('static', filename='js/amazeui.js') }}"></script>
+        
+
 {% endblock %}
 

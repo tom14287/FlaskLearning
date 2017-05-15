@@ -11,19 +11,37 @@
 				</ol>			
 			</div>
 		</div>
-		<!-- breadcrumb end -->	
-		<!-- account area start -->
+		
+
 		<div class="account-area pt-30 log">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-lg-6 col-sm-6">
-						<div class="account-info pb-30">
-							<form method="post" action="">
+					<div class="col-md-6 col-lg-6 col-sm-6" style="
+    margin-left: 25%;">
+						<div class="account-info pb-30 am-tabs" data-am-tabs>
+							
+									<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
+  								<li class="am-active" style="font-size:20px;">
+  									<a href="#">
+  										<span class="index-needs-dt-txt">LOGIN</span></a>
+  								</li>
+                  <li style="font-size:20px;" >
+                    <a href="#">
+                      <span class="index-needs-dt-txt">REGISTER</span></a>
+                  </li>
+  							</ul>
+
+
+
+  							<div class="am-tabs-bd">
+                  <div class="am-tab-panel am-fade am-in am-active">
+  									<div class="J_Brand">
+  										<form method="post" action="">
 								<div class="form-fields">
-									<h2>Login</h2>
-									<p>
+  										<div class="attr-list-hd tm-clear" style="margin-top:20px">
+  											<p>
 										<label>
-											email address
+											Email Address
 											<span class="required">*</span>
 										</label>
 										{{ form.email(placeholder="email") }}
@@ -35,20 +53,107 @@
 										</label>
 										{{ form.password(placeholder="password") }}
 									</p>
-								</div>
-								<div class="form-action">
+									<div class="form-action">
 									<label>
 									<a href="#" class="lost_password">Lost your password?</a>								
 										<input type="checkbox">
-										Remember me
+										Remember Me
 									</label>								
 									<input value="Login" type="submit">
-								</div>								
+
+								</div>	
+                      					</div>
+                      					</div>
+															
 							</form>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+  							</div>
+
+  					
+
+  							<div class="am-tab-panel am-fade">
+  									
+							<div class="J_Brand">
+  										<form method="post" action="">
+								<div class="form-fields">
+  										<div class="attr-list-hd tm-clear" style="margin-top:20px">
+  											<p>
+										<label>
+											Email Address
+											<span class="required">*</span>
+										</label>
+										{{ form.email(placeholder="email") }}
+									</p>
+  											<p>
+										<label>
+											User Name
+											<span class="required">*</span>
+										</label>
+										{{ form.email(placeholder="user name") }}
+									</p>
+									<p>
+										<label>
+											Password
+											<span class="required">*</span>
+										</label>
+										{{ form.password(placeholder="password") }}
+									</p>
+									<p>
+										<label>
+											Confirm Password
+											<span class="required">*</span>
+										</label>
+										{{ form.password(placeholder="confirm password") }}
+									</p>
+									<div class="form-action">
+									<label>							
+										<input type="checkbox">
+										Remember Me
+									</label>	
+									<input value="REGISTER" type="submit">
+
+								</div>	
+                      					</div>
+                      					</div>
+															
+							</form>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+
+
+  								</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									
+								
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 {% endblock %}
 

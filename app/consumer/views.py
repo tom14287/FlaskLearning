@@ -22,3 +22,7 @@ def consumer_order():
 @consumer_.route('/consumer_refund', methods=['GET', 'POST'])
 def consumer_refund():
 	return render_template("consumer_refund.html")
+
+@consumer_.route('/consumer_profile', methods=['GET', 'POST'])
+def consumer_profile():
+	return render_template("consumer_profile.html")

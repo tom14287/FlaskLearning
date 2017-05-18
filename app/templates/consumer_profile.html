@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}TYMT{% endblock %}
+
+{% block page_content %}
+
+<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="index.html"><i class="fa fa-home"></i> Home/</a></li>
+				  <li class="active">My Profile</li>
+				</ol>			
+			</div>
+		</div>
+
+<div class = "container">
+{% include "consumer_side.html" %}
+
+<div class="login-area pt-30">
+			 <div class="container">
+				<div class="row">
+				   <div class="centered-title text-center mb-40">
+					  <h2>Complete <span class="light-font">Profile</span></h2>
+					  <br>
+					  <p>This is how you’ll be shown to other shoppers on TYMT when you <br>post Reviews, Commands and more.</p>
+				   </div>
+				   
+				   <div class="col-md-8 col-sm-8" style="padding-left: 6%;">
+					  <div class="billing-fields row">
+						 <p class="form-row col-sm-6">
+							<label for="billing_first_name">First Name<abbr title="required" class="required">*</abbr></label>
+							<input type="text" name="billing_first_name" id="billing_first_name" class="form-controller">
+						 </p>
+						 <p class="form-row col-sm-6">
+							<label for="billing_last_name">Last Name<abbr title="required" class="required">*</abbr></label>
+							<input type="text" name="billing_last_name" id="billing_last_name" class="form-controller">
+						 </p>
+						 <p class="form-row col-sm-12">
+							<label for="billing_company">Company Name</label>
+							<input type="text" name="billing_company" id="billing_company" class="form-controller">
+						 </p>
+						 <p class="form-row col-sm-6">
+							<label for="billing_email">Email Address<abbr title="required" class="required">*</abbr></label>
+							<input type="text" name="billing_email" id="billing_email" class="form-controller">
+						 </p>
+						 <p class="form-row col-sm-6">
+							<label for="billing_email">Phone<abbr title="required" class="required">*</abbr></label>
+							<input type="text" name="billing_phone" id="billing_phone" class="form-controller">
+						 </p>
+						 <p class="form-row col-sm-12">
+							<label for="billing_country">Country<abbr title="required" class="required">*</abbr></label>
+							<select class="billing_country" id="billing_country" name="billing_country">
+							   <option value="">Select a country</option>
+							   <option value="AX">Aland Islands</option>
+							   <option value="AF">Afghanistan</option>
+							   <option value="AL">Albania</option>
+							   <option value="DZ">Algeria</option>
+							   <option value="AS">American Samoa</option>
+							   <option value="AD">Andorra</option>
+							   <option value="AO">Angola</option>
+							   <option value="AI">Anguilla</option>
+							   <option value="AQ">Antarctica</option>
+							   <option value="AG">Antigua and Barbuda</option>
+							</select>
+						 </p>
+						 <p class="form-row col-sm-12">
+							<label for="billing_address_1">Address<abbr title="required" class="required">*</abbr></label>
+							<input type="text" name="billing_address_1" id="billing_address_1" placeholder="Street address" class="form-controller">
+							<input type="text" name="billing_address_2" id="billing_address_2" placeholder="Apartment, suite, unit etc. (optional)" class="form-controller">
+						 </p>
+						 <p class="form-row col-sm-12">
+							<label for="billing_city">Town/City<abbr title="required" class="required">*</abbr></label>
+							<input type="text" name="billing_city" id="billing_city" class="form-controller">
+						 </p>
+						 <p class="form-row col-sm-6">
+							<label for="billing_state">State<abbr title="required" class="required">*</abbr></label>
+							<select class="billing_state" id="billing_state" name="billing_state">
+							   <option value="">Select a State</option>
+							   <option value="AP">Andhra Pradesh</option>
+							   <option value="AR">Arunachal Pradesh</option>
+							   <option value="DL">Delhi</option>
+							   <option value="LD">Lakshadeep</option>
+							   <option value="PY">Pondicherry (Puducherry)</option>
+							</select>
+						 </p>
+						 <p class="form-row col-sm-6">
+							<label for="billing_postcode">Postcode/zip<abbr title="required" class="required">*</abbr></label>
+							<input type="text" name="billing_postcode" id="billing_postcode" placeholder="Postcode/zip" class="form-controller">
+						 </p>
+
+						 <p class="form-group col-sm-6">
+    						<label >Profile Picture</label>
+    						<input type="file" class="form-controller" id="profile_picture" name="profile_picture" placeholder="profile picture">
+    					</p>
+						 
+						 <p class="col-sm-12">
+							<input type="checkbox" value="forever" id="rememberme" name="rememberme">
+							<label class="inline" for="rememberme">I agree <a href="#">Terms & Condition</a></label>
+						 </p>
+						 <p class="col-sm-12">
+							<input type="submit" value="Complete" name="signup" class="theme-button marL0">
+						 </p>
+					  </div>
+				   </div>
+				   <!-- /.col-md-6 -->
+				   <div class="col-md-6 marTB30">
+				   </div>
+				   <!-- /.col-md-6 -->
+				</div>
+				<!-- /.row -->
+			 </div>			
+		</div>
+		<!-- login-area end -->	
+</div>
+{% endblock %}

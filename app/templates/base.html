@@ -1,47 +1,34 @@
-﻿<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>My Account</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block title %}TYMT{% endblock %}
 
-        <link rel="icon" href="img/favicon.png" />
-        <!-- Place favicon.ico in the root directory -->
-				
-		<!-- all css here -->
-		<!-- bootstrap.min.css -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+{% block head %}
+
+
+		<link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" >
+		<!-- Place favicon.ico in the root directory -->
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/amazeui.css') }}">
+						
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 		<!-- font-awesome.min.css -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
 		<!-- owl.carousel.css -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
 		<!-- owl.carousel.css -->
-        <link rel="stylesheet" href="css/meanmenu.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/meanmenu.min.css') }}">
 		<!-- shortcode/shortcodes.css -->
-        <link rel="stylesheet" href="css/shortcode/shortcodes.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/shortcode/shortcodes.css') }}">
 		<!-- nivo-slider.css -->
-        <link rel="stylesheet" href="css/nivo-slider.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/nivo-slider.css') }}">
 		<!-- style.css -->
-        <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 		<!-- responsive.css -->
-        <link rel="stylesheet" href="css/responsive.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
 
-         
+{% endblock %}
 
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <!-- header -->
-		<header>
-			<!-- header-top-area-start -->
-			<div class="header-top-area black-bg ptb-7 hidden-xs">
+{% block header %}
+<div class="header-top-area black-bg ptb-7 hidden-xs">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-4">
@@ -55,7 +42,7 @@
 									<li class="slide-toggle"><a href="#"><i class="fa fa-user"></i> My Account</a>
 										<ul class="show-toggle">
 											<li><a href="#">register</a></li>
-											<li><a href="#">login</a></li>	
+											<li><a href="#">login</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -68,7 +55,7 @@
 											<li><a href="#"><i class="fa fa-eur"></i> EUR</a></li>
 											<li><a href="#"><i class="fa fa-gbp"></i> GBP</a></li>
 											<li><a href="#"><i class="fa fa-usd"></i> USD</a></li>
-										</ul>	
+										</ul>
 									</li>
 								</ul>
 								<ul>
@@ -76,7 +63,7 @@
 										<ul class="show-toggle-3">
 											<li><a href="#">en-gb</a></li>
 											<li><a href="#">fr-ca</a></li>
-										</ul>	
+										</ul>
 									</li>
 								</ul>
 							</div>
@@ -91,7 +78,7 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 							<div class="logo">
-								<a href="index.html"><img src="img/logo.png" alt="" /></a>
+								<a href="index.html"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" /></a>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -141,12 +128,12 @@
 											<option value="66">Watches</option>
 											<option value="67">Books</option>
 											<option value="68">Sports</option>
-											<option value="69">Gifts</option>											
+											<option value="69">Gifts</option>
 										</select>
 										<input type="text" placeholder="Search...">
 										<button><i class="fa fa-search"></i></button>
 									</form>
-								</div>								
+								</div>
 							</div>
 							<div class="header-bottom-right">
 								<div class="left-cart">
@@ -170,7 +157,7 @@
                                                     <!-- single item -->
                                                     <li>
                                                         <a class="product-image" href="product-details.html">
-                                                            <img alt="" src="img/cart/1.jpg">
+                                                            <img alt="" src="{{ url_for('static', filename='img/cart/1.jpg') }}">
                                                         </a>
                                                         <div class="product-details">
                                                             <p class="cartproduct-name">
@@ -187,7 +174,7 @@
                                                     <!-- single item -->
                                                     <li>
                                                         <a class="product-image" href="product-details.html">
-                                                            <img alt="" src="img/cart/2.jpg">
+                                                            <img alt="" src="{{ url_for('static', filename='img/cart/2.jpg') }}">
                                                         </a>
                                                         <div class="product-details">
                                                             <p class="cartproduct-name">
@@ -209,19 +196,20 @@
                                                 <div class="cart-actions">
                                                     <button><span>Checkout</span></button>
                                                 </div>
-                                            </div>											
+                                            </div>
 										</div>
 									</div>
 								</div>
-							</div>							
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>	
-			<!-- header-bottom-area-end -->
-		</header>																											<!-- header -->
-		<!-- mainmenu-area-start -->
-		<div class="mainmenu-area bg-color-2 hidden-xs hidden-sm">
+			</div>
+
+{% endblock %}
+
+{% block mainmenu_area %}
+<div class="mainmenu-area bg-color-2 hidden-xs hidden-sm">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-3">
@@ -232,20 +220,20 @@
 							<div class="product_vmegamenu">
 								<ul>
 									<li>
-										<a href="#"><img src="img/menu-l/1.png" alt="" /> Automotive & Motorcycle</a></li>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/1.png') }}" alt="" /> Automotive & Motorcycle</a></li>
 									<li>
-										<a href="#"><img src="img/menu-l/2.png" alt="" />Bags, Shoes & Accessories</a></li>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/2.png') }}" alt="" />Bags, Shoes & Accessories</a></li>
 									<li>
-										<a href="#"><img src="img/menu-l/3.png" alt="" /> Cameras & Photo</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/3.png') }}" alt="" /> Cameras & Photo</a>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/4.png" alt="" /> Computers & Networking</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/4.png') }}" alt="" /> Computers & Networking</a>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/5.png" alt="" />Flashlights & Lamps</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/5.png') }}" alt="" />Flashlights & Lamps</a>
 									</li>
 									<li>
-										<a href="#"  class="hover-icon"><img src="img/menu-l/6.png" alt="" />Laptops & Accessories</a>
+										<a href="#"  class="hover-icon"><img src="{{ url_for('static', filename='img/menu-l/6.png') }}" alt="" />Laptops & Accessories</a>
 										<div class="vmegamenu">
 											<span>
 												<a href="#" class="vgema-title">Linux</a>
@@ -271,10 +259,10 @@
 												<a href="#">Windows 7</a>
 												<a href="#">Windows 8.1</a>
 											</span>
-										</div>										
+										</div>
 									</li>
 									<li>
-										<a href="#" class="hover-icon"><img src="img/menu-l/12.png" alt="" />Sports & Outdoors</a>
+										<a href="#" class="hover-icon"><img src="{{ url_for('static', filename='img/menu-l/12.png') }}" alt="" />Sports & Outdoors</a>
 										<div class="vmegamenu">
 											<span>
 												<a href="#" class="vgema-title">Electronic</a>
@@ -304,10 +292,10 @@
 												<a href="#">Pedestal </a>
 												<a href="#">Top-Load </a>
 											</span>
-										</div>										
+										</div>
 									</li>
 									<li>
-										<a href="#" class="hover-icon"><img src="img/menu-l/7.png" alt="" />Smartphone & Tablets</a>
+										<a href="#" class="hover-icon"><img src="{{ url_for('static', filename='img/menu-l/7.png') }}" alt="" />Smartphone & Tablets</a>
 										<div class="vmegamenu vmegamenu2">
 											<span>
 												<a href="#" class="vgema-title">HandBags</a>
@@ -323,50 +311,57 @@
 												<a href="#">Mens</a>
 												<a href="#">Womens</a>
 											</span>
-										</div>	
+										</div>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/8.png" alt="" />Health & Beauty</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/8.png') }}" alt="" />Health & Beauty</a>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/9.png" alt="" />Toys & Hobbies</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/9.png') }}" alt="" />Toys & Hobbies</a>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/10.png" alt="" />Holiday Supplies & Gifts</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/10.png') }}" alt="" />Holiday Supplies & Gifts</a>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/11.png" alt="" />Jewelry & Watches</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/11.png') }}" alt="" />Jewelry & Watches</a>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/5.png" alt="" />Smartphone & Watches</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/5.png') }}" alt="" />Smartphone & Watches</a>
 									</li>
 									<li>
-										<a href="#"><img src="img/menu-l/4.png" alt="" />Health Watches</a>
+										<a href="#"><img src="{{ url_for('static', filename='img/menu-l/4.png') }}" alt="" />Health Watches</a>
 									</li>
 								</ul>
 							</div>
-						</div>	
+						</div>
 					</div>
 					<div class="col-lg-9 col-md-9">
 						<div class="mainmenu">
 							<nav>
 								<ul>
 									<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
 							<li><a href="shop.html">Shop</a></li>
+<<<<<<< HEAD
+							<li><a href="setting.html">Setting</a></li>	
+							<li><a href="about.html">About</a></li>						
+=======
 							<li><a href="cart.html">Cart</a></li>
 							<li><a href="login.html">Login</a></li>
-							<li><a href="account.html">My Account</a></li>								
+							<li><a href="account.html">My Account</a></li>
 							<li><a href="contact-us.html">Contact Us</a></li>
+>>>>>>> 820ddabe0ba421918c616c7307147a241932003f
 								</ul>
 							</nav>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- mobile-menu-start -->
-		<div class="mobile-menu-area hidden-md hidden-lg">
+
+{% endblock %}
+
+{% block mobile_menu %}
+<div class="mobile-menu-area hidden-md hidden-lg">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -378,235 +373,34 @@
 									<li><a href="shop.html">Shop</a></li>
 									<li><a href="cart.html">Cart</a></li>
 									<li><a href="login.html">Login</a></li>
-									<li><a href="account.html">My Account</a></li>								
+									<li><a href="account.html">My Account</a></li>
 									<li><a href="contact-us.html">Contact Us</a></li>
-								</ul>	
+								</ul>
 							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- mobile-menu-end -->		
-		<!-- mainmenu-area-end -->
-		<!-- breadcrumb start -->
-		<div class="breadcrumb-area">
-			<div class="container">
-				<ol class="breadcrumb">
-				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-				  <li class="active">My Account</li>
-				</ol>			
-			</div>
-		</div>
-		<!-- breadcrumb end -->	
-		<!-- login-area start -->
-		<div class="login-area pt-30">
-			 <div class="container">
-				<div class="row">
-				   <div class="centered-title text-center mb-40">
-					  <h2>Sign <span class="light-font">Up</span></h2>
-					  <div class="clear"></div>
-					  <em>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo <br>inventore veritatis et quasi architecto beatae</em>
-				   </div>
-				   <div class="clear"></div>
-				   <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
-					  <div class="billing-fields row">
-						 <p class="form-row col-sm-6">
-							<label for="billing_first_name">First Name<abbr title="required" class="required">*</abbr></label>
-							<input type="text" name="billing_first_name" id="billing_first_name" class="form-controller">
-						 </p>
-						 <p class="form-row col-sm-6">
-							<label for="billing_last_name">Last Name<abbr title="required" class="required">*</abbr></label>
-							<input type="text" name="billing_last_name" id="billing_last_name" class="form-controller">
-						 </p>
-						 <p class="form-row col-sm-12">
-							<label for="billing_company">Company Name</label>
-							<input type="text" name="billing_company" id="billing_company" class="form-controller">
-						 </p>
-						 <p class="form-row col-sm-6">
-							<label for="billing_email">Email Address<abbr title="required" class="required">*</abbr></label>
-							<input type="text" name="billing_email" id="billing_email" class="form-controller">
-						 </p>
-						 <p class="form-row col-sm-6">
-							<label for="billing_email">Phone<abbr title="required" class="required">*</abbr></label>
-							<input type="text" name="billing_phone" id="billing_phone" class="form-controller">
-						 </p>
-						 <p class="form-row col-sm-12">
-							<label for="billing_country">Country<abbr title="required" class="required">*</abbr></label>
-							<select class="billing_country" id="billing_country" name="billing_country">
-							   <option value="">Select a country</option>
-							   <option value="AX">Aland Islands</option>
-							   <option value="AF">Afghanistan</option>
-							   <option value="AL">Albania</option>
-							   <option value="DZ">Algeria</option>
-							   <option value="AS">American Samoa</option>
-							   <option value="AD">Andorra</option>
-							   <option value="AO">Angola</option>
-							   <option value="AI">Anguilla</option>
-							   <option value="AQ">Antarctica</option>
-							   <option value="AG">Antigua and Barbuda</option>
-							</select>
-						 </p>
-						 <p class="form-row col-sm-12">
-							<label for="billing_address_1">Address<abbr title="required" class="required">*</abbr></label>
-							<input type="text" name="billing_address_1" id="billing_address_1" placeholder="Street address" class="form-controller">
-							<input type="text" name="billing_address_2" id="billing_address_2" placeholder="Apartment, suite, unit etc. (optional)" class="form-controller">
-						 </p>
-						 <p class="form-row col-sm-12">
-							<label for="billing_city">Town/City<abbr title="required" class="required">*</abbr></label>
-							<input type="text" name="billing_city" id="billing_city" class="form-controller">
-						 </p>
-						 <p class="form-row col-sm-6">
-							<label for="billing_state">State<abbr title="required" class="required">*</abbr></label>
-							<select class="billing_state" id="billing_state" name="billing_state">
-							   <option value="">Select a State</option>
-							   <option value="AP">Andhra Pradesh</option>
-							   <option value="AR">Arunachal Pradesh</option>
-							   <option value="DL">Delhi</option>
-							   <option value="LD">Lakshadeep</option>
-							   <option value="PY">Pondicherry (Puducherry)</option>
-							</select>
-						 </p>
-						 <p class="form-row col-sm-6">
-							<label for="billing_postcode">Postcode/zip<abbr title="required" class="required">*</abbr></label>
-							<input type="text" name="billing_postcode" id="billing_postcode" placeholder="Postcode/zip" class="form-controller">
-						 </p>
-						 <p class="col-sm-12">
-							<label class="" for="account_password">Account password<abbr title="required" class="required">*</abbr></label>
-							<input type="password" value="" placeholder="Password" id="account_password" name="account_password" class="form-controller">
-						 </p>
-						 <p class="col-sm-12" >
-							<label class="" for="confirm_password">Confirm password<abbr title="required" class="required">*</abbr></label>
-							<input type="password" value="" placeholder="Password" id="confirm_password" name="confirm_password" class="form-controller">
-						 </p>
-						 <p class="col-sm-12">
-							<input type="checkbox" value="forever" id="rememberme" name="rememberme">
-							<label class="inline" for="rememberme">I agree <a href="#">Terms & Condition</a></label>
-						 </p>
-						 <p class="col-sm-12">
-							<input type="submit" value="Register" name="signup" class="theme-button marL0">
-						 </p>
-					  </div>
-				   </div>
-				   <!-- /.col-md-6 -->
-				   <div class="col-md-6 marTB30">
-				   </div>
-				   <!-- /.col-md-6 -->
-				</div>
-				<!-- /.row -->
-			 </div>			
-		</div>
-		<!-- login-area end -->	
-		<!-- brand-area-start -->
-		<div class="brand-area ptb-60 dotted-style-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section-title">
-							<h3>Logo Brands & Clients</h3>
-						</div>					
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="brand-active border-1">
-							<div class="single-brand">
-								<a href="#"><img src="img/brand/1.jpg" alt="" /></a>
-							</div>
-							<div class="single-brand">
-								<a href="#"><img src="img/brand/2.jpg" alt="" /></a>
-							</div>
-							<div class="single-brand">
-								<a href="#"><img src="img/brand/3.jpg" alt="" /></a>
-							</div>
-							<div class="single-brand">
-								<a href="#"><img src="img/brand/4.jpg" alt="" /></a>
-							</div>
-							<div class="single-brand">
-								<a href="#"><img src="img/brand/5.jpg" alt="" /></a>
-							</div>
-							<div class="single-brand">
-								<a href="#"><img src="img/brand/6.jpg" alt="" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- brand-area-end -->
-		<!-- blog-area-start -->
-		<div class="blog-area dotted-style-2  pb-60">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section-title">
-							<h3>latest from blog</h3>
-						</div>					
-					</div>
-				</div>
-				<div class="row">
-					<div class="blog-active">
-						<div class="col-lg-12">
-							<div class="single-blog">
-								<div class="blog-img">
-									<img src="img/blog/1.jpg" alt="" />
-								</div>
-								<div class="blog-content-inner">
-									<div class="blog-content white-bg">
-										<a href="#"><h4>LATIN PROFESSOR</h4></a>
-										<p class="mb-0">Donec vitae hendrerit arcu, sit amet faucibus nisl..</p>
-										<a href="#" class="read-more text-capitalize">Read more <i class="fa fa-arrow-circle-right"></i></a>
-									</div>							
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="single-blog">
-								<div class="blog-img">
-									<img src="img/blog/2.jpg" alt="" />
-								</div>
-								<div class="blog-content-inner">
-									<div class="blog-content white-bg">
-										<a href="#"><h4>LATIN PROFESSOR</h4></a>
-										<p class="mb-0">Donec vitae hendrerit arcu, sit amet faucibus nisl..</p>
-										<a href="#" class="read-more text-capitalize">Read more <i class="fa fa-arrow-circle-right"></i></a>
-									</div>							
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="single-blog">
-								<div class="blog-img">
-									<img src="img/blog/3.jpg" alt="" />
-								</div>
-								<div class="blog-content-inner">
-									<div class="blog-content white-bg">
-										<a href="#"><h4>welcome to plazathemes</h4></a>
-										<p class="mb-0">Donec vitae hendrerit arcu, sit amet faucibus nisl..</p>
-										<a href="#" class="read-more text-capitalize">Read more <i class="fa fa-arrow-circle-right"></i></a>
-									</div>							
-								</div>
-							</div>
-						</div>					
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- blog-area-end -->
-		<!-- newletter-area-start -->
-		<div class="newletter-area ptb-30">
+
+{% endblock %}
+
+{% block page_content %}{% endblock %}
+
+{% block newletter_area %}
+<div class="newletter-area ptb-30">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="newletter-logo">
-							<a href="#"><img src="img/logo.png" alt="" /></a>
+							<a href="#"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 						<div class="subscribe-form">
 							<form action="#">
 								<input placeholder="Email address..." type="text">
-								<button class="subscribe">Subscribe</button>							
+								<button class="subscribe">Subscribe</button>
 							</form>
 						</div>
 					</div>
@@ -621,10 +415,11 @@
 				</div>
 			</div>
 		</div>
-		<!-- newletter-area-end -->
-		<footer>
-			<!-- footer-top-area -->
-			<div class="footer-top-area border-1 ptb-30 bg-color-3">
+
+{% endblock %}
+
+{% block footer %}
+<div class="footer-top-area border-1 ptb-30 bg-color-3">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -700,25 +495,25 @@
 							<div class="footer-title">
 								<h4>Instagram</h4>
 							</div>
-							<div class="footer-widget">	
+							<div class="footer-widget">
 								<div class="footer-widget-img">
 									<div class="single-img">
-										<a href="#"><img src="img/footer/1.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/1.jpg') }}" alt="" /></a>
 									</div>
 									<div class="single-img">
-										<a href="#"><img src="img/footer/2.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/2.jpg') }}" alt="" /></a>
 									</div>
 									<div class="single-img">
-										<a href="#"><img src="img/footer/3.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/3.jpg') }}" alt="" /></a>
 									</div>
 									<div class="single-img">
-										<a href="#"><img src="img/footer/4.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/4.jpg') }}" alt="" /></a>
 									</div>
 									<div class="single-img">
-										<a href="#"><img src="img/footer/5.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/5.jpg') }}" alt="" /></a>
 									</div>
 									<div class="single-img">
-										<a href="#"><img src="img/footer/6.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/6.jpg') }}" alt="" /></a>
 									</div>
 								</div>
 							</div>
@@ -726,10 +521,11 @@
 					</div>
 				</div>
 			</div>
-		</footer>
-		<!-- copyright-area-start -->
-        <div class="copyright-area text-center bg-color-3">
-            <div class="container"> 
+{% endblock %}
+
+{% block copyright_area %}
+<div class="copyright-area text-center bg-color-3">
+            <div class="container">
                 <div class="copyright-border ptb-30">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -739,16 +535,17 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="payment text-right">
-                                <a href="#"><img src="img/payment.png" alt="" /></a>
+                                <a href="#"><img src="{{ url_for('static', filename='img/payment.png') }}" alt="" /></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		<!-- copyright-area-end -->
-		<!-- social_block-start -->
-		<div id="social_block">
+{% endblock %}
+
+{% block social %}
+<div id="social_block">
 			<ul>
 				<li class="facebook"><a href="#">Facebook</a></li>
 				<li class="twitter"><a href="#">twitter</a></li>
@@ -758,29 +555,31 @@
 				<li class="pinterest"><a href="#">pinterest</a></li>
 			</ul>
 		</div>
-		<!-- social_block-end -->
-		
-		<!-- all js here -->
-		<!-- jquery-1.12.0 -->
-        <script src="js/vendor/jquery-1.12.0.min.js"></script>
-		<!-- bootstrap.min.js -->
-        <script src="js/bootstrap.min.js"></script>
-		<!-- nivo.slider.js -->
-        <script src="js/jquery.nivo.slider.pack.js"></script>
-		<!-- jquery-ui.min.js -->
-        <script src="js/jquery-ui.min.js"></script>
-		<!-- jquery.magnific-popup.min.js -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
-		<!-- jquery.meanmenu.min.js -->
-        <script src="js/jquery.meanmenu.js"></script>
-		<!-- jquery.scrollup.min.js-->
-        <script src="js/jquery.scrollup.min.js"></script>
-		<!-- owl.carousel.min.js -->
-        <script src="js/owl.carousel.min.js"></script>		
-		<!-- plugins.js -->
-        <script src="js/plugins.js"></script>
-		<!-- main.js -->
-        <script src="js/main.js"></script>
-    </body>
-</html>
 
+		<script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+		<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.0.min.js') }}"></script>
+		<!-- bootstrap.min.js -->
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<!-- nivo.slider.js -->
+		<script src="{{ url_for('static', filename='js/jquery.nivo.slider.pack.js') }}"></script>
+		<!-- jquery-ui.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+		<!-- jquery.magnific-popup.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<!-- jquery.meanmenu.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery.meanmenu.js') }}"></script>
+		<!-- jquery.scrollup.min.js-->
+		<script src="{{ url_for('static', filename='js/jquery.scrollup.min.js') }}"></script>
+		<!-- owl.carousel.min.js -->
+		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>		
+		<!-- plugins.js -->
+		<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+		<!-- main.js -->
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+		
+        <script src="{{ url_for('static', filename='js/amazeui.js') }}"></script>
+        
+
+{% endblock %}

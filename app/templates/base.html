@@ -1,0 +1,374 @@
+{% block title %}TYMT{% endblock %}
+
+{% block head %}
+
+
+		<link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" >
+		<!-- Place favicon.ico in the root directory -->
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/amazeui.css') }}">
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		<!-- font-awesome.min.css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+		<!-- owl.carousel.css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+		<!-- owl.carousel.css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/meanmenu.min.css') }}">
+		<!-- shortcode/shortcodes.css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/shortcode/shortcodes.css') }}">
+		<!-- nivo-slider.css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/nivo-slider.css') }}">
+		<!-- style.css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<!-- responsive.css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+
+{% endblock %}
+
+{% block header %}
+<div class="header-top-area black-bg ptb-7 hidden-xs">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-4">
+					<div class="header-top-left">
+						<span><a href="#">Call us toll free:</a>(+1)866-550-3669</span>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-8">
+					<div class="header-top-right">
+						<ul>
+							<li class="slide-toggle"><a href="#"><i class="fa fa-user"></i>我的账号</a>
+								<ul class="show-toggle">
+									<li><a href="#">登录</a></li>
+									<li><a href="#">注册</a></li>
+								</ul>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="slide-toggle-3 text-uppercase"><a href="#">用户帮助</a>
+								<ul class="show-toggle-3">
+									<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1908627313&site=qq&menu=yes">人工客服</a></li>
+									<li><a href="#">QA</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+			</div>
+			<!-- header-top-area-end -->
+			<!-- header-bottom-area-start -->
+			<div class="header-bottom-area bg-color-1 ptb-25">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="logo">
+						<a href="index.html"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" /></a>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+					<div class="header-bottom-middle">
+
+						<div class="search-box">
+							<form action="/search_service" method="post">
+								<select name="search_type" id="select">
+									<option value="0">商品/装修公司</option>
+									<option value="1">装修公司</option>
+									<option value="2">商品</option>
+									<option value="21">---装修主材</option>
+									<option value="22">---厨房用品</option>
+									<option value="23">---卫浴用品</option>
+									<option value="24">---灯饰照明</option>
+									<option value="25">---全屋定制</option>
+
+								</select>
+								<input type="text" name="search_keyword" placeholder="搜索..." required="required">
+								<button type="submit" id="btn_search" name="btn_search"><i class="fa fa-search"></i></button>
+							</form>
+						</div>
+					</div>
+					<div class="header-bottom-right">
+						<div class="left-cart">
+
+						</div>
+						<div class="shop-cart-area">
+							<div class="top-cart-wrapper">
+								<div class="block-cart">
+									<div class="top-cart-title">
+										<a href="#">
+											<span class="title-cart">my cart</span>
+											<span class="count-item">2 items</span>
+											<span class="price">$444.00</span>
+										</a>
+									</div>
+									<div class="top-cart-content">
+										<ol class="mini-products-list">
+											<!-- single item -->
+											<li>
+												<a class="product-image" href="product-details.html">
+													<img alt="" src="{{url_for('static' , filename='img/cart/1.jpg') }}">
+												</a>
+												<div class="product-details">
+													<p class="cartproduct-name">
+														<a href="product-details.html">Pellentesque habitant </a>
+													</p>
+													<strong class="qty">qty:1</strong>
+													<span class="sig-price">$222.00</span>
+												</div>
+												<div class="pro-action">
+													<a class="btn-remove" href="#">remove</a>
+												</div>
+											</li>
+											<!-- single item -->
+											<!-- single item -->
+											<li>
+												<a class="product-image" href="product-details.html">
+													<img alt="" src="{{ url_for('static', filename='img/cart/2.jpg') }}">
+												</a>
+												<div class="product-details">
+													<p class="cartproduct-name">
+														<a href="product-details.html">New catolog</a>
+													</p>
+													<strong class="qty">qty:1</strong>
+													<span class="sig-price">$222.00</span>
+												</div>
+												<div class="pro-action">
+													<a class="btn-remove" href="#">remove</a>
+												</div>
+											</li>
+											<!-- single item -->
+
+										</ol>
+										<div class="top-subtotal">
+											Subtotal: <span class="sig-price">$444.00</span>
+										</div>
+										<div class="cart-actions">
+											<button><span>Checkout</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			</div>
+
+{% endblock %}
+
+{% block mainmenu_area %}
+<div class="mainmenu-area bg-color-2 hidden-xs hidden-sm">
+		</div>
+
+{% endblock %}
+
+{% block mobile_menu %}
+<div class="mobile-menu-area hidden-md hidden-lg">
+
+		</div>
+
+{% endblock %}
+
+{% block page_content %}{% endblock %}
+
+{% block newletter_area %}
+<div class="newletter-area ptb-30">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						<div class="newletter-logo">
+							<a href="#"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="subscribe-form">
+							<form action="#">
+								<input placeholder="Email address..." type="text">
+								<button class="subscribe">Subscribe</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+						<div class="subscribe-social text-right">
+							<a href="#"><i class="fa fa-youtube"></i></a>
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}
+
+{% block footer %}
+<div class="footer-top-area border-1 ptb-30 bg-color-3">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="footer-title">
+								<h4>Store Information</h4>
+							</div>
+							<div class="footer-widget">
+								<div class="contact-info">
+									<ul>
+										<li>
+											<div class="contact-icon">
+												<i class="fa fa-home"></i>
+											</div>
+											<div class="contact-text">
+												<span>PO Box 16122 Collins Street West Victoria 8007 Australia</span>
+											</div>
+										</li>
+										<li>
+											<div class="contact-icon">
+												<i class="fa fa-envelope-o"></i>
+											</div>
+											<div class="contact-text">
+												<a href="#"><span>demo@towerthemes.com</span></a>
+											</div>
+										</li>
+										<li>
+											<div class="contact-icon">
+												<i class="fa fa-phone"></i>
+											</div>
+											<div class="contact-text">
+												<span>(+1)866-550-3669</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="footer-title">
+								<h4>Information</h4>
+							</div>
+							<div class="footer-widget">
+								<div class="list-unstyled">
+									<ul>
+										<li><a href="#">About Us</a></li>
+										<li><a href="#">Delivery Information</a></li>
+										<li><a href="#">Privacy Policy</a></li>
+										<li><a href="#">Terms & Conditions</a></li>
+										<li><a href="#">Contact Us</a></li>
+										<li><a href="#">Site Map</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="footer-title">
+								<h4>My Account</h4>
+							</div>
+							<div class="footer-widget">
+								<div class="list-unstyled">
+									<ul>
+										<li><a href="#">My Account</a></li>
+										<li><a href="#">Order History</a></li>
+										<li><a href="#">Wish List</a></li>
+										<li><a href="#">Newsletter</a></li>
+										<li><a href="#">Specials</a></li>
+										<li><a href="#">Brands</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="footer-title">
+								<h4>Instagram</h4>
+							</div>
+							<div class="footer-widget">
+								<div class="footer-widget-img">
+									<div class="single-img">
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/1.jpg') }}" alt="" /></a>
+									</div>
+									<div class="single-img">
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/2.jpg') }}" alt="" /></a>
+									</div>
+									<div class="single-img">
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/3.jpg') }}" alt="" /></a>
+									</div>
+									<div class="single-img">
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/4.jpg') }}" alt="" /></a>
+									</div>
+									<div class="single-img">
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/5.jpg') }}" alt="" /></a>
+									</div>
+									<div class="single-img">
+										<a href="#"><img src="{{ url_for('static', filename='img/footer/6.jpg') }}" alt="" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}
+
+{% block copyright_area %}
+<div class="copyright-area text-center bg-color-3">
+            <div class="container">
+                <div class="copyright-border ptb-30">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="copyright text-left">
+                                <p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="payment text-right">
+                                <a href="#"><img src="{{ url_for('static', filename='img/payment.png') }}" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block social %}
+<div id="social_block">
+			<ul>
+				<li class="facebook"><a href="#">Facebook</a></li>
+				<li class="twitter"><a href="#">twitter</a></li>
+				<li class="rss"><a href="#">rss</a></li>
+				<li class="youtube"><a href="#">youtube</a></li>
+				<li class="google-plus"><a href="#">google plus</a></li>
+				<li class="pinterest"><a href="#">pinterest</a></li>
+			</ul>
+		</div>
+
+		<script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+		<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.0.min.js') }}"></script>
+		<!-- bootstrap.min.js -->
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<!-- nivo.slider.js -->
+		<script src="{{ url_for('static', filename='js/jquery.nivo.slider.pack.js') }}"></script>
+		<!-- jquery-ui.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+		<!-- jquery.magnific-popup.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+		<!-- jquery.meanmenu.min.js -->
+		<script src="{{ url_for('static', filename='js/jquery.meanmenu.js') }}"></script>
+		<!-- jquery.scrollup.min.js-->
+		<script src="{{ url_for('static', filename='js/jquery.scrollup.min.js') }}"></script>
+		<!-- owl.carousel.min.js -->
+		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+		<!-- plugins.js -->
+		<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+		<!-- main.js -->
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+
+        <script src="{{ url_for('static', filename='js/amazeui.js') }}"></script>
+
+
+{% endblock %}

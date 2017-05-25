@@ -21,6 +21,7 @@ def before_request():
 @auth_.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm(request.form)
+    print form.username.data, form.email.data, form.password.data, form.type.data
     if form.validate_on_submit():
         user = User(form.username.data, form.email.data,
                     form.password.data, form.type.data,
@@ -81,8 +82,11 @@ def unconfirmed():
 def login():
     if g.user is not None and g.user.is_authenticated:
         return redirect(url_for('module_a.index_view'))
-    form = LoginForm(request.form)
-    if form.validate_on_submit():
+    form = RegisterForm(request.form)
+    if request.form != None:
+        print (request.form)
+    if False:
+        print  request.form['action']
         user = User.query.filter_by(UserEmail=form.email.data).first()
         print request.form.get("email"), request.form.get("password")
         if user and check_password_hash(

@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask import render_template, request, redirect, url_for, g
 from flask_login import login_required
-from app.sql_operation.mysql import Consumer, Company, Designer, User
+from app.sql_operation.mysql import *
 
 company_ = Blueprint('company', __name__)
 
@@ -13,12 +13,15 @@ def company_index():
 
 @company_.route("/info")
 @login_required
-def comsumer_info():
+def company_info():
 	user = g.user
 	user = User.query.filter_by(UserID=user.UserID).first_or_404()
-	if user.UserType == "Consumer":
+	if user.UserType == "Company":
 		consum = Consumer.query.filter_by(ConsumerID=user.UserID).first()
-		# TODO
+		dec_forms = DecorationForm.query.filter_by(ConsumerID=user.UserID).all()
+		user_addresses = UserAddress.query.filter_by(UserID=user.UserID).all()
+		order_forms = OrderForm.query.filter_by(UserID=user.UserID).all()
+
 
 	return redirect(url_for("main.index"))
 
@@ -31,6 +34,7 @@ def company_change_info():
 @company_.route("/verify", methods=['GET', 'POST'])
 @login_required
 def company_verify():
+
 	return
 
 @company_.route("/design_scheme", methods=['GET', 'POST'])

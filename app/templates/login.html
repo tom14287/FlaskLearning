@@ -91,9 +91,16 @@
 											User Name
 											<span class="required">*</span>
 										</label>
-										{{ form.email(placeholder="user name") }}
+										{{ form.username(placeholder="user name") }}
 									</p>
-									
+									</p>
+  											<p>
+										<label>
+											Type
+											<span class="required">*</span>
+										</label>
+										{{ form.type(placeholder="type") }}
+									</p>
 									<p>
 										<label>
 											Password
@@ -106,7 +113,7 @@
 											Confirm Password
 											<span class="required">*</span>
 										</label>
-										{{ form.password(placeholder="confirm password") }}
+										{{ form.confirm(placeholder="confirm password") }}
 									</p>
 									<div class="form-action">
 									<input type="checkbox" value="forever" id="rememberme" name="rememberme">

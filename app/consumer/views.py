@@ -11,18 +11,27 @@ def comsumer_index():
 	return render_template("index.html")
 
 
-@consumer_.route('/cart', methods=['GET', 'POST'])
-def cart():
-	return render_template("cart.html")
+@consumer_.route("/change_info", methods=['GET', 'POST'])
+@login_required
+def consumer_change_info():
+	return
 
-@consumer_.route('/consumer_order', methods=['GET', 'POST'])
-def consumer_order():
-	return render_template("consumer_order.html")
+@consumer_.route("/add_rec_addr", methods=['GET', 'POST'])
+@login_required
+def consumer_add_rec_addr():
+	return
 
-@consumer_.route('/consumer_refund', methods=['GET', 'POST'])
-def consumer_refund():
-	return render_template("consumer_refund.html")
+@consumer_.route("/cart", methods=['GET', 'POST'])
+@login_required
+def consumer_cart():
+	return
 
-@consumer_.route('/consumer_profile', methods=['GET', 'POST'])
-def consumer_profile():
-	return render_template("consumer_profile.html")
+@consumer_.route("/orders", methods=['GET', 'POST'])
+@login_required
+def consumer_orders():
+	return
+
+@consumer_.route("/decoration", methods=['GET', 'POST'])
+@login_required
+def consumer_decoration():
+	return

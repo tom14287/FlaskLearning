@@ -36,7 +36,8 @@ def register_func(username, email, password, confirm, type):
     if type != "Company" and type != 'Consumer' and type != 'Designer':
         return "TYPEERR"
     user = User.query.filter_by(UserEmail=email).first()
-    if user:
+    if user != None and user.UserEmail == email:
+        print email
         return "REPEAT"
     user = User(username, email,
                 password, type,
@@ -58,26 +59,32 @@ def register_func(username, email, password, confirm, type):
     subject = "Please confirm your email"
     send_email(user.UserEmail, subject, html)
     login_user(user)
-    flash('A confirmation email has been sent via email.', 'success')
+    # flash('A confirmation email has been sent via email.', 'success')
     return "SUCCEED"
 
 @auth_.route('/confirm/<token>')
 @login_required
 def confirm_email(token):
+    ret = is_confirm(token)
+    if  ret == "CONFIRM" or ret == "HAVECONFIRM":
+        return redirect(url_for('auth.login'))
+    return redirect(url_for('module_a.index_view'))
+
+def is_confirm(token):
+    email = None
     try:
         email = confirm_token(token)
     except:
-        flash('The confirmation link is invalid or has expired.', 'danger')
-    user = User.query.filter_by(UserEmail=email).first_or_404()
-    if user.UserConfirm:
-        flash('Account already confirmed. Please login.', 'success')
+        return "TOKENERR"
+    user = User.query.filter_by(UserEmail=email).first()
+    if user == None:
+        return "EMAILERR"
+    elif user.UserConfirm:
+        return "HAVECONFIRM"
     else:
-        user.UserConfirm = True
-        db.session.add(user)
+        db.session.execute("update User set UserConfirm=%d where UserID=%d"% (1, user.UserID))
         db.session.commit()
-        flash('You have confirmed your account. Thanks!', 'success')
-    return redirect(url_for('module_a.index_view'))
-
+    return "CONFIRM"
 
 @auth_.route('/unconfirmed')
 @login_required
@@ -104,6 +111,7 @@ def login():
                     return redirect(url_for('module_a.index_view'))
         elif request.form['action'] == 'register':
             if form.validate_on_submit():
+                print "reg"
                 ret = register_func(form.username.data, form.email.data, form.password.data, form.confirm.data, form.type.data)
                 print ret
                 if ret == "SUCCEED":
@@ -140,9 +148,10 @@ def change_password():
     if form.validate_on_submit():
         if user and check_password_hash(
             user.UserPassword, request.form['old_password']):
-            user.UserPassword = generate_password_hash(form.password)
-            db.session.add(user)
+            pwd = generate_password_hash(form.password)
+            db.session.execute("update User set UserPassword='%s' where UserID=%d" % (pwd, user.UserID))
             db.session.commit()
+            user.UserPassword = pwd
         return redirect(url_for("auth.login"))
     return render_template('auth/change_password.html', form=form)
 

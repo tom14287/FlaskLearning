@@ -39,7 +39,7 @@ def consumer_cart():
 		dec_forms = DecorationForm.query.filter_by(ConsumerID=user.UserID).all()
 		user_addresses = UserAddress.query.filter_by(UserID=user.UserID).all()
 		order_forms = OrderForm.query.filter_by(UserID=user.UserID).all()
-	return
+	return render_template('cart.html')
 
 @consumer_.route("/orders", methods=['GET', 'POST'])
 @login_required

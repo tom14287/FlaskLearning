@@ -19,36 +19,45 @@ def before_request():
     g.user = current_user
 
 @auth_.route('/register', methods=['GET', 'POST'])
-def register():
+def register_view():
     form = RegisterForm(request.form)
     print form.username.data, form.email.data, form.password.data, form.type.data
     if form.validate_on_submit():
-        user = User(form.username.data, form.email.data,
-                    form.password.data, form.type.data,
-                    False)
-        db.session.add(user)
-        db.session.commit()
-        temp = None
-        if form.type.data == 'Consumer':
-            temp = Consumer(ConsumerID=user.UserID)
-        elif form.type.data == 'Company':
-            temp = Company(CompanyID=user.UserID)
-        else:
-            temp = Designer(DesignerID=user.UserID)
-        db.session.add(temp)
-        db.session.commit()
-        token = generate_confirmation_token(user.UserEmail)
-        confirm_url = url_for('auth.confirm_email', token=token, _external=True)
-        html = render_template('auth/activate.html', confirm_url=confirm_url)
-        subject = "Please confirm your email"
-        send_email(user.UserEmail, subject, html)
 
-        login_user(user)
-
-        flash('A confirmation email has been sent via email.', 'success')
         return redirect(url_for("auth.unconfirmed"))
 
     return render_template('auth/register.html', form=form)
+
+def register(username, email, password, type):
+    if not username or not email or not password or not type:
+        return "INPUTERR"
+    if type != "Company" and type != 'Consumer' and type != 'Designer':
+        return "TYPEERR"
+    user = User.query.filter_by(UserEmail=email).first()
+    if user:
+        return "REPEAT"
+    user = User(username, email,
+                password, type,
+                False)
+    db.session.add(user)
+    db.session.commit()
+    temp = None
+    if type == 'Consumer':
+        temp = Consumer(ConsumerID=user.UserID)
+    elif type == 'Company':
+        temp = Company(CompanyID=user.UserID)
+    elif type == 'Designer':
+        temp = Designer(DesignerID=user.UserID)
+    db.session.add(temp)
+    db.session.commit()
+    token = generate_confirmation_token(user.UserEmail)
+    confirm_url = url_for('auth.confirm_email', token=token, _external=True)
+    html = render_template('auth/activate.html', confirm_url=confirm_url)
+    subject = "Please confirm your email"
+    send_email(user.UserEmail, subject, html)
+    login_user(user)
+    flash('A confirmation email has been sent via email.', 'success')
+    return "SUCCEED"
 
 @auth_.route('/confirm/<token>')
 @login_required
@@ -79,27 +88,32 @@ def unconfirmed():
 
 
 @auth_.route('/login', methods=['GET', 'POST'])
-def login():
+def login_view():
     if g.user is not None and g.user.is_authenticated:
         return redirect(url_for('module_a.index_view'))
     form = RegisterForm(request.form)
-    if request.form != None:
-        print (request.form)
-    if False:
-        print  request.form['action']
-        user = User.query.filter_by(UserEmail=form.email.data).first()
-        print request.form.get("email"), request.form.get("password")
-        if user and check_password_hash(
-                user.UserPassword, request.form['password']):
-            login_user(user)
-            flash('Welcome.', 'success')
-            session['userid'] = user.UserID
-            session['usertype'] = user.UserType
-            return redirect(url_for('module_a.index_view'))
-        else:
+    if form.validate_on_submit():
+        ret = login(form.email, form.password)
+        if ret == 'NOACCOUNT' or ret == 'WRONGPWD':
             flash('Invalid email and/or password.', 'danger')
             return render_template('login.html', form=form)
+        else:
+            return redirect(url_for('module_a.index_view'))
     return render_template('login.html', form=form)
+
+def login(email, password):
+    user = User.query.filter_by(UserEmail=email).first()
+    if user == None:
+        return "NOACCOUNT"
+    else:
+        if check_password_hash(user.UserPassword, password):
+            login_user(user)
+            session['userid'] = user.UserID
+            session['usertype'] = user.UserType
+            return "SUCCEED"
+        else:
+            return "WRONGPWD"
+
 
 @auth_.route('/logout', methods = ['GET', 'POST'])
 @login_required

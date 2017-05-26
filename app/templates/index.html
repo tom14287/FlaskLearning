@@ -36,20 +36,18 @@
 							<li>
 								<a href="#"><img src="{{ url_for('static' , filename='img/menu-l/5.png') }}" alt=""/> 家用电器</a>
 							</li>
-
+						
 						</ul>
 					</div>
-				</div>
+				</div>	
 			</div>
 			<div class="col-lg-9 col-md-9">
 				<div class="mainmenu">
 					<nav>
 						<ul>
-							<li><a href="index.html">商城首页</a></li>
+							<li><a  href="{{url_for('module_a.index_view')}}">商城首页</a></li>
 							<li><a href="about.html">竞标任务</a></li>
-							<li><a href="shop.html">推荐商品</a></li>
-							<li><a href="cart.html">专家系统</a></li>
-							<li><a href="contact-us.html">联系我们</a></li>
+							<li><a href="#abc">推荐商品</a></li>					
 						</ul>
 					</nav>
 				</div>
@@ -70,20 +68,20 @@
 						<!-- Slider Image -->
 						<div id="mainSlider" class="nivoSlider slider-image">
 
-							<img src="{{ url_for('static', filename='img/slider/1.jpg') }}" alt="" title="#htmlcaption1">
-							<img src="{{ url_for('static', filename='img/slider/2.jpg') }}" alt="" title="#htmlcaption2">
+							<img src="{{ url_for('static', filename='img/company/1.jpg') }}" alt="" title="#htmlcaption1"> 
+							<img src="{{ url_for('static', filename='img/company/3.jpg') }}" alt="" title="#htmlcaption2"> 
 						</div>
-					</div>
+					</div>	
 				</div>
 				<div class="slider-product dotted-style-1 pt-30">
 					<div class="slider-product-active">
 						<div class="single-product single-product-sidebar white-bg">
 							<div class="product-img product-img-left">
-								<a href="#"><img src="{{ url_for('static' , filename='img/product/6.jpg') }}" alt="" /></a>
+								<a href="#"><img src="{{ url_for('static' , filename='img/zhucai/1.jpg') }}" alt="" /></a>  
 							</div>
 							<div class="product-content product-content-right">
 								<div class="pro-title">
-									<h4><a href="product-details.html">Lounge Chair</a></h4>
+									<h4><a href="product-details.html">金钢铂林复合地板</a></h4>
 								</div>
 								<div class="pro-rating ">
 									<a href="#"><i class="fa fa-star"></i></a>
@@ -93,22 +91,22 @@
 									<a href="#"><i class="fa fa-star-o"></i></a>
 								</div>
 								<div class="price-box">
-									<span class="price product-price">$444.00</span>
+									<span class="price product-price">$100.00</span>
 								</div>
 								<div class="product-icon">
 									<div class="product-icon-left f-left">
 										<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
 									</div>
 								</div>
-							</div>
-						</div>
+							</div>					
+						</div>	
 						<div class="single-product single-product-sidebar white-bg">
 							<div class="product-img product-img-left">
-								<a href="#"><img src="{{ url_for('static' , filename='img/product/9.jpg') }}" alt="" /></a>
+								<a href="#"><img src="{{ url_for('static' , filename='img/light/1.jpg') }}" alt="" /></a>
 							</div>
 							<div class="product-content product-content-right">
 								<div class="pro-title">
-									<h4><a href="product-details.html">imac</a></h4>
+									<h4><a href="product-details.html">瑝玛欧式吊灯</a></h4>
 								</div>
 								<div class="pro-rating ">
 									<a href="#"><i class="fa fa-star"></i></a>
@@ -118,15 +116,15 @@
 									<a href="#"><i class="fa fa-star-o"></i></a>
 								</div>
 								<div class="price-box">
-									<span class="price product-price">$300.00</span>
+									<span class="price product-price">$662.00</span>
 								</div>
 								<div class="product-icon">
 									<div class="product-icon-left f-left">
 										<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
 									</div>
 								</div>
-							</div>
-						</div>
+							</div>					
+						</div>							
 					</div>
 				</div>
 			</div>
@@ -134,14 +132,14 @@
 				<div class="slider-sidebar">
 					<div class="slider-single-img mb-20">
 						<a href="#">
-							<img class="img_a" src="{{ url_for('static' , filename='img/menu-l/1-1.jpg') }}" alt="" />
-							<img class="img_b" src="{{ url_for('static' , filename='img/menu-l/1-1.jpg') }}" alt="" />
+							<img class="img_a" src="{{ url_for('static' , filename='img/cook/1.jpg') }}" alt="" />
+							<img class="img_b" src="{{ url_for('static' , filename='img/cook/1.jpg') }}" alt="" />
 						</a>
 					</div>
 					<div class="slider-single-img none-sm">
 						<a href="#">
-					        <img class="img_a" src="{{ url_for('static' , filename='img/menu-l/1-2.jpg') }}" alt="" />
-							<img class="img_b" src="{{ url_for('static' , filename='img/menu-l/1-2.jpg') }}" alt="" />
+					        <img class="img_a" src="{{ url_for('static' , filename='img/equipment/2.jpg') }}" alt="" />
+							<img class="img_b" src="{{ url_for('static' , filename='img/equipment/2.jpg') }}" alt="" />
 						</a>
 					</div>
 				</div>
@@ -151,12 +149,12 @@
 </div>
 <!-- slider-area-end -->
 <!-- electronic-tab-area-start -->
-<div class="electronic-tab-area pt-60 pb-60">
+<div class="electronic-tab-area pt-60 pb-60" id="abc">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				<div class="tab-title">
-					<h2>预留广告位</h2>
+					<h2>优秀商家</h2>
 				</div>
 				<div class="tab-menu">
 					<ul>
@@ -164,9 +162,9 @@
 						<li><a href="#profile" data-toggle="tab"><img src="{{ url_for('static' , filename='img/electronic/2.png') }}" alt="" />厨房用品</a></li>
 						<li><a href="#messages" data-toggle="tab"><img src="{{ url_for('static' , filename='img/electronic/3.png') }}" alt="" />卫浴用品</a></li>
 						<li><a href="#settings" data-toggle="tab"><img src="{{ url_for('static' , filename='img/electronic/4.png') }}" alt="" />灯饰照明</a></li>
-						<li><a href="#settings" data-toggle="tab"><img src="{{ url_for('static' , filename='img/electronic/4.png') }}" alt="" />全屋定制</a></li>
-						<li><a href="#settings" data-toggle="tab"><img src="{{ url_for('static' , filename='img/electronic/4.png') }}" alt="" />家用电器</a></li>
-					</ul>
+						<li><a href="#room" data-toggle="tab"><img src="{{ url_for('static' , filename='img/electronic/4.png') }}" alt="" />全屋定制</a></li>
+						<li><a href="#equipment" data-toggle="tab"><img src="{{ url_for('static' , filename='img/electronic/4.png') }}" alt="" />家用电器</a></li>
+					</ul>						
 				</div>
 			</div>
 		</div>
@@ -175,17 +173,17 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
 						<div class="single-tab-img">
-							<a href="#"><img src="{{ url_for('static' , filename='img/electronic/1.jpg') }}" alt="" /> alt="" /></a>
+							<a href="#"><img src="{{ url_for('static' , filename='img/company/1.jpg') }}" alt="" /> </a>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-6  col-xs-12 pad">
 						<div class="single-product pt-30 pb-20 white-bg">
 							<div class="product-img pb-40">
-								<a href="#"><img src="{{ url_for('static' , filename='img/product/1.jpg') }}" alt="" /></a>
+								<a href="#"><img src="{{ url_for('static' , filename='img/zhucai/3.jpg') }}" alt="" /></a>
 							</div>
 							<div class="product-content">
 								<div class="pro-title">
-									<h4><a href="product-details.html">Moebius Table</a></h4>
+									<h4><a href="product-details.html">西门子单控开关</a></h4>
 								</div>
 								<div class="pro-rating ">
 									<a href="#"><i class="fa fa-star"></i></a>
@@ -201,7 +199,7 @@
 									<div class="product-icon-left f-left">
 										<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
 									</div>
-
+									
 								</div>
 							</div>
 							<span class="new">new</span>
@@ -212,11 +210,11 @@
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="{{ url_for('static' , filename='img/product/2.jpg') }}" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/zhucai/2.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Lounge Chair Cinema </a></h4>
+											<h4><a href="product-details.html">贝尔地板 </a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -233,18 +231,18 @@
 											<div class="product-icon-left f-left">
 												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
 											</div>
-
+											
 										</div>
 									</div>
 									<span class="new">new</span>
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="{{ url_for('static' , filename='img/product/3.jpg') }}" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/zhucai/1.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
+											<h4><a href="product-details.html">金钢柏林复合地板</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -267,19 +265,18 @@
 										</div>
 									</div>
 									<span class="sale">sale</span>
-								</div>
+								</div>										
 							</div>
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="{{ url_for('static' , filename='img/product/4.jpg') }}" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/zhucai/4.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iMac</a></h4>
+											<h4><a href="product-details.html">雅琪诺中式墙纸</a></h4>
 										</div>
 										<div class="pro-rating ">
-											<a href="#"><i class="fa fa-star"></i></a>
 											<a href="#"><i class="fa fa-star"></i></a>
 											<a href="#"><i class="fa fa-star"></i></a>
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -302,11 +299,11 @@
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="{{ url_for('static' , filename='img/product/5.jpg') }}" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/zhucai/5.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Footstool</a></h4>
+											<h4><a href="product-details.html">维迅瓷砖</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -330,69 +327,7 @@
 										</div>
 									</div>
 									<span class="new">new</span>
-								</div>
-							</div>
-							<div class="together-single-product">
-								<div class="single-product white-bg">
-									<div class="product-img product-container-img">
-										<a href="#"><img src="{{ url_for('static' , filename='img/product/6.jpg') }}" alt="" /></a>
-									</div>
-									<div class="product-content product-i">
-										<div class="pro-title">
-											<h4><a href="product-details.html">Lounge Chair Cinema </a></h4>
-										</div>
-										<div class="pro-rating ">
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star-o"></i></a>
-										</div>
-										<div class="price-box">
-											<span class="price product-price">$300.00</span>
-										</div>
-										<div class="product-icon">
-											<div class="product-icon-left f-left">
-												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-											</div>
-											<div class="product-icon-right floatright">
-												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
-												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
-											</div>
-										</div>
-									</div>
-									<span class="sale">sale</span>
-								</div>
-								<div class="single-product white-bg">
-									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/7.jpg" alt="" /></a>
-									</div>
-									<div class="product-content product-i">
-										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
-										</div>
-										<div class="pro-rating ">
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-										</div>
-										<div class="price-box">
-											<span class="price product-price">$100.00</span>
-										</div>
-										<div class="product-icon">
-											<div class="product-icon-left f-left">
-												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-											</div>
-											<div class="product-icon-right floatright">
-												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
-												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
-											</div>
-										</div>
-									</div>
-									<span class="sale">sale</span>
-								</div>
+								</div>										
 							</div>
 						</div>
 					</div>
@@ -402,17 +337,17 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
 						<div class="single-tab-img">
-							<a href="#"><img src="img/electronic/1.jpg" alt="" /></a>
+							<a href="#"><img src="{{ url_for('static' , filename='img/company/2.jpg') }}" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
 						<div class="single-product pt-30 pb-20 white-bg">
 							<div class="product-img pb-40">
-								<a href="#"><img src="img/product/3.jpg" alt="" /></a>
+								<a href="#"><img src="{{ url_for('static' , filename='img/cook/1.jpg') }}" alt="" /></a>
 							</div>
 							<div class="product-content">
 								<div class="pro-title">
-									<h4><a href="product-details.html">Moebius Table</a></h4>
+									<h4><a href="product-details.html">卡贝洗菜盆</a></h4>
 								</div>
 								<div class="pro-rating ">
 									<a href="#"><i class="fa fa-star"></i></a>
@@ -442,11 +377,11 @@
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/7.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/cook/2.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">MacBook</a></h4>
+											<h4><a href="product-details.html">安住龙头</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -473,11 +408,11 @@
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/3.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/cook/3.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
+											<h4><a href="product-details.html">晋乐美龙头</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -500,16 +435,16 @@
 										</div>
 									</div>
 									<span class="sale">sale</span>
-								</div>
+								</div>										
 							</div>
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/10.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/cook/4.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Loudspeaker</a></h4>
+											<h4><a href="product-details.html">飞雕龙头</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -534,11 +469,11 @@
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/5.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/cook/5.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Footstool</a></h4>
+											<h4><a href="product-details.html">欧琳水槽</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -548,8 +483,8 @@
 											<a href="#"><i class="fa fa-star"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$70.00</span>
-											<span class="price-2"><del>$100.00</del></span>
+											<span class="price product-price">$700.00</span>
+											<span class="price-2"><del>$1000.00</del></span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -562,89 +497,27 @@
 										</div>
 									</div>
 									<span class="new">new</span>
-								</div>
-							</div>
-							<div class="together-single-product">
-								<div class="single-product white-bg">
-									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/6.jpg" alt="" /></a>
-									</div>
-									<div class="product-content product-i">
-										<div class="pro-title">
-											<h4><a href="product-details.html">Lounge Chair Cinema </a></h4>
-										</div>
-										<div class="pro-rating ">
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star-o"></i></a>
-										</div>
-										<div class="price-box">
-											<span class="price product-price">$300.00</span>
-										</div>
-										<div class="product-icon">
-											<div class="product-icon-left f-left">
-												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-											</div>
-											<div class="product-icon-right floatright">
-												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
-												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
-											</div>
-										</div>
-									</div>
-									<span class="sale">sale</span>
-								</div>
-								<div class="single-product white-bg">
-									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/7.jpg" alt="" /></a>
-									</div>
-									<div class="product-content product-i">
-										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
-										</div>
-										<div class="pro-rating ">
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-										</div>
-										<div class="price-box">
-											<span class="price product-price">$100.00</span>
-										</div>
-										<div class="product-icon">
-											<div class="product-icon-left f-left">
-												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-											</div>
-											<div class="product-icon-right floatright">
-												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
-												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
-											</div>
-										</div>
-									</div>
-									<span class="sale">sale</span>
-								</div>
+								</div>										
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>					
 			</div>
 			<div class="tab-pane" id="messages">
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
 						<div class="single-tab-img">
-							<a href="#"><img src="img/electronic/1.jpg" alt="" /></a>
+							<a href="#"><img src="{{ url_for('static' , filename='img/company/3.jpg') }}" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
 						<div class="single-product pt-30 pb-20 white-bg">
 							<div class="product-img pb-40">
-								<a href="#"><img src="img/product/5.jpg" alt="" /></a>
+								<a href="#"><img src="{{ url_for('static' , filename='img/bathroom/1.jpg') }}" alt="" /></a>
 							</div>
 							<div class="product-content">
 								<div class="pro-title">
-									<h4><a href="product-details.html">Moebius Table</a></h4>
+									<h4><a href="product-details.html">卡贝电吹风架</a></h4>
 								</div>
 								<div class="pro-rating ">
 									<a href="#"><i class="fa fa-star"></i></a>
@@ -654,7 +527,7 @@
 									<a href="#"><i class="fa fa-star-o"></i></a>
 								</div>
 								<div class="price-box">
-									<span class="price product-price">$262.00</span>
+									<span class="price product-price">$26.00</span>
 								</div>
 								<div class="product-icon">
 									<div class="product-icon-left f-left">
@@ -674,11 +547,11 @@
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/11.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/bathroom/2.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Samsung Y8</a></h4>
+											<h4><a href="product-details.html">卡贝毛巾杆</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -688,8 +561,8 @@
 											<a href="#"><i class="fa fa-star-o"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$210.00</span>
-											<span class="price-2"><del>$230.00</del></span>
+											<span class="price product-price">$22.00</span>
+											<span class="price-2"><del>$23.00</del></span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -705,11 +578,11 @@
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/3.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/bathroom/3.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
+											<h4><a href="product-details.html">安住坐便器</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -719,7 +592,7 @@
 											<a href="#"><i class="fa fa-star"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$100.00</span>
+											<span class="price product-price">$326.00</span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -732,16 +605,16 @@
 										</div>
 									</div>
 									<span class="sale">sale</span>
-								</div>
+								</div>										
 							</div>
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/4.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/bathroom/4.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iMac</a></h4>
+											<h4><a href="product-details.html">卡贝叠物架</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -751,8 +624,8 @@
 											<a href="#"><i class="fa fa-star-o"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$120.00</span>
-											<span class="price-2"><del>$300.00</del></span>
+											<span class="price product-price">$90.00</span>
+											<span class="price-2"><del>$150.00</del></span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -767,11 +640,11 @@
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/5.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/bathroom/5.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Footstool</a></h4>
+											<h4><a href="product-details.html">智洁艺术盆</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -781,8 +654,8 @@
 											<a href="#"><i class="fa fa-star"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$70.00</span>
-											<span class="price-2"><del>$100.00</del></span>
+											<span class="price product-price">$700.00</span>
+											<span class="price-2"><del>$1000.00</del></span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -795,89 +668,27 @@
 										</div>
 									</div>
 									<span class="new">new</span>
-								</div>
-							</div>
-							<div class="together-single-product">
-								<div class="single-product white-bg">
-									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/6.jpg" alt="" /></a>
-									</div>
-									<div class="product-content product-i">
-										<div class="pro-title">
-											<h4><a href="product-details.html">Lounge Chair Cinema </a></h4>
-										</div>
-										<div class="pro-rating ">
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star-o"></i></a>
-										</div>
-										<div class="price-box">
-											<span class="price product-price">$300.00</span>
-										</div>
-										<div class="product-icon">
-											<div class="product-icon-left f-left">
-												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-											</div>
-											<div class="product-icon-right floatright">
-												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
-												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
-											</div>
-										</div>
-									</div>
-									<span class="sale">sale</span>
-								</div>
-								<div class="single-product white-bg">
-									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/7.jpg" alt="" /></a>
-									</div>
-									<div class="product-content product-i">
-										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
-										</div>
-										<div class="pro-rating ">
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-											<a href="#"><i class="fa fa-star"></i></a>
-										</div>
-										<div class="price-box">
-											<span class="price product-price">$100.00</span>
-										</div>
-										<div class="product-icon">
-											<div class="product-icon-left f-left">
-												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-											</div>
-											<div class="product-icon-right floatright">
-												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
-												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
-											</div>
-										</div>
-									</div>
-									<span class="sale">sale</span>
-								</div>
+								</div>										
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>					
 			</div>
 			<div class="tab-pane" id="settings">
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
 						<div class="single-tab-img">
-							<a href="#"><img src="img/electronic/1.jpg" alt="" /></a>
+							<a href="#"><img src="{{ url_for('static' , filename='img/company/4.jpg') }}" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
 						<div class="single-product pt-30 pb-20 white-bg">
 							<div class="product-img pb-40">
-								<a href="#"><img src="img/product/3.jpg" alt="" /></a>
+								<a href="#"><img src="{{ url_for('static' , filename='img/light/1.jpg') }}" alt="" /></a>
 							</div>
 							<div class="product-content">
 								<div class="pro-title">
-									<h4><a href="product-details.html">Moebius Table</a></h4>
+									<h4><a href="product-details.html">瑝玛欧式吊灯</a></h4>
 								</div>
 								<div class="pro-rating ">
 									<a href="#"><i class="fa fa-star"></i></a>
@@ -887,7 +698,7 @@
 									<a href="#"><i class="fa fa-star-o"></i></a>
 								</div>
 								<div class="price-box">
-									<span class="price product-price">$262.00</span>
+									<span class="price product-price">$662.00</span>
 								</div>
 								<div class="product-icon">
 									<div class="product-icon-left f-left">
@@ -907,11 +718,11 @@
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/2.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/light/2.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Lounge Chair Cinema </a></h4>
+											<h4><a href="product-details.html">月影凯顿壁灯</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -938,11 +749,11 @@
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/3.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/light/3.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
+											<h4><a href="product-details.html">雷氏照明吸顶灯</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -952,7 +763,7 @@
 											<a href="#"><i class="fa fa-star"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$100.00</span>
+											<span class="price product-price">$530.00</span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -965,16 +776,16 @@
 										</div>
 									</div>
 									<span class="sale">sale</span>
-								</div>
+								</div>										
 							</div>
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/4.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/light/4.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iMac</a></h4>
+											<h4><a href="product-details.html">月影凯顿台灯</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -1000,11 +811,11 @@
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/5.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/light/5.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Footstool</a></h4>
+											<h4><a href="product-details.html">雷氏照明水晶吸顶灯</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -1028,16 +839,61 @@
 										</div>
 									</div>
 									<span class="new">new</span>
+								</div>										
+							</div>
+						</div>
+					</div>
+				</div>						
+			</div>
+			<div class="tab-pane" id="room">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
+						<div class="single-tab-img">
+							<a href="#"><img src="{{ url_for('static' , filename='img/company/5.jpg') }}" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
+						<div class="single-product pt-30 pb-20 white-bg">
+							<div class="product-img pb-40">
+								<a href="#"><img src="{{ url_for('static' , filename='img/room/1.jpg') }}" alt="" /></a>
+							</div>
+							<div class="product-content">
+								<div class="pro-title">
+									<h4><a href="product-details.html">派的卧室门</a></h4>
+								</div>
+								<div class="pro-rating ">
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star-o"></i></a>
+								</div>
+								<div class="price-box">
+									<span class="price product-price">$1162.00</span>
+								</div>
+								<div class="product-icon">
+									<div class="product-icon-left f-left">
+										<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+									</div>
+									<div class="product-icon-right floatright">
+										<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+										<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+									</div>
 								</div>
 							</div>
+							<span class="new">new</span>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 padd-2 col-sm-12 col-xs-12 dotted-style-1">
+						<div class="tab-product-active">
 							<div class="together-single-product">
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/6.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/room/2.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">Lounge Chair Cinema </a></h4>
+											<h4><a href="product-details.html">挪威森林整体厨房</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -1047,7 +903,8 @@
 											<a href="#"><i class="fa fa-star-o"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$300.00</span>
+											<span class="price product-price">$210.00</span>
+											<span class="price-2"><del>$230.00</del></span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -1059,15 +916,15 @@
 											</div>
 										</div>
 									</div>
-									<span class="sale">sale</span>
+									<span class="new">new</span>
 								</div>
 								<div class="single-product white-bg">
 									<div class="product-img product-container-img">
-										<a href="#"><img src="img/product/7.jpg" alt="" /></a>
+										<a href="#"><img src="{{ url_for('static' , filename='img/room/3.jpg') }}" alt="" /></a>
 									</div>
 									<div class="product-content product-i">
 										<div class="pro-title">
-											<h4><a href="product-details.html">iPhone</a></h4>
+											<h4><a href="product-details.html">派的门 相守系列</a></h4>
 										</div>
 										<div class="pro-rating ">
 											<a href="#"><i class="fa fa-star"></i></a>
@@ -1077,7 +934,7 @@
 											<a href="#"><i class="fa fa-star"></i></a>
 										</div>
 										<div class="price-box">
-											<span class="price product-price">$100.00</span>
+											<span class="price product-price">$1530.00</span>
 										</div>
 										<div class="product-icon">
 											<div class="product-icon-left f-left">
@@ -1090,11 +947,245 @@
 										</div>
 									</div>
 									<span class="sale">sale</span>
+								</div>										
+							</div>
+							<div class="together-single-product">
+								<div class="single-product white-bg">
+									<div class="product-img product-container-img">
+										<a href="#"><img src="{{ url_for('static' , filename='img/room/4.jpg') }}" alt="" /></a>
+									</div>
+									<div class="product-content product-i">
+										<div class="pro-title">
+											<h4><a href="product-details.html">沃根整体橱柜</a></h4>
+										</div>
+										<div class="pro-rating ">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star-o"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="price product-price">$120.00</span>
+											<span class="price-2"><del>$300.00</del></span>
+										</div>
+										<div class="product-icon">
+											<div class="product-icon-left f-left">
+												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+											</div>
+											<div class="product-icon-right floatright">
+												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+											</div>
+										</div>
+									</div>
 								</div>
+								<div class="single-product white-bg">
+									<div class="product-img product-container-img">
+										<a href="#"><img src="{{ url_for('static' , filename='img/room/5.jpg') }}" alt="" /></a>
+									</div>
+									<div class="product-content product-i">
+										<div class="pro-title">
+											<h4><a href="product-details.html">圣堡罗阳台门</a></h4>
+										</div>
+										<div class="pro-rating ">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="price product-price">$70.00</span>
+											<span class="price-2"><del>$100.00</del></span>
+										</div>
+										<div class="product-icon">
+											<div class="product-icon-left f-left">
+												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+											</div>
+											<div class="product-icon-right floatright">
+												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+											</div>
+										</div>
+									</div>
+									<span class="new">new</span>
+								</div>										
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>						
+			</div>
+			<div class="tab-pane" id="equipment">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
+						<div class="single-tab-img">
+							<a href="#"><img src="{{ url_for('static' , filename='img/company/6.jpg') }}" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad">
+						<div class="single-product pt-30 pb-20 white-bg">
+							<div class="product-img pb-40">
+								<a href="#"><img src="{{ url_for('static' , filename='img/equipment/1.jpg') }}" alt="" /></a>
+							</div>
+							<div class="product-content">
+								<div class="pro-title">
+									<h4><a href="product-details.html">美的燃气热水器</a></h4>
+								</div>
+								<div class="pro-rating ">
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star"></i></a>
+									<a href="#"><i class="fa fa-star-o"></i></a>
+								</div>
+								<div class="price-box">
+									<span class="price product-price">$962.00</span>
+								</div>
+								<div class="product-icon">
+									<div class="product-icon-left f-left">
+										<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+									</div>
+									<div class="product-icon-right floatright">
+										<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+										<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+									</div>
+								</div>
+							</div>
+							<span class="new">new</span>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 padd-2 col-sm-12 col-xs-12 dotted-style-1">
+						<div class="tab-product-active">
+							<div class="together-single-product">
+								<div class="single-product white-bg">
+									<div class="product-img product-container-img">
+										<a href="#"><img src="{{ url_for('static' , filename='img/equipment/2.jpg') }}" alt="" /></a>
+									</div>
+									<div class="product-content product-i">
+										<div class="pro-title">
+											<h4><a href="product-details.html">美的变频空调</a></h4>
+										</div>
+										<div class="pro-rating ">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star-o"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="price product-price">$210.00</span>
+											<span class="price-2"><del>$1266.00</del></span>
+										</div>
+										<div class="product-icon">
+											<div class="product-icon-left f-left">
+												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+											</div>
+											<div class="product-icon-right floatright">
+												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+											</div>
+										</div>
+									</div>
+									<span class="new">new</span>
+								</div>
+								<div class="single-product white-bg">
+									<div class="product-img product-container-img">
+										<a href="#"><img src="{{ url_for('static' , filename='img/equipment/3.jpg') }}" alt="" /></a>
+									</div>
+									<div class="product-content product-i">
+										<div class="pro-title">
+											<h4><a href="product-details.html">老板微波炉</a></h4>
+										</div>
+										<div class="pro-rating ">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="price product-price">$530.00</span>
+										</div>
+										<div class="product-icon">
+											<div class="product-icon-left f-left">
+												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+											</div>
+											<div class="product-icon-right floatright">
+												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+											</div>
+										</div>
+									</div>
+									<span class="sale">sale</span>
+								</div>										
+							</div>
+							<div class="together-single-product">
+								<div class="single-product white-bg">
+									<div class="product-img product-container-img">
+										<a href="#"><img src="{{ url_for('static' , filename='img/equipment/4.jpg') }}" alt="" /></a>
+									</div>
+									<div class="product-content product-i">
+										<div class="pro-title">
+											<h4><a href="product-details.html">帅康电烤箱</a></h4>
+										</div>
+										<div class="pro-rating ">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star-o"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="price product-price">$120.00</span>
+											<span class="price-2"><del>$300.00</del></span>
+										</div>
+										<div class="product-icon">
+											<div class="product-icon-left f-left">
+												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+											</div>
+											<div class="product-icon-right floatright">
+												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="single-product white-bg">
+									<div class="product-img product-container-img">
+										<a href="#"><img src="{{ url_for('static' , filename='img/equipment/5.jpg') }}" alt="" /></a>
+									</div>
+									<div class="product-content product-i">
+										<div class="pro-title">
+											<h4><a href="product-details.html">魅电扫地机</a></h4>
+										</div>
+										<div class="pro-rating ">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="price product-price">$70.00</span>
+											<span class="price-2"><del>$100.00</del></span>
+										</div>
+										<div class="product-icon">
+											<div class="product-icon-left f-left">
+												<a href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+											</div>
+											<div class="product-icon-right floatright">
+												<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+												<a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart"></i></a>
+											</div>
+										</div>
+									</div>
+									<span class="new">new</span>
+								</div>										
+							</div>
+						</div>
+					</div>
+				</div>						
 			</div>
 		</div>
 	</div>

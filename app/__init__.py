@@ -47,7 +47,7 @@ def create_app(configfile=None):
 	from consumer import consumer_ as CS
 	app.register_blueprint(CS, url_prefix='/consumer')
 
-	from main import main_ as MainPrint
+ 	from main import main_ as MainPrint
 	app.register_blueprint(MainPrint)
 
 	return app

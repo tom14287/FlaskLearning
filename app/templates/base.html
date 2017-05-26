@@ -1,4 +1,4 @@
-{% block title %}TYMT{% endblock %}
+
 
 {% block head %}
 
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 						<ul>
-						<li ><a href="{{url_for('module_a.index_view')}}">平台首页</a>
+						<li ><a href="{{url_for('main.index_view')}}">平台首页</a>
 							</li>
 						</ul>
 					
@@ -73,28 +73,28 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="logo">
-						<a href="{{url_for('module_a.index_view')}}"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" /></a>
+						<a href="{{url_for('main.index_view')}}"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" /></a>
 					</div>
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 					<div class="header-bottom-middle">
 						
 						<div class="search-box">
-							<form action="#">
-								<select name="#" id="select">
-									<option value="">商品/装修公司</option>
-									<option value="43">装修公司</option>
-									<option value="42">商品</option>
-									<option value="41">---装修主材</option>
-									<option value="42">---厨房用品</option>
-									<option value="42">---卫浴用品</option>
-									<option value="47">---灯饰照明</option>
-									<option value="43">---全屋定制</option>
-																		
-								</select>
-								<input type="text" placeholder="搜索...">
-								<button><i class="fa fa-search"></i></button>
-							</form>
+							<form action="/search_service/1" method="post">
+ 							<select name="search_type" id="select">
+ 									<option value="0">商品/装修公司</option>
+ 									<option value="1">装修公司</option>
+ 									<option value="2">商品</option>
+ 									<option value="21">---装修主材</option>
+ 									<option value="22">---厨房用品</option>
+ 									<option value="23">---卫浴用品</option>
+ 									<option value="25">---全屋定制</option>
+
+  								</select>
+ 								<input type="text" name="search_keyword" placeholder="搜索..." required="required">
+ 								<button type="submit" id="btn_search" name="btn_search"><i class="fa fa-search"></i></button>
+
+  							</form>
 						</div>								
 					</div>
 					<div class="header-bottom-right">

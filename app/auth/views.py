@@ -19,16 +19,16 @@ def before_request():
     g.user = current_user
 
 @auth_.route('/register', methods=['GET', 'POST'])
-def register_view():
+def register():
     form = RegisterForm(request.form)
     print form.username.data, form.email.data, form.password.data, form.type.data
     if form.validate_on_submit():
-        ret = register(form.username.data, form.email.data, form.password.data, form.confirm, form.type)
+        ret = register_func(form.username.data, form.email.data, form.password.data, form.confirm, form.type)
         if ret == "SUCCEED":
             return redirect(url_for("auth.unconfirmed"))
     return render_template('auth/login.html', form=form, page='register')
 
-def register(username, email, password, confirm, type):
+def register_func(username, email, password, confirm, type):
     if not username or not email or not password or not type or not confirm:
         return "INPUTERR"
     if confirm != password:
@@ -69,7 +69,6 @@ def confirm_email(token):
     except:
         flash('The confirmation link is invalid or has expired.', 'danger')
     user = User.query.filter_by(UserEmail=email).first_or_404()
-    print email
     if user.UserConfirm:
         flash('Account already confirmed. Please login.', 'success')
     else:
@@ -90,20 +89,30 @@ def unconfirmed():
 
 
 @auth_.route('/login', methods=['GET', 'POST'])
-def login_view():
-    if g.user is not None and g.user.is_authenticated:
-        return redirect(url_for('module_a.index_view'))
+def login():
     form = RegisterForm(request.form)
-    if form.validate_on_submit():
-        ret = login(form.email, form.password)
-        if ret == 'NOACCOUNT' or ret == 'WRONGPWD':
-            flash('Invalid email and/or password.', 'danger')
-            return render_template('login.html', form=form,  page='login')
-        else:
-            return redirect(url_for('module_a.index_view'))
-    return render_template('login.html', form=form,  page='login')
+    if request.form:
+        if request.form['action'] == 'login':
+            if g.user is not None and g.user.is_authenticated:
+                return redirect(url_for('module_a.index_view'))
+            if form.validate_on_submit():
+                ret = login_func(form.email.data, form.password.data)
+                if ret == 'NOACCOUNT' or ret == 'WRONGPWD':
+                    flash('Invalid email and/or password.', 'danger')
+                    return render_template('login.html', form=form, page='login')
+                else:
+                    return redirect(url_for('module_a.index_view'))
+        elif request.form['action'] == 'register':
+            if form.validate_on_submit():
+                ret = register_func(form.username.data, form.email.data, form.password.data, form.confirm.data, form.type.data)
+                print ret
+                if ret == "SUCCEED":
+                    return redirect(url_for("auth.unconfirmed"))
+            return render_template('login.html', form=form, page='register')
 
-def login(email, password):
+    return render_template('login.html', form=form, page='login')
+
+def login_func(email, password):
     user = User.query.filter_by(UserEmail=email).first()
     if user == None:
         return "NOACCOUNT"

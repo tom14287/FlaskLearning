@@ -20,12 +20,7 @@ class RegisterForm(FlaskForm):
     type = StringField('type', validators=[DataRequired()])
 
     def validate(self):
-        print "reg val", self.email.data, self.username, self.password, self.confirm
-        initial_validation = super(RegisterForm, self).validate()
-        if not initial_validation:
-            return False
-        print "reg val" ,self.email.data, self.username, self.password, self.confirm
-        if self.email.data != None and self.password != None:
+        if self.email.data != None and self.password.data != None:
             return True
         return False
 

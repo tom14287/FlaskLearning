@@ -92,7 +92,7 @@ def unconfirmed():
     if current_user.UserConfirm:
         return redirect(url_for('module_a.index_view'))
     flash('Please confirm your account!', 'warning')
-    return render_template('auth/unconfirmed.html')
+    return redirect(url_for('module_a.index_view'))
 
 
 @auth_.route('/login', methods=['GET', 'POST'])
@@ -101,9 +101,11 @@ def login():
     if request.form:
         if request.form['action'] == 'login':
             if g.user is not None and g.user.is_authenticated:
+                print g.user.UserName, g.user.UserPassword
                 return redirect(url_for('module_a.index_view'))
             if form.validate_on_submit():
                 ret = login_func(form.email.data, form.password.data)
+                print "login ret : ", ret
                 if ret == 'NOACCOUNT' or ret == 'WRONGPWD':
                     flash('Invalid email and/or password.', 'danger')
                     return render_template('login.html', form=form, page='login')

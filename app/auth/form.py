@@ -25,11 +25,9 @@ class RegisterForm(FlaskForm):
         if not initial_validation:
             return False
         print "reg val" ,self.email.data, self.username, self.password, self.confirm
-        user = User.query.filter_by(UserEmail=self.email.data).first()
-        if user:
-            self.email.errors.append("Email already registered")
-            return False
-        return True
+        if self.email.data != None and self.password != None:
+            return True
+        return False
 
 
 class ChangePasswordForm(FlaskForm):

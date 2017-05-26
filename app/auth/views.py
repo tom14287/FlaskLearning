@@ -23,14 +23,16 @@ def register_view():
     form = RegisterForm(request.form)
     print form.username.data, form.email.data, form.password.data, form.type.data
     if form.validate_on_submit():
+        ret = register(form.username.data, form.email.data, form.password.data, form.confirm, form.type)
+        if ret == "SUCCEED":
+            return redirect(url_for("auth.unconfirmed"))
+    return render_template('auth/login.html', form=form)
 
-        return redirect(url_for("auth.unconfirmed"))
-
-    return render_template('auth/register.html', form=form)
-
-def register(username, email, password, type):
-    if not username or not email or not password or not type:
+def register(username, email, password, confirm, type):
+    if not username or not email or not password or not type or not confirm:
         return "INPUTERR"
+    if confirm != password:
+        return "PWDERR"
     if type != "Company" and type != 'Consumer' and type != 'Designer':
         return "TYPEERR"
     user = User.query.filter_by(UserEmail=email).first()

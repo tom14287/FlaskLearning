@@ -19,11 +19,11 @@
 					<div class="col-md-6 col-lg-6 col-sm-6" style="margin-left: 25%;">
 						<div class="account-info pb-30 am-tabs" data-am-tabs>
 							<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
-  								<li class="am-active" style="font-size:20px;">
+  								<li  {% if page == 'login' %}class="am-active"{% endif %} style="font-size:20px;">
   									<a href="#">
   									<span class="index-needs-dt-txt">LOGIN</span></a>
   								</li>
-                  				<li style="font-size:20px;" >
+                  				<li {% if page == 'register' %}class="am-active"{% endif %} style="font-size:20px;" >
                     				<a href="#">
                       				<span class="index-needs-dt-txt">REGISTER</span></a>
                   				</li>
@@ -32,7 +32,7 @@
 
 
   							<div class="am-tabs-bd">
-                  				<div class="am-tab-panel am-fade am-in am-active">
+                  				<div {% if page == 'login' %}class="am-tab-panel am-fade am-in am-active"{% endif %} {% if page == 'register' %}class="am-tab-panel am-fade"{% endif %}>
   									<div class="J_Brand">
   										<form method="post" action="">
 											<div class="form-fields">
@@ -69,11 +69,11 @@
   										<div class="clear"></div>
   									</div>
   									<div class="clear"></div>
-  							</div>
+  								</div>
 
   					
 
-  							<div class="am-tab-panel am-fade">
+  							<div {% if page == 'register' %}class="am-tab-panel am-fade am-in am-active"{% endif %} {% if page == 'login' %}class="am-tab-panel am-fade"{% endif %}>
   									
 							<div class="J_Brand">
   										<form method="post" action="">

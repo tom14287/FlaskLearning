@@ -26,7 +26,7 @@ def register_view():
         ret = register(form.username.data, form.email.data, form.password.data, form.confirm, form.type)
         if ret == "SUCCEED":
             return redirect(url_for("auth.unconfirmed"))
-    return render_template('auth/login.html', form=form)
+    return render_template('auth/login.html', form=form, page='register')
 
 def register(username, email, password, confirm, type):
     if not username or not email or not password or not type or not confirm:
@@ -98,10 +98,10 @@ def login_view():
         ret = login(form.email, form.password)
         if ret == 'NOACCOUNT' or ret == 'WRONGPWD':
             flash('Invalid email and/or password.', 'danger')
-            return render_template('login.html', form=form)
+            return render_template('login.html', form=form,  page='login')
         else:
             return redirect(url_for('module_a.index_view'))
-    return render_template('login.html', form=form)
+    return render_template('login.html', form=form,  page='login')
 
 def login(email, password):
     user = User.query.filter_by(UserEmail=email).first()

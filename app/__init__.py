@@ -34,13 +34,6 @@ def create_app(configfile=None):
 	app.config['BOOTSTRAP_SERVE_LOCAL'] = True
 
 	#blueprint
-
-	from module_a import module_a_ as ModuleAPrint
-	app.register_blueprint(ModuleAPrint, url_prefix='/module_a')
-
-	from module_b import module_b_ as ModuleBPrint
-	app.register_blueprint(ModuleBPrint, url_prefix='/module_b')
-
 	from app.auth.views import auth_ as AuthPrint
 	app.register_blueprint(AuthPrint, url_prefix='/auth')
 
@@ -49,6 +42,9 @@ def create_app(configfile=None):
 
  	from main import main_ as MainPrint
 	app.register_blueprint(MainPrint)
+
+	from qa import qa_ as QA
+	app.register_blueprint(QA, url_prefix='/qa')
 
 	return app
 

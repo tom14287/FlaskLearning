@@ -1,8 +1,9 @@
 
 from flask import render_template, redirect, url_for, abort, flash, request,\
-    current_app, make_response, session
+    current_app, make_response, session,g
 
 import csv
+import sys
 
 from flask_login import login_required
 
@@ -17,7 +18,8 @@ def index_view():
 
 
 @main_.route('/search_service/<int:page_num>', methods=['POST', 'GET'])
-def search_link(page_num = 1):
+def search_link(page_num=1):
+
 	if('search_keyword'  in request.form and 'search_type' in request.form):
 		print 'search keyword in request form'
 		print 'search type in request form'
@@ -25,14 +27,34 @@ def search_link(page_num = 1):
 		get_type = request.form['search_type']
 		session['search_keyword'] = get_keyword
 		session['search_type'] = get_type
-		tag_list = []
-		mylist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-		return render_template('search.html', keyword=get_keyword, type=get_type, tag=tag_list, comments=mylist, page_num=page_num, pages=5)
+
 	else:
-		print 'no request'
+		print 'no request of keyword & type'
 		get_keyword = session['search_keyword']
 		get_type = session['search_type']
-		tag_list=[]
-		mylist=[1,2,3]
-		#return render_template('search.html', keyword=get_keyword, type=get_type, tag=tag_list, comments=mylist,page_num=page_num, pages=5)
-		return render_template('search.html', keyword=get_keyword, type=get_type, tag=tag_list, comments=mylist, page_num=page_num, pages=5)
+
+	if('lowbound' in request.form and 'upperbound' in request.form):
+		print 'lowbound in request form'
+		print 'upperbound in request form'
+		get_lowbound = request.form['lowbound']
+		get_upperbound = request.form['upperbound']
+		session['lowbound'] = get_lowbound
+		session['upperbound'] = get_upperbound
+
+	else:
+		print 'no price range in request form'
+		if('lowbound' in session and 'upperbound' in session):
+			get_lowbound = session['lowbound']
+			get_upperbound = session['upperbound']
+		else:
+			get_lowbound = 0
+			get_upperbound = sys.maxint
+
+	#page data
+	mylist = [1, 2, 3]
+	tag_list=[]
+	print (get_keyword)
+	print (get_type)
+	print(get_lowbound)
+	print(get_upperbound)
+	return render_template('search.html', keyword=get_keyword, type=get_type, tag=tag_list, comments=mylist,page_num=page_num, pages=5, lowbound=get_lowbound, highbound=get_upperbound)

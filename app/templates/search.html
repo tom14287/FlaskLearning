@@ -4,6 +4,22 @@
 
 {% block page_content %}
 <!-- slider-area-start -->
+<script>
+	function judgeupper(){
+		var upperbound = new Number(document.getElementById("upperbound").value);
+		var lowbound = new Number(document.getElementById("lowbound").value);
+		if(upperbound < lowbound){
+			document.getElementById("upperbound").value=lowbound;
+		}
+	}
+	function judgelow(){
+		var upperbound = new Number(document.getElementById("upperbound").value);
+		var lowbound = new Number(document.getElementById("lowbound").value);
+		if(lowbound > upperbound){
+			document.getElementById("lowbound").value=upperbound;
+		}
+	}
+</script>
 <div class="shop-area">
 			<div class="container">
 				<div class="row">
@@ -19,13 +35,13 @@
 							<div class="sidebar-widget">
 								<h3 class="sidebar-title">价格</h3>
 								<div class="price-filter">
-									    <form method="post">
-                                            <input type="number" name="lowbound" id="lowbound" required="required" width="5">
+									    <form method="post" action="/search_service/1">
+                                            <input type="number" name="lowbound"  id="lowbound" onchange="judgeupper()" required="required" width="5">
                                            <div>
-                                               <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—</h3> <button class="compare" type="submit" name="pricesearch" id="pricesearch">确定</button>
+                                               <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—</h3>
                                            </div>
-                                            <input type="number" name="upperbound" id="upperbound" required="required" width="5">
-
+                                            <input type="number" name="upperbound"  id="upperbound" onchange="judgelow()" required="required" width="5" >
+										<button class="compare" type="submit" name="pricesearch">确定</button>
                                         </form>
                                 </div>
 							</div>
@@ -49,11 +65,18 @@
 						</h2>
 						<div class="shop-page-bar">
 							<div>
+
 								<div class="shop-bar">
 									<!-- Nav tabs -->
 									<ul class="shop-tab f-left" role="tablist">
-										<li role="presentation" class="active"><a href="#home"  data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true" onautocomplete="true"></i></a></li>
-										<li role="presentation"><a href="#profile" data-toggle="tab"><i class="fa fa-th-list" aria-hidden="true" onautocomplete="true"></i></a></li>
+
+
+										<li role="presentation" class="active"><a href="#home" data-toggle="tab"><i class="fa fa-th-large" aria-hidden="true"></i></a></li>
+										<li role="presentation"><a href="#profile" data-toggle="tab"><i class="fa fa-th-list" aria-hidden="true"></i></a></li>
+
+
+
+
 									</ul>
 									<div class="selector-field f-left ml-20 hidden-xs">
 										<form action="#">

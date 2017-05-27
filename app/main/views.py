@@ -17,8 +17,8 @@ def index_view():
 
 
 
-@main_.route('/search_service/<int:page_num>', methods=['POST', 'GET'])
-def search_link(page_num=1):
+@main_.route('/search_service/<int:page_num>/<int:Pane>', methods=['POST', 'GET'])
+def search_link(page_num=1, Pane=0):
 
 	if('search_keyword'  in request.form and 'search_type' in request.form):
 		print 'search keyword in request form'
@@ -27,6 +27,7 @@ def search_link(page_num=1):
 		get_type = request.form['search_type']
 		session['search_keyword'] = get_keyword
 		session['search_type'] = get_type
+		redirect(url_for('main.search_link', page_num=page_num, Pane=Pane))
 
 	else:
 		print 'no request of keyword & type'
@@ -40,6 +41,7 @@ def search_link(page_num=1):
 		get_upperbound = request.form['upperbound']
 		session['lowbound'] = get_lowbound
 		session['upperbound'] = get_upperbound
+		redirect(url_for('main.search_link', page_num=page_num, Pane=Pane))
 
 	else:
 		print 'no price range in request form'
@@ -57,4 +59,4 @@ def search_link(page_num=1):
 	print (get_type)
 	print(get_lowbound)
 	print(get_upperbound)
-	return render_template('search.html', keyword=get_keyword, type=get_type, tag=tag_list, comments=mylist,page_num=page_num, pages=5, lowbound=get_lowbound, highbound=get_upperbound)
+	return render_template('search.html', Pane=Pane,keyword=get_keyword, type=get_type, tag=tag_list, comments=mylist,page_num=page_num, pages=5, lowbound=get_lowbound, highbound=get_upperbound)

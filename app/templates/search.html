@@ -29,18 +29,27 @@
 							<div class="sidebar-widget">
 								<h3 class="sidebar-title">筛选</h3>
 								<ul class="sidebar-menu">
-									<li><a href="#">所有<span>(11)</span></a></li>
+
+									{% if Command == 'C' %}
+									<li><a href="/search_service/Pane={{Pane}}&Page=1&Command=''">中式<span>({{ res_num }})</span></a></li>
+									{% elif Command == 'E' %}
+									<li><a href="/search_service/Pane={{Pane}}&Page=1&Command=''">欧式<span>({{ res_num }})</span></a></li>
+									{% elif Command == 'J' %}
+									<li><a href="/search_service/Pane={{Pane}}&Page=1&Command=''">日式<span>({{ res_num }})</span></a></li>
+									{% else %}
+									<li><a href="/search_service/Pane={{Pane}}&Page=1&Command=''">所有<span>({{ res_num }})</span></a></li>
+									{% endif %}
 								</ul>
 							</div>
 							<div class="sidebar-widget">
 								<h3 class="sidebar-title">价格</h3>
 								<div class="price-filter">
-									    <form method="post" action="/search_service/1">
-                                            <input type="number" name="lowbound"  id="lowbound" onchange="judgeupper()" required="required" width="5">
+									    <form method="post" action="/search_service/Pane={{Pane}}&Page=1&Command={{Command}}">
+                                            <input type="number" name="lowbound"  {% if lowbound != 0 %} value="{{ lowbound }}" {% endif %} id="lowbound" onchange="judgeupper()"  width="5">
                                            <div>
                                                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—</h3>
                                            </div>
-                                            <input type="number" name="upperbound"  id="upperbound" onchange="judgelow()" required="required" width="5" >
+                                            <input type="number" name="upperbound"  {% if upperbound != 2147483647 %} value="{{ upperbound}}" {% endif %} id="upperbound" onchange="judgelow()" width="5" >
 										<button class="compare" type="submit" name="pricesearch">确定</button>
                                         </form>
                                 </div>
@@ -50,9 +59,9 @@
 							<div class="sidebar-widget">
 								<h3 class="sidebar-title">风格</h3>
 								<ul class="sidebar-menu">
-									<li><a href="#"> 中式 <span>(2)</span></a></li>
-									<li><a href="#"> 欧式<span>(4)</span></a></li>
-									<li><a href="#"> 日式  <span>(4)</span></a></li>
+									<li><a href="/search_service/Pane={{Pane}}&Page=1&Command=C"> 中式 <span></span></a></li>
+									<li><a href="/search_service/Pane={{Pane}}&Page=1&Command=E"> 欧式<span></span></a></li>
+									<li><a href="/search_service/Pane={{Pane}}&Page=1&Command=J"> 日式  <span></span></a></li>
 								</ul>
 							</div>
 
@@ -79,30 +88,58 @@
 
 									</ul>
 									<div class="selector-field f-left ml-20 hidden-xs">
-										<form action="#">
+										<form id="sort_form" name="sort_form" action="/search_service/Pane={{Pane}}&Page=1&Command={{Command}}" method="post">
 											<label>排序</label>
-											<select name="select">
+
+											<select name="select" id="select" onchange="document.getElementById('sort_form').submit();">
+												{% if sort_type == '1' %}
 												<option value="1">综合</option>
 												<option value="2">价格从低到高</option>
 												<option value="3">价格从高到低</option>
 												<option value="4">销量</option>
 												<option value="5">好评</option>
+												{% elif sort_type == '2' %}
+												<option value="2">价格从低到高</option>
+												<option value="1">综合</option>
+												<option value="3">价格从高到低</option>
+												<option value="4">销量</option>
+												<option value="5">好评</option>
+												{% elif sort_type == '3' %}
+												<option value="3">价格从高到低</option>
+												<option value="1">综合</option>
+												<option value="2">价格从低到高</option>
+												<option value="4">销量</option>
+												<option value="5">好评</option>
+												{% elif sort_type == '4' %}
+												<option value="4">销量</option>
+												<option value="1">综合</option>
+												<option value="2">价格从低到高</option>
+												<option value="3">价格从高到低</option>
+												<option value="5">好评</option>
+												{% elif sort_type == '5' %}
+												<option value="5">好评</option>
+												<option value="1">综合</option>
+												<option value="2">价格从低到高</option>
+												<option value="3">价格从高到低</option>
+												<option value="4">销量</option>
+												{% endif %}
 											</select>
+
 										</form>
 									</div>
 								</div>
 								<!-- Tab panes -->
 
 								<div class="tab-content">
-									 {% macro render_comment(comment) %}
+									 {% macro render_item(item) %}
         								<div class="col-lg-4 col-md-4 col-sm-6">
 												<div class="single-product mb-30  white-bg">
 													<div class="product-img pt-20">
-														<a href="#"><img src="{{ url_for('static', filename='img/product/1.jpg') }}" alt="" /></a>
+														<a href="#"><img src="{{ url_for('static', filename=item.FurnitureImagePath) }}" alt="" /></a>
 													</div>
 													<div class="product-content product-i">
 														<div class="pro-title">
-															<h4><a href="product-details.html">Moebius Table</a></h4>
+															<h4><a href="product-details.html">{{ item.FurnitureName }}</a></h4>
 														</div>
 														<div class="pro-rating ">
 															<a href="#"><i class="fa fa-star"></i></a>
@@ -112,7 +149,7 @@
 															<a href="#"><i class="fa fa-star-o"></i></a>
 														</div>
 														<div class="price-box">
-															<span class="price product-price">$400.00</span>
+															<span class="price product-price">${{ item.FurniturePrice }}</span>
 														</div>
 														<div class="product-icon">
 															<div class="product-icon-left f-left">
@@ -131,21 +168,25 @@
 
 									<div role="tabpanel" {% if Pane == 0 %} class="tab-pane active" {% else %} class="tab-pane" {% endif %}  id="home">
 										<div class="row">
-											{% for comment in comments %}
-												{{ render_comment(comment) }}
+											{% for item in show_list %}
+												{{ render_item(item) }}
     							 			{% endfor %}
 										</div>
 
 										<div class="content-sortpagibar">
-											<div class="product-count display-inline">Showing 1 - 12 of 13 items</div>
+											{% if res_num > 0 %}
+											<div class="product-count display-inline">Showing {{ (page_num - 1) * limits + 1 }} - {% if (res_num - (page_num - 1) * limits) > limits %} {{ page_num * limits }} {% else %} {{ res_num }} {% endif %} of {{ res_num }} items</div>
+											{% else %}
+											<div class="product-count display-inline">Not Found</div>
+											{% endif %}
 											<ul class="shop-pagi display-inline">
 												<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
 												{% for page in range(1,page_num) %}
-												<li><a href='/search_service/{{page}}/0'>{{ page }}</a></li>
+												<li><a href='/search_service/Pane=0&Page={{page}}&Command={{Command}}'>{{ page }}</a></li>
 												{% endfor %}
 												<li class="active"><a href="#">{{ page_num }}</a></li>
-												{% for page in range(page_num + 1, pages) %}
-												<li><a href='/search_service/{{page}}/0'>{{ page }}</a></li>
+												{% for page in range(page_num + 1, pages + 1) %}
+												<li><a href='/search_service/Pane=0&Page={{page}}&Command={{Command}}'>{{ page }}</a></li>
 												{% endfor %}
 												<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
 											</ul>
@@ -153,15 +194,15 @@
 									</div>
 
 
-									{% macro render_comment_2(comment) %}
+									{% macro render_item_2(item) %}
 										<div class="col-lg-12">
 												<div class="single-product  shop-single-product mb-30 white-bg">
 													<div class="product-img pt-20">
-														<a href="#"><img src="{{ url_for('static', filename='img/product/2.jpg') }}" alt=""></a>
+														<a href="#"><img src="{{ url_for('static', filename=item.FurnitureImagePath) }}" alt=""></a>
 													</div>
 													<div class="product-content">
 														<div class="pro-title">
-															<h4><a href="product-details.html">Moebius Table</a></h4>
+															<h4><a href="product-details.html">{{ item.FurnitureName }}</a></h4>
 														</div>
 														<div class="pro-rating mb-20">
 															<a href="#"><i class="fa fa-star"></i></a>
@@ -170,9 +211,9 @@
 															<a href="#"><i class="fa fa-star"></i></a>
 															<a href="#"><i class="fa fa-star-o"></i></a>
 														</div>
-														<p>Revolutionary multi-touch interface. iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow. Gorgeous 3.5-inch widescreen display. Watc..</p>
+														<p>{{ item.FurnitureDESC }}</p>
 														<div class="price-box">
-															<span class="price product-price">$400.00</span>
+															<span class="price product-price">${{ item.FurniturePrice }}</span>
 														</div>
 														<div class="product-icon">
 															<div class="product-icon-left f-left">
@@ -190,21 +231,25 @@
 
 									<div role="tabpanel" {% if Pane == 1 %} class="tab-pane active" {% else %} class="tab-pane" {% endif %} id="profile">
 										<div class="row">
-											{% for comment in comments %}
-												{{ render_comment_2(comment) }}
+											{% for item in show_list %}
+												{{ render_item_2(item) }}
     							 			{% endfor %}
 
 										</div>
 										<div class="content-sortpagibar">
-											<div class="product-count display-inline">Showing 1 - 12 of 13 items</div>
+											{% if res_num > 0 %}
+											<div class="product-count display-inline">Showing {{ (page_num - 1) * limits + 1 }} - {% if (res_num - (page_num - 1) * limits) > limits %} {{ page_num * limits }} {% else %} {{ res_num }} {% endif %} of {{ res_num }} items items</div>
+											{% else %}
+											<div class="product-count display-inline">Not Found</div>
+											{% endif %}
 											<ul class="shop-pagi display-inline">
 												<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
 												{% for page in range(1,page_num) %}
-												<li><a href='/search_service/{{page}}/1'>{{ page }}</a></li>
+												<li><a href='/search_service/Pane=1&Page={{page}}&Command={{Command}}'>{{ page }}</a></li>
 												{% endfor %}
 												<li class="active"><a href="#">{{ page_num }}</a></li>
-												{% for page in range(page_num + 1, pages) %}
-												<li><a href='/search_service/{{page}}/1'>{{ page }}</a></li>
+												{% for page in range(page_num + 1, pages+1) %}
+												<li><a href='/search_service/Pane=1&Page={{page}}&Command={{Command}}'>{{ page }}</a></li>
 												{% endfor %}
 												<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
 											</ul>

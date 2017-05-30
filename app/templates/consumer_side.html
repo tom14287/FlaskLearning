@@ -5,22 +5,22 @@
         
         <ul class="nav" id="main-menu">
             <li>
-            <a href="consumer/cart" id = "mycart"> &nbsp;&nbsp;MY CART </a>
+            <a href="{{url_for('consumer.consumer_cart') }}" id = "mycart"> &nbsp;&nbsp;MY CART </a>
             </li>
             <li>
-            <a href="#" id = "command"> &nbsp;&nbsp;MY COMMAND</a>
+            <a href="{{url_for('consumer.consumer_decoration') }}" id = "decoration"> &nbsp;&nbsp;MY DECORATION</a>
             </li>
             <li>
-            <a href="#" id = "profile"> &nbsp;&nbsp;MY PROFILE</a>
+            <a href="{{url_for('consumer.consumer_change_info') }}" id = "ptofile"> &nbsp;&nbsp;MY PROFILE</a>
             </li>
             
             <li>
-            <a href="consumer/orders" id = "myorder"> &nbsp;&nbsp;MY ORDER</a>
+            <a href="{{url_for('consumer.consumer_orders') }}" id = "myorder"> &nbsp;&nbsp;MY ORDER</a>
                 
             </li>
             
             <li>
-            <a href="#"> &nbsp;&nbsp;MY REFUND</a>
+            <a href=""> &nbsp;&nbsp;MY REFUND</a>
             </li>
             
         </ul>

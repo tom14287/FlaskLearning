@@ -25,7 +25,8 @@ def consumer_index():
 @consumer_.route("/change_info", methods=['GET', 'POST'])
 #@login_required
 def consumer_change_info():
-	return
+
+	return render_template('consumer_profile.html')
 
 def update_consumer(id, birth, truename, sex, resident):
 	sql = ""

@@ -89,9 +89,9 @@ def get_ad_bycompanyid(id):
 
 
 @company_.route("/furniture_list", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def company_furniture_list():
-	return
+	return render_template('company_merchandise.html')
 
 def get_all_furniture_list(id):
 	goods = Furniture.query.filter_by(CompanyID=id).all()

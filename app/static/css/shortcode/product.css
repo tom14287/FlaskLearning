@@ -249,7 +249,6 @@ button.compare {
 }
 .shop-pagi li a {
   background: #fff none repeat scroll 0 0;
-  border: 1px solid #ebebeb;
   color: #232323;
   display: block;
   height: 30px;
@@ -298,7 +297,7 @@ font-size: 13px;
 font-weight: 700;
 padding: 0 18px;
 text-transform: uppercase;
-width: auto; 
+width: auto;
 }
 .product-list .product-action a:hover{ color: #ffae00;}
 .color-list {

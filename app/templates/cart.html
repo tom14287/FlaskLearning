@@ -7,7 +7,7 @@
 		<div class="breadcrumb-area">
 			<div class="container">
 				<ol class="breadcrumb">
-				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+				  <li><a href="/consumer"><i class="fa fa-home"></i> Home</a></li>
 				  <li class="active">My Cart</li>
 				</ol>			
 			</div>
@@ -32,22 +32,16 @@
 										</tr>
 									</thead>
 									<tbody>
+										{% for item in items %}
 										<tr>
-											<td class="product-thumbnail"><a href="#"><img src="img/product/3.jpg" alt="" /></a></td>
-											<td class="product-name"><a href="product-details.html">Vestibulum suscipit</a></td>
-											<td class="product-price"><span class="amount">$165.00</span></td>
-											<td class="product-quantity"><input type="number" value="1" /></td>
-											<td class="product-subtotal">$165.00</td>
+											<td class="product-thumbnail"><a href="#"><img src={{item['img']}} alt="" /></a></td>
+											<td class="product-name"><a href={{item['page']}}>{{item['name']}}</a></td>
+											<td class="product-price"><span class="amount">{{item['price']}}</span></td>
+											<td class="product-quantity">{{item['quantity']}}</td>
+											<td class="product-subtotal">{{item['total']}}</td>
 											<td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
 										</tr>
-										<tr>
-											<td class="product-thumbnail"><a href="#"><img src="img/product/4.jpg" alt="" /></a></td>
-											<td class="product-name"><a href="product-details.html">Vestibulum dictum magna</a></td>
-											<td class="product-price"><span class="amount">$50.00</span></td>
-											<td class="product-quantity"><input type="number" value="1" /></td>
-											<td class="product-subtotal">$50.00</td>
-											<td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-										</tr>
+										{% endfor %}
 									</tbody>
 								</table>
 							</div>
@@ -71,12 +65,12 @@
 											<tbody>
 												<tr class="cart-subtotal">
 													<th>Subtotal</th>
-													<td><span class="amount">$215.00</span></td>
+													<td><span class="amount">{{subtotal}}</span></td>
 												</tr>
 												<tr class="order-total">
 													<th>Total</th>
 													<td>
-														<strong><span class="amount">$215.00</span></strong>
+														<strong><span class="amount">{{total}}</span></strong>
 													</td>
 												</tr>											
 											</tbody>

@@ -57,5 +57,8 @@ def get_all_succeed_order(id):
 def designer_add_scheme():
 	return
 
-def insert_design_scheme(id, desc, img):
-	# TODO
+def insert_design_scheme(did, desc, img):
+	# have encode
+	scheme = DesignerScheme(DesignerID=did, SchemeDESC=desc, SchemeImage=img)
+	db.session.add(scheme)
+	db.session.commit()

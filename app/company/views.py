@@ -57,20 +57,43 @@ def company_verify():
 def company_design_scheme():
 	return
 
+def get_allscheme_byid(id):
+	company = Company.query.filter_by(CompanyID=id).first()
+	if company:
+		schemes = DesignerScheme.query.filter_by(CompanyID=id).all()
+		return company, schemes
+	return None, None
+
 @company_.route("/order_form", methods=['GET', 'POST'])
 @login_required
 def company_order_form():
 	return
+
+def get_all_succeed_order(id):
+	user = User.query.filter_by(UserID=id).first()
+	if user and user.UserType:
+		order_forms = OrderForm.query.filter_by(UserID=user.UserID, OrderFormState="Success").all()
+		return user, order_forms
+	return None, None
 
 @company_.route("/advertisement", methods=['GET', 'POST'])
 @login_required
 def company_advertisement():
 	return
 
+def get_ad_bycompanyid(id):
+	ads = Advertisement.query.filter_by(CompanyID=id).all()
+	return ads
+
+
 @company_.route("/furniture_list", methods=['GET', 'POST'])
 @login_required
 def company_furniture_list():
 	return
+
+def get_all_furniture_list(id):
+	goods = Furniture.query.filter_by(CompanyID=id).all()
+	return goods
 
 
 @company_.route("/furniture", methods=['GET', 'POST'])
@@ -88,4 +111,8 @@ def get_furniture_byid(id):
 @login_required
 def company_my_designer():
 	return
+
+def get_all_designer_byid(id):
+	people = Designer.query.filter_by(CompanyID=id).all()
+	return people
 

@@ -158,13 +158,15 @@ def search_link(page_num=1, Pane=0, Command=''):
 
 	v_lowbound = 0
 	v_upperbound = sys.maxint
-	if(not get_lowbound or get_lowbound < 0 or not get_upperbound or get_upperbound < 0 or get_lowbound > get_upperbound):
+	print 'low_bound: ', get_lowbound
+	print 'upper_bound: ', get_upperbound
+	if((not get_lowbound) or (not get_upperbound) or (int(get_lowbound) < 0) or (int(get_upperbound) < 0) or (int(get_lowbound) > int(get_upperbound))):
 		print ("price range not valid")
 		v_lowbound = 0
 		v_upperbound = sys.maxint
 	else:
-		v_lowbound = get_lowbound
-		v_upperbound = get_upperbound
+		v_lowbound = int(get_lowbound)
+		v_upperbound = int(get_upperbound)
 		print ("price range valid")
 
 	print 'sort type: ', sort_type

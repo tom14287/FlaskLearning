@@ -83,7 +83,7 @@ def company_orders():
 	temp['name'] = 'Good Design'
 	temp['quantity'] = 1
 	temp['user'] = 'fyg'
-	
+
 	merchandise.append(temp)
 
 	return render_template('company_order.html', design=design, merchandise=merchandise)
@@ -115,6 +115,7 @@ def get_ad_bycompanyid(id):
 @company_.route("/furniture_list", methods=['GET', 'POST'])
 #@login_required
 def company_furniture_list():
+
 	return render_template('company_merchandise.html')
 
 def get_all_furniture_list(id):
@@ -172,8 +173,13 @@ def get_furniture_byid(id):
 @company_.route("/my_designer", methods=['GET', 'POST'])
 #@login_required
 def company_my_designer():
-
-	return render_template('company_designer.html')
+	class Designer():
+		def __init__(self):
+			self.img = '/static/img/client/1.jpg'
+			self.name = "jj"
+	designer = Designer()
+	designers = [designer]
+	return render_template('company_designer.html', designers = designers)
 
 
 def get_all_designer_byid(id):

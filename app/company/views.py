@@ -48,10 +48,9 @@ def update_company(id, type, auth, addr, intro):
 	db.session.commit()
 
 @company_.route("/verify", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def company_verify():
-
-	return
+	return render_template('company_verify.html')
 
 @company_.route("/design_scheme", methods=['GET', 'POST'])
 @login_required
@@ -61,7 +60,7 @@ def company_design_scheme():
 def get_allscheme_byid(id):
 	company = Company.query.filter_by(CompanyID=id).first()
 	if company:
-		schemes = DesignerScheme.query.filter_by(CompanyID=id).all()
+		schemes = DesignScheme.query.filter_by(CompanyID=id).all()
 		return company, schemes
 	return None, None
 

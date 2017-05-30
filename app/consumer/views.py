@@ -8,8 +8,9 @@ consumer_ = Blueprint('consumer', __name__)
 
 @consumer_.route("")
 @consumer_.route("/index")
-@login_required
+#@login_required
 def consumer_index():
+	'''
 	user = g.user
 	user = User.query.filter_by(UserID=user.UserID).first_or_404()
 	if user.UserType == "Consumer":
@@ -17,11 +18,12 @@ def consumer_index():
 		dec_forms = DecorationForm.query.filter_by(ConsumerID=user.UserID).all()
 		user_addresses = UserAddress.query.filter_by(UserID=user.UserID).all()
 		order_forms = OrderForm.query.filter_by(UserID=user.UserID).all()
-	return render_template("index.html")
+	'''
+	return render_template("consumer.html", user_name='dyftug')
 
 
 @consumer_.route("/change_info", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def consumer_change_info():
 	return
 
@@ -40,7 +42,7 @@ def update_consumer(id, birth, truename, sex, resident):
 	db.session.commit()
 
 @consumer_.route("/add_rec_addr", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def consumer_add_rec_addr():
 	return
 
@@ -50,8 +52,9 @@ def insert_useraddress_item(uid, addr):
 	db.session.commit()
 
 @consumer_.route("/cart", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def consumer_cart():
+	'''
 	user = g.user
 	user = User.query.filter_by(UserID=user.UserID).first_or_404()
 	if user.UserType == "Consumer":
@@ -59,7 +62,17 @@ def consumer_cart():
 		dec_forms = DecorationForm.query.filter_by(ConsumerID=user.UserID).all()
 		user_addresses = UserAddress.query.filter_by(UserID=user.UserID).all()
 		order_forms = OrderForm.query.filter_by(UserID=user.UserID).all()
-	return render_template('cart.html')
+	'''
+	item = []
+	temp = {}
+	temp['img'] = 1
+	temp['price'] = '$1.00'
+	temp['page'] = 'hhh.html'
+	temp['name'] = 'fuygdwyh'
+	temp['quantity'] = 1
+	temp['total'] = 1
+	item.append(temp)
+	return render_template('cart.html', items=item, subtotal='$1.00', total='$1.00')
 
 def get_cart_byid(id):
 	user = User.query.filter_by(UserID=id).first()
@@ -70,9 +83,28 @@ def get_cart_byid(id):
 	return None, None, None
 
 @consumer_.route("/orders", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def consumer_orders():
-	return
+	unpay = []
+	review = []
+	finish = []
+
+	temp = {}
+	temp['date'] = '2017/5/1'
+	temp['img'] = '$1.00'
+	temp['page'] = 'hhh.html'
+	temp['price'] = 1
+	temp['name'] = 'fuygdwyh'
+	temp['quantity'] = 1
+	temp['total'] = 1
+
+	unpay.append(temp)
+	review.append(temp)
+
+	temp['review'] = 'Good!'
+
+	finish.append(temp)
+	return render_template('consumer_order.html', unpay=unpay, review=review, finish=finish)
 
 def get_allorders_byid(id):
 	user = User.query.filter_by(UserID=id).first()
@@ -83,7 +115,7 @@ def get_allorders_byid(id):
 	return None, None, None
 
 @consumer_.route("/decoration", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def consumer_decoration():
 	return
 

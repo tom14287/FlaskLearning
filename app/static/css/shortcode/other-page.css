@@ -725,6 +725,10 @@ h4.wishlist-share-title {
   font-size: 15px;
   font-weight: 700;
 }
+.table-content table .product-quantity .amount {
+  font-size: 15px;
+  font-weight: 700;
+}
 .table-content table td.product-remove i:hover {
   color: #F4A137;
 }

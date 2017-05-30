@@ -61,7 +61,7 @@ padding: 0
 body {
   color: #666666;
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 20px;	
 }
@@ -237,4 +237,7 @@ body {
 .wishlist-share ul li a:hover{background-position: left bottom;}
 .blog-page-area {
   background: #ffffff none repeat scroll 0 0;
+}
+homepage_side{
+  color:#555555;
 }

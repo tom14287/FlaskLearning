@@ -2,6 +2,7 @@ from flask import Blueprint
 from flask import render_template, request, redirect, url_for, g
 from flask_login import login_required
 from app.sql_operation.mysql import *
+import base64
 from app import db
 
 company_ = Blueprint('company', __name__)
@@ -49,6 +50,8 @@ def update_company(id, type, auth, addr, intro):
 @company_.route("/verify", methods=['GET', 'POST'])
 #@login_required
 def company_verify():
+	if g.user :
+		g.user.UserID
 	return render_template('company_verify.html')
 
 @company_.route("/design_scheme", methods=['GET', 'POST'])
@@ -56,34 +59,99 @@ def company_verify():
 def company_design_scheme():
 	return
 
+def get_allscheme_byid(id):
+	company = Company.query.filter_by(CompanyID=id).first()
+	if company:
+		schemes = DesignScheme.query.filter_by(CompanyID=id).all()
+		return company, schemes
+	return None, None
+
 @company_.route("/order_form", methods=['GET', 'POST'])
 @login_required
 def company_order_form():
 	return
+
+def get_all_succeed_order(id):
+	user = User.query.filter_by(UserID=id).first()
+	if user and user.UserType:
+		order_forms = OrderForm.query.filter_by(UserID=user.UserID, OrderFormState="Success").all()
+		return user, order_forms
+	return None, None
 
 @company_.route("/advertisement", methods=['GET', 'POST'])
 @login_required
 def company_advertisement():
 	return
 
+def get_ad_bycompanyid(id):
+	ads = Advertisement.query.filter_by(CompanyID=id).all()
+	return ads
+
+
 @company_.route("/furniture_list", methods=['GET', 'POST'])
 @login_required
 def company_furniture_list():
 	return
 
+def get_all_furniture_list(id):
+	goods = Furniture.query.filter_by(CompanyID=id).all()
+	return goods
 
-@company_.route("/furniture", methods=['GET', 'POST'])
-@login_required
-def company_furniture():
-	return
+
+@company_.route("/furniture/<id>", methods=['GET', 'POST'])
+# @login_required
+def company_furniture(id):
+	# from app.sql_operation.mysql import init_mysql
+	# init_mysql()
+	class Product():
+		def __init__(self, _name, _desc, _price, _intro, _path):
+			self.name = _name
+			self.description = _desc
+			self.price = _price
+			self.procedure = _intro
+			self.img = _path # "/static/img/product/2.jpg"
+	class Comment():
+		def __init__(self, _name, _date, _con, _path):
+			self.name = _name
+			self.time = _date
+			self.content = _con
+			self.img = _path # "/static/img/client/1.jpg"
+	item, company, coms = get_furniture_byid(int(id))
+	path = 'app/static/img/product/' + str(item.FurnitureID) + '.jpg'
+	path_img = '/static/img/product/' + str(item.FurnitureID) + '.jpg'
+	with open(path, "wb") as f:
+		f.write(base64.b64decode(item.FurnitureImage))
+		f.close()
+	product = Product(item.FurnitureName, item.FurnitureDESC, item.FurniturePrice, company.CompanyIntro, path_img)
+	comments = []
+	for row in coms:
+		cpath = 'app/static/img/client/' + str(row[1]) + '.jpg'
+		cpath_img = '/static/img/client/' + str(row[1]) + '.jpg'
+		with open(cpath, "wb") as f:
+			f.write(base64.b64decode(row[0]))
+			f.close()
+		comment = Comment(row[2], "NO date", row[3], cpath_img)
+		comments.append(comment)
+	test = "Test"
+	return render_template('product.html', product=product, comments=comments, test=test)
 
 def get_furniture_byid(id):
 	item = Furniture.query.filter_by(FurnitureID=id).first()
 	company = Company.query.filter_by(CompanyID=item.CompanyID).first()
-	return item, company
+	comments = db.session.execute("select UserImage,User.UserID, UserName,Content,Rank from User,OrderItem, OrderForm, Comments where "
+					   "OrderItem.FurnitureID=%d and OrderItem.OrderFormID=OrderForm.OrderFormID "
+					   "and OrderForm.OrderFormID=Comments.OrderFormID and "
+					   "User.UserID = OrderForm.UserID " % id)
+	return item, company, comments
 
 
 @company_.route("/my_designer", methods=['GET', 'POST'])
 #@login_required
 def company_my_designer():
+
 	return render_template('company_designer.html')
+
+
+def get_all_designer_byid(id):
+	people = Designer.query.filter_by(CompanyID=id).all()
+	return people

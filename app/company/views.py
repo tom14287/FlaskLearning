@@ -174,13 +174,26 @@ def get_furniture_byid(id):
 @company_.route("/my_designer", methods=['GET', 'POST'])
 #@login_required
 def company_my_designer():
-	class Designer():
-		def __init__(self):
-			self.img = '/static/img/client/1.jpg'
-			self.name = "jj"
-	designer = Designer()
-	designers = [designer]
-	return render_template('company_designer.html', designers = designers)
+    class PDeg():
+        def __init__(self):
+            self.img = '/static/img/client/1.jpg'
+            self.name = "jj"
+    items = []
+    if g.user and g.user.UserType == "Company":
+        people = get_all_designer_byid(g.user.UserID)
+        for row in people:
+            row = Designer()
+            temp = PDeg()
+            cpath = 'app/static/img/client/' + str(row.DesignerID) + '.jpg'
+            cpath_img = '/static/img/client/' + str(row.DesignerID) + '.jpg'
+            user = User.query.filter_by(UserID=row.DesignerID).first()
+            with open(cpath, "wb") as f:
+                f.write(base64.b64decode(user.UserImage))
+                f.close()
+            temp.img = cpath_img
+            temp.name = user.UserName
+            items.append(temp)
+    return render_template('company_designer.html', designers = items)
 
 
 def get_all_designer_byid(id):

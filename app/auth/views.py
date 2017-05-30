@@ -119,6 +119,7 @@ def login():
                 print ret
                 if ret == "SUCCEED":
                     return redirect(url_for("auth.unconfirmed"))
+
             return render_template('login.html', form=form, page='register')
 
     return render_template('login.html', form=form, page='login')

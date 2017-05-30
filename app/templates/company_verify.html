@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}TYMT{% endblock %}
+
+{% block page_content %}
+
+<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">Verify</li>
+				</ol>
+			</div>
+		</div>
+
+<div class = "container">
+{% include "company_side.html" %}
+
+<div class="account-area pt-30 log" style="width: 102%;margin-bottom: 30px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-lg-9 col-sm-9 ">
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12" style="text-align:center">
+						<!--img src="{{ url_for('static', filename='{{is_success_img}}') }}" alt=""></img-->
+						<img src="{{ url_for('static', filename='img/company/success.png') }}" alt=""></img>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12" style="text-align:center">
+						<!--h4>{{is_success_info}}</h4-->
+						<h4>验证成功 </h4>
+					</div>
+				</div>
+				<!--div class="row" style="{{is_display}}"-->
+				<div class="row" style="display:true">
+					<div class="col-md-9 col-lg-12 col-sm-12 col-md-offset-3" style=" margin-top: 30px;">
+						<form action="" method="post" enctype="multipart/form-data">
+							<input type="file" name="fileField" class="file" style="background: white;border: 0px;text-align:center; width: 50%" id="fileField"/>
+					 		<input type="submit" name="submit" class="file" value="上传" style="background: white;text-align:center; width:57px; padding-left:0px; font-size: 14px; border: 2px solid #CDCDCD; border-radius: 5px; margin-left: 20%" />
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

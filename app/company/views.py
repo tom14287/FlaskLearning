@@ -84,6 +84,6 @@ def get_furniture_byid(id):
 
 
 @company_.route("/my_designer", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def company_my_designer():
-	return
+	return render_template('company_designer.html')

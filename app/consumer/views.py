@@ -25,7 +25,8 @@ def consumer_index():
 @consumer_.route("/change_info", methods=['GET', 'POST'])
 #@login_required
 def consumer_change_info():
-	return
+
+	return render_template('consumer_profile.html')
 
 def update_consumer(id, birth, truename, sex, resident):
 	sql = ""
@@ -99,6 +100,10 @@ def consumer_orders():
 	temp['total'] = 1
 
 	unpay.append(temp)
+	unpay.append(temp)
+	unpay.append(temp)
+	unpay.append(temp)
+	unpay.append(temp)
 	review.append(temp)
 
 	temp['review'] = 'Good!'
@@ -117,7 +122,15 @@ def get_allorders_byid(id):
 @consumer_.route("/decoration", methods=['GET', 'POST'])
 #@login_required
 def consumer_decoration():
-	return
+
+	command = []
+	temp = {}
+	temp['command'] = 'fuygwixvwehcvgdhwxschjscjds'
+	temp['status'] = 'Finished'
+	temp['date'] = '2017/5/1'
+	command.append(temp)
+
+	return render_template('consumer_decoration.html',command=command)
 
 def get_decform_byid(id):
 	user = User.query.filter_by(UserID=id).first()

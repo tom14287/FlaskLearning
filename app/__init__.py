@@ -19,8 +19,8 @@ def create_app(configfile=None):
 	app.config['MAIL_SERVER'] = 'smtp.163.com'
 	app.config['MAIL_PORT'] = 465
 	app.config['MAIL_USE_SSL'] = True
-	app.config['MAIL_USERNAME'] = 'TYMT_SevenLords@163.com'
-	app.config['MAIL_PASSWORD'] = '123456q'
+	app.config['MAIL_USERNAME'] = 'tymt_test_1@163.com'
+	app.config['MAIL_PASSWORD'] = '888qqq'
 	app.config['SECURITY_PASSWORD_SALT'] = 'my_precious_two'
 	app.config['SECRET_KEY'] = 'notsecret'
 	bootstrap.init_app(app)

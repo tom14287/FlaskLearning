@@ -22,11 +22,11 @@
 					<div class="col-md-12 col-sm-8">
             <div class="single-product  shop-single-product mb-30 white-bg" style="margin-top: 25px">
                 <div class="product-img pt-20">
-                  <a href="#"><img src={{product.img}} alt="" /></a>
+                  <a href="#"><img src="{{product.img}}" alt="" /></a>
                 </div>
                 <div class="product-content">
                   <div class="pro-title" style="font-size:35px">
-                    <h4><a href="#">{{product.name}}</a></h4>
+                    <h4><a href="#">{{test}}</a></h4>
                   </div>
                   <div class="pro-rating mb-20">
                     <a href="#"><i class="fa fa-star"></i></a>
@@ -76,7 +76,7 @@
                     <li class="am-comment">
                     <!-- 评论容器 -->
                     <a href="">
-                      <img class="am-comment-avatar" src="{{ url_for('static', filename='img/hwbn40x40.jpg') }}" />
+                      <img class="am-comment-avatar" src="{{comment.img}}" />
                       <!-- 评论者头像 -->
                     </a>
 

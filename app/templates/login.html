@@ -11,22 +11,95 @@
 				</ol>			
 			</div>
 		</div>
-		<!-- breadcrumb end -->	
-		<!-- account area start -->
+		
+
 		<div class="account-area pt-30 log">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-lg-6 col-sm-6">
-						<div class="account-info pb-30">
-							<form method="post" action="">
+					<div class="col-md-6 col-lg-6 col-sm-6" style="margin-left: 25%;">
+						<div class="account-info pb-30 am-tabs" data-am-tabs>
+							<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
+  								<li  {% if page == 'login' %}class="am-active"{% endif %} style="font-size:20px;">
+  									<a href="#">
+  									<span class="index-needs-dt-txt">LOGIN</span></a>
+  								</li>
+                  				<li {% if page == 'register' %}class="am-active"{% endif %} style="font-size:20px;" >
+                    				<a href="#">
+                      				<span class="index-needs-dt-txt">REGISTER</span></a>
+                  				</li>
+  							</ul>
+
+
+
+  							<div class="am-tabs-bd">
+                  				<div {% if page == 'login' %}class="am-tab-panel am-fade am-in am-active"{% endif %} {% if page == 'register' %}class="am-tab-panel am-fade"{% endif %}>
+  									<div class="J_Brand">
+  										<form method="post" action="">
+											<div class="form-fields">
+  												<div class="attr-list-hd tm-clear" style="margin-top:20px">
+  												<p>
+												<label>
+													Email Address
+													<span class="required">*</span>
+												</label>
+												{{ form.email(placeholder="email") }}
+												</p>
+												<p>
+												<label>
+												Password
+													<span class="required">*</span>
+												</label>
+												{{ form.password(placeholder="password") }}
+												</p>
+												<div class="form-action">
+												<label>
+													<a href="#" class="lost_password">Lost your password?</a>								
+													<input type="checkbox">
+													Remember Me
+												</label>								
+												<input name = 'action' value="login" type="submit">
+
+												</div>	
+                      							</div>
+                      						</div>
+															
+								</form>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+  								</div>
+
+  					
+
+  							<div {% if page == 'register' %}class="am-tab-panel am-fade am-in am-active"{% endif %} {% if page == 'login' %}class="am-tab-panel am-fade"{% endif %}>
+  									
+							<div class="J_Brand">
+  										<form method="post" action="">
 								<div class="form-fields">
-									<h2>Login</h2>
-									<p>
+  										<div class="attr-list-hd tm-clear" style="margin-top:20px">
+  											<p>
 										<label>
-											email address
+											Email Address
 											<span class="required">*</span>
 										</label>
 										{{ form.email(placeholder="email") }}
+									</p>
+  											<p>
+										<label>
+											User Name
+											<span class="required">*</span>
+										</label>
+										{{ form.username(placeholder="user name") }}
+									</p>
+									</p>
+  											<p>
+										<label>
+											Type
+											<span class="required">*</span>
+										</label>
+										{{ form.type(placeholder="type") }}
 									</p>
 									<p>
 										<label>
@@ -35,20 +108,36 @@
 										</label>
 										{{ form.password(placeholder="password") }}
 									</p>
-								</div>
-								<div class="form-action">
-									<label>
-									<a href="#" class="lost_password">Lost your password?</a>								
-										<input type="checkbox">
-										Remember me
-									</label>								
-									<input value="Login" type="submit">
-								</div>								
+									<p>
+										<label>
+											Confirm Password
+											<span class="required">*</span>
+										</label>
+										{{ form.confirm(placeholder="confirm password") }}
+									</p>
+									<div class="form-action">
+									<input type="checkbox" value="forever" id="rememberme" name="rememberme">
+									<label class="inline" for="rememberme">I agree <a href="#">Terms & Condition</a></label>	
+									<input name = 'action' value="register" type="submit">
+
+								</div>	
+                      					</div>
+                      					</div>
+															
 							</form>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+
+
+  								</div>					
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	
 {% endblock %}
 

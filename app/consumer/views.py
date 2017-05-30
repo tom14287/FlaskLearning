@@ -135,20 +135,21 @@ def get_allorders_byid(id):
 @consumer_.route("/decoration", methods=['GET', 'POST'])
 #@login_required
 def consumer_decoration():
-
 	command = []
-	temp = {}
-	temp['command'] = 'fuygwixvwehcvgdhwxschjscjds'
-	temp['status'] = 'Finished'
-	temp['date'] = '2017/5/1'
-	command.append(temp)
-
+	consumer, dec_forms = get_decform_byid(g.user.UserID)
+	for item in dec_forms:
+		item = DecorationForm()
+		temp = {}
+		temp['command'] = item.DcFormDESC
+		temp['status'] = item.DcFormState
+		temp['date'] = str(item.DcFormCreateTime)
+		command.append(temp)
 	return render_template('consumer_decoration.html',command=command)
 
 def get_decform_byid(id):
 	user = User.query.filter_by(UserID=id).first()
-	if user and user.UserType:
+	if user and user.UserType == "Consumer":
 		consumer = Consumer.query.filter_by(ConsumerID=user.UserID).first()
 		dec_forms = DecorationForm.query.filter_by(ConsumerID=user.UserID).all()
-		return user, consumer, dec_forms
-	return None, None, None
+		return consumer, dec_forms
+	return None, None

@@ -1,3 +1,4 @@
+
 from flask_login import login_user, logout_user, current_user, login_required
 from flask import Blueprint, g, flash, session
 from app import lm, db, app
@@ -117,4 +118,21 @@ def change_password():
         return redirect(url_for("auth.login"))
     return render_template('auth/change_password.html', form=form)
 
-
+@auth_.route('/product/<id>')
+def product_display(id):
+    class Product():
+        def __init__(self):
+            name = "id"
+            description = "test_description"
+            price = "400u"
+            procedure = "fdsafdsaf"
+            img = ""
+    product = Product()
+    class Comment():
+        def __init__(self):
+            name = "ljh"
+            time = "2017.6.6"
+            content = "not wrong"
+    comment = Comment()
+    comments = [comment]
+    return render_template('product.html', product=product, comments=comments)

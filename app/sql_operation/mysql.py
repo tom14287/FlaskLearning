@@ -133,4 +133,3 @@ class OrderItem(db.Model):
     OrderFormID = db.Column(db.Integer)
     FurnitureID = db.Column(db.Integer)
     OrderItemNum = db.Column(db.Integer)
-

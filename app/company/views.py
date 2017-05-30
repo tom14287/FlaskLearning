@@ -51,7 +51,8 @@ def update_company(id, type, auth, addr, intro):
 #@login_required
 def company_verify():
 	if g.user :
-		g.user.UserID
+		db.session.execute("update Company set CompanyAuth='Y' where CompanyID=%d" % g.user.UserID)
+		db.session.commit()
 	return render_template('company_verify.html')
 
 @company_.route("/design_scheme", methods=['GET', 'POST'])

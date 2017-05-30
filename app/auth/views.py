@@ -176,8 +176,6 @@ def product_display(id):
             self.time = "2017.6.6"
             self.content = "not wrong"
             self.img = "/static/img/client/1.jpg"
-    js="alert(test);"
-    browser.execute_script(js)
     comment = Comment()
     comments = [comment]
     test = "product dfadsfdsfdsadsfdsdfs"

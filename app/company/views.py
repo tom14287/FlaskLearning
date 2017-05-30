@@ -56,10 +56,34 @@ def company_verify():
 def company_design_scheme():
 	return
 
-@company_.route("/order_form", methods=['GET', 'POST'])
-@login_required
-def company_order_form():
-	return
+@company_.route("/company_orders", methods=['GET', 'POST'])
+#@login_required
+def company_orders():
+
+	design = []
+	merchandise = []
+
+	temp = {}
+	temp['date'] = '2017/5/1'
+	temp['url'] = '/'
+	temp['price'] = '$1.00'
+	temp['name'] = 'Good Design'
+	temp['designer'] = 'asd'
+	temp['user'] = 'fyg'
+
+	design.append(temp)
+
+	temp = {}
+	temp['date'] = '2017/5/1'
+	temp['url'] = '/'
+	temp['price'] = '$1.00'
+	temp['name'] = 'Good Design'
+	temp['quantity'] = 1
+	temp['user'] = 'fyg'
+	
+	merchandise.append(temp)
+
+	return render_template('company_order.html', design=design, merchandise=merchandise)
 
 @company_.route("/advertisement", methods=['GET', 'POST'])
 @login_required

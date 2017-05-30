@@ -59,17 +59,41 @@ def company_verify():
 def company_design_scheme():
 	return
 
+@company_.route("/company_orders", methods=['GET', 'POST'])
+#@login_required
+def company_orders():
+
+	design = []
+	merchandise = []
+
+	temp = {}
+	temp['date'] = '2017/5/1'
+	temp['url'] = '/'
+	temp['price'] = '$1.00'
+	temp['name'] = 'Good Design'
+	temp['designer'] = 'asd'
+	temp['user'] = 'fyg'
+
+	design.append(temp)
+
+	temp = {}
+	temp['date'] = '2017/5/1'
+	temp['url'] = '/'
+	temp['price'] = '$1.00'
+	temp['name'] = 'Good Design'
+	temp['quantity'] = 1
+	temp['user'] = 'fyg'
+	
+	merchandise.append(temp)
+
+	return render_template('company_order.html', design=design, merchandise=merchandise)
+
 def get_allscheme_byid(id):
 	company = Company.query.filter_by(CompanyID=id).first()
 	if company:
 		schemes = DesignScheme.query.filter_by(CompanyID=id).all()
 		return company, schemes
 	return None, None
-
-@company_.route("/order_form", methods=['GET', 'POST'])
-@login_required
-def company_order_form():
-	return
 
 def get_all_succeed_order(id):
 	user = User.query.filter_by(UserID=id).first()

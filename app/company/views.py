@@ -47,10 +47,9 @@ def update_company(id, type, auth, addr, intro):
 	db.session.commit()
 
 @company_.route("/verify", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def company_verify():
-
-	return
+	return render_template('company_verify.html')
 
 @company_.route("/design_scheme", methods=['GET', 'POST'])
 @login_required
@@ -88,4 +87,3 @@ def get_furniture_byid(id):
 @login_required
 def company_my_designer():
 	return
-

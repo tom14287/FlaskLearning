@@ -47,5 +47,7 @@ def create_app(configfile=None):
 	from consumer import consumer_ as CS
 	app.register_blueprint(CS, url_prefix='/consumer')
 
-	return app
+	from company import company_ as CP
+	app.register_blueprint(CP, url_prefix='/company')
 
+	return app

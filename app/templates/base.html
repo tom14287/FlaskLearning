@@ -7,7 +7,7 @@
 		<!-- Place favicon.ico in the root directory -->
 
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/amazeui.css') }}">
-						
+
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 		<!-- font-awesome.min.css -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
@@ -24,6 +24,7 @@
 		<!-- responsive.css -->
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/sweetalert.css') }}">
 
 {% endblock %}
 
@@ -42,17 +43,17 @@
 							<li class="slide-toggle"><a href="#"><i class="fa fa-user"></i>我的账号</a>
 								<ul class="show-toggle">
 									<li><a href="#">登录</a></li>
-									<li><a href="#">注册</a></li>	
+									<li><a href="#">注册</a></li>
 								</ul>
 							</li>
 						</ul>
-						
+
 						<ul>
 							<li class="slide-toggle-3 text-uppercase"><a href="#">用户帮助</a>
 								<ul class="show-toggle-3">
 									<li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1908627313&site=qq&menu=yes">人工客服</a></li>
 									<li><a href="#">QA</a></li>
-								</ul>	
+								</ul>
 							</li>
 						</ul>
 					</div>
@@ -72,7 +73,7 @@
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 					<div class="header-bottom-middle">
-						
+
 						<div class="search-box">
 							<form action="#">
 								<select name="#" id="select">
@@ -84,16 +85,16 @@
 									<option value="42">---卫浴用品</option>
 									<option value="47">---灯饰照明</option>
 									<option value="43">---全屋定制</option>
-																		
+
 								</select>
 								<input type="text" placeholder="搜索...">
 								<button><i class="fa fa-search"></i></button>
 							</form>
-						</div>								
+						</div>
 					</div>
 					<div class="header-bottom-right">
 						<div class="left-cart">
-							
+
 						</div>
 						<div class="shop-cart-area">
 							<div class="top-cart-wrapper">
@@ -149,11 +150,11 @@
 										<div class="cart-actions">
 											<button><span>Checkout</span></button>
 										</div>
-									</div>											
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>							
+					</div>
 				</div>
 			</div>
 		</div>
@@ -169,7 +170,7 @@
 
 {% block mobile_menu %}
 <div class="mobile-menu-area hidden-md hidden-lg">
-			
+
 		</div>
 
 {% endblock %}
@@ -345,6 +346,7 @@
 			</ul>
 		</div>
 
+		<script src="{{ url_for('static', filename='js/vendor/sweetalert-dev.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
 
 		<script src="{{ url_for('static', filename='js/vendor/jquery-1.12.0.min.js') }}"></script>
@@ -361,14 +363,14 @@
 		<!-- jquery.scrollup.min.js-->
 		<script src="{{ url_for('static', filename='js/jquery.scrollup.min.js') }}"></script>
 		<!-- owl.carousel.min.js -->
-		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>		
+		<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
 		<!-- plugins.js -->
 		<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
 		<!-- main.js -->
 		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
-		
+
         <script src="{{ url_for('static', filename='js/amazeui.js') }}"></script>
-        
+
 
 {% endblock %}

@@ -119,6 +119,7 @@ def login():
                 print ret
                 if ret == "SUCCEED":
                     return redirect(url_for("auth.unconfirmed"))
+
             return render_template('login.html', form=form, page='register')
 
     return render_template('login.html', form=form, page='login')
@@ -175,6 +176,8 @@ def product_display(id):
             self.time = "2017.6.6"
             self.content = "not wrong"
             self.img = "/static/img/client/1.jpg"
+    js="alert(test);"
+    browser.execute_script(js)
     comment = Comment()
     comments = [comment]
     test = "product dfadsfdsfdsadsfdsdfs"

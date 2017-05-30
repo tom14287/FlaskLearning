@@ -35,7 +35,7 @@ def designer_design_scheme():
 def get_allscheme_byid(id):
 	designer = Designer.query.filter_by(DesignerID=id).first()
 	if designer:
-		schemes = DesignerScheme.query.filter_by(DesignerID=id).all()
+		schemes = DesignScheme.query.filter_by(DesignerID=id).all()
 		return designer, schemes
 	return None, None
 

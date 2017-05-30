@@ -159,27 +159,6 @@ def change_password():
     return render_template('auth/change_password.html', form=form)
 
 
-@auth_.route('/product/<id>')
-def product_display(id):
-    class Product():
-        def __init__(self):
-            self.name = "id"
-            self.description = "test_description"
-            self.price = "400u"
-            self.procedure = "fdsafdsaf"
-            self.img = "/static/img/product/2.jpg"
-    product = Product()
-    class Comment():
-        def __init__(self):
-            self.name = "ljh"
-            self.time = "2017.6.6"
-            self.content = "not wrong"
-            self.img = "/static/img/client/1.jpg"
-    comment = Comment()
-    comments = [comment]
-    test = "product dfadsfdsfdsadsfdsdfs"
-    return render_template('product.html', product=product, comments=comments, test=test)
-
 def update_user(id, name, email, tel, pwd):
     user = User.query.filter_by(UserID=id).first()
     if name != None:
@@ -192,5 +171,5 @@ def update_user(id, name, email, tel, pwd):
         user.UserPassword = pwd
     db.session.execute("update User set UserPassword='%s',UserName='%s',"
                        "UserEmail='%s',UserTEL='%s' where UserID=%d" % (user.UserPassword,
-                        user.UserName, user.UserEmail, user.UserTEL, user.UserID))
+                        user.UserName, user.UserEmail, user.UserTEL, user.UserID)).all()
     db.session.commit()

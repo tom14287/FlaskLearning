@@ -1,10 +1,7 @@
-# from app import db, app
+from app import db, app
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_sqlalchemy import SQLAlchemy
-from flask import Flask
-app = Flask(__name__)
-db = SQLAlchemy()
-
+import base64
+from datetime import datetime
 
 class User(db.Model):
     __tablename__ = 'User'
@@ -74,7 +71,7 @@ class Designer(db.Model):
     DesignerID = db.Column(db.Integer, primary_key = True)
     DesignerBirth = db.Column(db.Date)
     DesignerTrueName = db.Column(db.String(45))
-    ConsumerID = db.Column(db.Integer)
+    CompanyID = db.Column(db.Integer)
     DesignerSex = db.Column(db.Enum('M', 'F'))
     DesignerIntro = db.Column(db.String(45))
     # UserID = db.Column(db.Integer, db.ForeignKey('User.UserID'))
@@ -112,7 +109,7 @@ class CompetitiveBid(db.Model):
     DcFormID = db.Column(db.Integer, primary_key = True)
     SchemeID = db.Column(db.Integer)
     DSDESC = db.Column(db.String(200))
-    SubmitTime = db.Column(db.DateTime)
+    SubmitTime = db.Column(db.DateTime, default=datetime.now)
     DSState = db.Column(db.Enum('Waiting', 'Reject', 'Accept'))
 
 class UserAddress(db.Model):
@@ -131,10 +128,10 @@ class DecorationForm(db.Model):
     ConsumerID = db.Column(db.Integer)
     DcFormDESC = db.Column(db.String(200))
     DcFormState = db.Column(db.Enum('Waiting', 'Success', 'Overtime', 'Error', 'Compete', 'Cancel'))
-    DcFormCreateTime = db.Column(db.DateTime)
+    DcFormCreateTime = db.Column(db.DateTime, default=datetime.now)
 
-class DesignerScheme(db.Model):
-    __tablename__ = 'DesignerScheme'
+class DesignScheme(db.Model):
+    __tablename__ = 'DesignScheme'
     SchemeID = db.Column(db.Integer, primary_key = True)
     DesignerID = db.Column(db.Integer)
     CompanyID = db.Column(db.Integer)
@@ -151,13 +148,18 @@ class Furniture(db.Model):
     FurnitureDESC = db.Column(db.String(200))
     FurnitureImage = db.Column(db.BLOB)
 
+    def insert(self, cid, name, num, price, desc, image):
+        temp = Furniture(CompanyID=cid, FurnitureName=name, FurnitureNum=num, FurniturePrice=price, FurnitureDESC=desc, FurnitureImage=image)
+        db.session.add(temp)
+        db.session.commit()
 
 class OrderForm(db.Model):
     __tablename__ = 'OrderForm'
     OrderFormID = db.Column(db.Integer, primary_key = True)
     UserID = db.Column(db.Integer)
-    OerderFormState = db.Column(db.Enum('Waiting', 'Success', 'Fail', 'Cancel'))
-    CreateTime = db.Column(db.DateTime)
+    OrderFormState = db.Column(db.Enum('Waiting', 'Success', 'Fail', 'Cancel'))
+    CreateTime = db.Column(db.DateTime, default=datetime.now)
+    OrderFormcol = db.Column(db.String(45))
 
 class OrderItem(db.Model):
     __tablename__ = 'OrderItem'
@@ -173,6 +175,108 @@ class OrderItem(db.Model):
  #  user = User.query.filter_by(UserID=3).first_or_404()
   # print user.UserType
    #return render_template('index.html')
+
+def init_mysql():
+    user = User("LJH", "ljh@qq.com", "123456", "Consumer", True)
+    path = "app/static/img/product/10.jpg"
+    user.UserTEL = "12345678901"
+    file = open(path, "rb")
+    img1 = base64.b64encode(file.read())
+    file.close()
+    user.UserImage = img1
+
+    db.session.add(user)
+    db.session.commit()
+    user1 = User("XZL", "xzl@qq.com", "1234", "Designer", True)
+    user1.UserTEL = "23456789012"
+    user1.UserImage = img1
+    consumer = Consumer()
+    consumer.ConsumerID = 1
+    consumer.ConsumerTrueName = "LLjh"
+    consumer.ConsumerSex = 'M'
+    consumer.ConsumerResident = "resident1"
+    des = Designer()
+    des.DesignerID = 2
+    des.DesignerIntro = "intro333"
+    des.DesignerSex = 'M'
+    des.DesignerTrueName = 'xzl'
+    db.session.add(user1)
+    db.session.commit()
+    db.session.add(consumer)
+    db.session.commit()
+    db.session.add(des)
+    db.session.commit()
+    user2 = User("GJL", "gjl@qq.com", "123", "Company", True)
+    user2.UserTEL = "34567890123"
+    user2.UserImage = img1
+    company = Company()
+    company.CompanyID = 3
+    company.CompanyIntro = "intro1"
+    company.CompanyAddress = 'addr444'
+    company.CompanyAuth = 'Y'
+    company.CompanyType = 'Furniture'
+    db.session.add(user2)
+    db.session.commit()
+    db.session.add(company)
+    db.session.commit()
+    ad = Advertisement()
+    ad.CompanyID = 3
+    ad.AdContent = "con123"
+    ad.AdImage = img1
+    ad.AdType = "Company"
+    db.session.add(ad)
+    db.session.commit()
+    fr = Furniture()
+    fr.CompanyID = 3
+    fr.FurniturePrice = 103
+    fr.FurnitureDESC = "desc123"
+    fr.FurnitureName = "ShuiGuoMu"
+    fr.FurnitureImage = img1
+    fr.FurnitureNum = 111
+    db.session.add(fr)
+    db.session.commit()
+    ds = DesignScheme()
+    ds.CompanyID = 3
+    ds.SchemeDESC = "desc234"
+    ds.SchemeImage = img1
+    db.session.add(ds)
+    db.session.commit()
+    df = DecorationForm()
+    df.ConsumerID = 1
+    df.DcFormDESC = "desc345"
+    df.DcFormState = "Success"
+    db.session.add(df)
+    db.session.commit()
+    cb = CompetitiveBid()
+    cb.DcFormID = 1
+    cb.SchemeID = 1
+    cb.DSDESC = "desc456"
+    cb.DSState = "Accept"
+    db.session.add(cb)
+    db.session.commit()
+    ar = UserAddress()
+    ar.UserID = 1
+    ar.DeliveryAddress = "addre112"
+    db.session.add(ar)
+    db.session.commit()
+    of = OrderForm()
+    of.UserID = 1
+    of.OrderFormState = "Success"
+    of.OrderFormcol = "dontknow"
+    db.session.add(of)
+    db.session.commit()
+    oitm = OrderItem()
+    oitm.OrderFormID = 1
+    oitm.FurnitureID = 1
+    oitm.OrderItemNum = 1
+    db.session.add(oitm)
+    db.session.commit()
+    cm = Comments()
+    cm.Content = "con123"
+    cm.Rank = '1'
+    cm.OrderFormID = 1
+    db.session.add(cm)
+    db.session.commit()
 
 if __name__ == '__main__':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://kiinghom:atpatpatp@localhost:3306/TYMT?charset=utf8'

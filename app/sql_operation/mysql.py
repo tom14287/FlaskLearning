@@ -166,6 +166,7 @@ class OrderItem(db.Model):
     FurnitureID = db.Column(db.Integer)
     OrderItemNum = db.Column(db.Integer)
 
+
 # from flask import render_template
 #@app.route('/')
 #def info():
@@ -177,4 +178,3 @@ if __name__ == '__main__':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://kiinghom:atpatpatp@localhost:3306/TYMT?charset=utf8'
     db.init_app(app)
     app.run(debug=True)
-

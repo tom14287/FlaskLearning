@@ -56,24 +56,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/company/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
+            <state relative-caret-position="245">
+              <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <marker date="1496156942304" expanded="true" signature="3098:3167" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="3274:4553" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="3276:3340" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="3358:3566" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="3417:3566" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="3584:3747" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="3633:3747" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="3962:4023" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="4168:4451" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="4316:4366" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="4582:5068" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="4741:5030" ph="&quot;...&quot;" />
-                <marker date="1496156942304" expanded="true" signature="5171:5221" ph="..." />
-                <marker date="1496156942304" expanded="true" signature="5254:5324" ph="..." />
               </folding>
             </state>
           </provider>
@@ -126,8 +112,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1431">
-              <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+            <state relative-caret-position="-1080">
+              <caret line="33" column="71" lean-forward="false" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -737,7 +723,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496150363377</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="日常commit">
+      <created>1496156954799</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1496156954799</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -748,7 +741,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3222749" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2969984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1162,32 +1155,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/company/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
+        <state relative-caret-position="245">
+          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <marker date="1496156942304" expanded="true" signature="3098:3167" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="3274:4553" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="3276:3340" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="3358:3566" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="3417:3566" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="3584:3747" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="3633:3747" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="3962:4023" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="4168:4451" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="4316:4366" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="4582:5068" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="4741:5030" ph="&quot;...&quot;" />
-            <marker date="1496156942304" expanded="true" signature="5171:5221" ph="..." />
-            <marker date="1496156942304" expanded="true" signature="5254:5324" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1431">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+        <state relative-caret-position="-1080">
+          <caret line="33" column="71" lean-forward="false" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
           <folding />
         </state>
       </provider>

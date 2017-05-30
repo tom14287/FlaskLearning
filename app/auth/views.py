@@ -157,4 +157,19 @@ def change_password():
         return redirect(url_for("auth.login"))
     return render_template('auth/change_password.html', form=form)
 
+def update_user(id, name, email, tel, pwd):
+    user = User.query.filter_by(UserID=id).first()
+    if name != None:
+        user.UserName = name
+    if email != None:
+        user.UserEmail = email
+    if tel != None:
+        user.UserTEL = tel
+    if pwd != None:
+        user.UserPassword = pwd
+    db.session.execute("update User set UserPassword='%s',UserName='%s',"
+                       "UserEmail='%s',UserTEL='%s' where UserID=%d" % (user.UserPassword,
+                        user.UserName, user.UserEmail, user.UserTEL, user.UserID))
+    db.session.commit()
+
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84d910af-f823-40d3-9109-a75599ea1049" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/company/views.py" afterPath="$PROJECT_DIR$/app/company/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +57,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/company/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="905">
-              <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
+            <state relative-caret-position="162">
+              <caret line="57" column="6" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -78,10 +79,11 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="53" column="56" lean-forward="false" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
+            <state relative-caret-position="-26">
+              <caret line="55" column="14" lean-forward="false" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+                <marker date="1496150537718" expanded="true" signature="407:1452" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,9 +103,20 @@
         <entry file="file://$PROJECT_DIR$/app/auth/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
-              <caret line="171" column="4" lean-forward="false" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="4" />
+              <caret line="172" column="4" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
               <folding>
                 <element signature="e#1#78#0" expanded="true" />
+                <marker date="1496150486914" expanded="true" signature="3547:4816" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="3606:4749" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="4345:4749" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="4850:5220" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="4965:5220" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="5026:5176" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="5303:5373" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="5465:6007" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="5561:5940" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="5664:5893" ph="..." />
+                <marker date="1496150486914" expanded="true" signature="6330:6449" ph="&quot;...&quot;" />
               </folding>
             </state>
           </provider>
@@ -290,7 +303,9 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <flattenPackages />
@@ -341,14 +356,16 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/.DS_Store</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/__init__.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/auth/__init__.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/auth/email.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/auth/form.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/auth/token.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/auth/views.py</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/auth/views.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/company/views.py</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/consumer/__init__.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/consumer/views.py</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/consumer/views.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/module_a/__init__.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/module_a/views.pyc</PATH>
@@ -356,15 +373,10 @@
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/module_b/views.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/sql_operation/__init__.pyc</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/sql_operation/mysql.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/static/css/shortcode/other-page.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/static/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/static/img/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/auth/login.html</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/base.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/cart.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/consumer.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/consumer_order.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/consumer_profile.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/consumer_refund.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/consumer_side.html</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/login.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -372,6 +384,14 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/company/__init__.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/company/views.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/static/css/sweetalert.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/static/img/company/fail.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/static/img/company/success.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/static/js/sweetalert-dev.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/company_side.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/templates/company_verify.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -890,17 +910,25 @@
       <option name="project" value="LOCAL" />
       <updated>1496150363377</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="日常commit">
+      <created>1496150462513</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1496150462513</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20937042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2969984" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2969984" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3222749" sideWeight="0.4941435" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2969984" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1278,10 +1306,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="53" column="56" lean-forward="false" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
+        <state relative-caret-position="-26">
+          <caret line="55" column="14" lean-forward="false" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <marker date="1496150537718" expanded="true" signature="407:1452" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1359,17 +1388,28 @@
     <entry file="file://$PROJECT_DIR$/app/auth/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
-          <caret line="171" column="4" lean-forward="false" selection-start-line="171" selection-start-column="4" selection-end-line="171" selection-end-column="4" />
+          <caret line="172" column="4" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
           <folding>
             <element signature="e#1#78#0" expanded="true" />
+            <marker date="1496150486914" expanded="true" signature="3547:4816" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="3606:4749" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="4345:4749" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="4850:5220" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="4965:5220" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="5026:5176" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="5303:5373" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="5465:6007" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="5561:5940" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="5664:5893" ph="..." />
+            <marker date="1496150486914" expanded="true" signature="6330:6449" ph="&quot;...&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/company/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="905">
-          <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
+        <state relative-caret-position="162">
+          <caret line="57" column="6" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>

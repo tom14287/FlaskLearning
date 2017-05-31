@@ -7,6 +7,7 @@ from app import db
 
 consumer_ = Blueprint('consumer', __name__)
 
+
 @consumer_.route("")
 @consumer_.route("/index")
 #@login_required

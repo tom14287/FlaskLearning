@@ -47,6 +47,7 @@ def update_company(id, type, auth, addr, intro):
 	db.session.execute("update Company set %s where CompanyID=%d" % (sql, id))
 	db.session.commit()
 
+# Test ed
 @company_.route("/verify", methods=['GET', 'POST'])
 #@login_required
 def company_verify():
@@ -60,10 +61,10 @@ def company_verify():
 def company_design_scheme():
 	return
 
+#Test ed
 @company_.route("/company_orders", methods=['GET', 'POST'])
 #@login_required
 def company_orders():
-
 	design = []
 	merchandise = []
 
@@ -118,7 +119,7 @@ def get_ad_bycompanyid(id):
 	ads = Advertisement.query.filter_by(CompanyID=id).all()
 	return ads
 
-
+# Test ed
 @company_.route("/furniture_list", methods=['GET', 'POST'])
 #@login_required
 def company_furniture_list():
@@ -129,7 +130,7 @@ def get_all_furniture_list(id):
 	goods = Furniture.query.filter_by(CompanyID=id).all()
 	return goods
 
-
+# Test ed
 @company_.route("/furniture/<id>", methods=['GET', 'POST'])
 # @login_required
 def company_furniture(id):
@@ -176,7 +177,7 @@ def get_furniture_byid(id):
 					   "User.UserID = OrderForm.UserID " % id)
 	return item, company, comments
 
-
+# Test ed
 @company_.route("/my_designer", methods=['GET', 'POST'])
 #@login_required
 def company_my_designer():

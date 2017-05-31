@@ -49,17 +49,17 @@
 														<table>
 														<thead>
 														<tr>
-															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
-															<th class="col-md-7 col-sm-7 col-xs-7">Design Scheme Name</th>
 															
+															<th class="col-md-7 col-sm-7 col-xs-7">Design Scheme Name</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
 														</tr>
 														</thead>
 														<tbody>
 														{% for item in design %}
 														<tr>	
-															<td >{{item['date']}}</td>
-															<td ><a href={{item['url']}}>{{item['name']}}</a></td>
 															
+															<td ><a href={{item['url']}}>{{item['name']}}</a></td>
+															<td >{{item['price']}}</td>
 														</tr>
 														{% endfor %}
 														</tbody>

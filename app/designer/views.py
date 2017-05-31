@@ -38,6 +38,7 @@ def update_designer(id, cid, birth, truename, sex, intro):
 @designer_.route("/design_scheme", methods=['GET', 'POST'])
 #@login_required
 def designer_design_scheme():
+	g.user = User.query.filter_by(UserID=2).first()
 	design = []
 	designer, schemes = get_allscheme_byid(g.user.UserID)
 	for item in schemes:
@@ -45,7 +46,7 @@ def designer_design_scheme():
 		# 链接到设计方案展示界面
 		temp['url'] = 'http://127.0.0.1:5000/designer/scheme/' + str(item.SchemeID)
 		temp['name'] = str(item.SchemeID)
-		temp['date'] = str(item.SchemePrice)
+		temp['date'] = '$' + str(item.SchemePrice)
 		design.append(temp)
 	return render_template("designer_scheme.html", design=design)
 
@@ -59,6 +60,7 @@ def get_allscheme_byid(id):
 @designer_.route("/orders", methods=['GET', 'POST'])
 #@login_required
 def designer_orders():
+	designer_design_scheme
 	design = []
 	schemes = get_all_success_scheme_byid(g.user.UserID)
 	for item in schemes:

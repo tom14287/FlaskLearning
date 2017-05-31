@@ -67,15 +67,16 @@ def company_orders():
 	design = []
 	merchandise = []
 
-	temp = {}
-	temp['date'] = '2017/5/1'
-	temp['url'] = '/'
-	temp['price'] = '$1.00'
-	temp['name'] = 'Good Design'
-	temp['designer'] = 'asd'
-	temp['user'] = 'fyg'
-
-	design.append(temp)
+	schemes = get_allscheme_byid(g.user.UserID)
+	for item in schemes:
+		temp = {}
+		temp['date'] = '2017/5/1'
+		temp['url'] = '/'
+		temp['price'] = '$1.00'
+		temp['name'] = 'Good Design'
+		temp['designer'] = 'asd'
+		temp['user'] = 'fyg'
+		design.append(temp)
 	order_forms = get_all_succeed_order(g.user.UserID)
 	for item in order_forms:
 		temp = {}
@@ -92,8 +93,8 @@ def get_allscheme_byid(id):
 	company = Company.query.filter_by(CompanyID=id).first()
 	if company:
 		schemes = DesignScheme.query.filter_by(CompanyID=id).all()
-		return company, schemes
-	return None, None
+		return schemes
+	return None
 
 def get_all_succeed_order(id):
 	user = User.query.filter_by(UserID=id).first()

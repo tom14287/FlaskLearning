@@ -64,24 +64,37 @@ def consumer_cart():
 		user_addresses = UserAddress.query.filter_by(UserID=user.UserID).all()
 		order_forms = OrderForm.query.filter_by(UserID=user.UserID).all()
 	'''
-	item = []
-	temp = {}
-	temp['img'] = 1
-	temp['price'] = '$1.00'
-	temp['page'] = 'hhh.html'
-	temp['name'] = 'fuygdwyh'
-	temp['quantity'] = 1
-	temp['total'] = 1
-	item.append(temp)
-	return render_template('cart.html', items=item, subtotal='$1.00', total='$1.00')
+	items = []
+	user, consumer, order_forms, goods = get_cart_byid(g.user.UserID)
+	total = 0
+	for item in goods:
+		temp = {}
+		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
+		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
+		with open(path, "wb") as f:
+			f.write(base64.b64decode(item[0]))
+			f.close()
+		temp['img'] = path_img
+		temp['price'] = '$' + str(item[1])
+		temp['page'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[2])
+		temp['name'] = item[3]
+		temp['quantity'] = item[4]
+		temp['total'] = item[1] * item[4]
+		total += temp['total']
+		items.append(temp)
+	return render_template('cart.html', items=items, subtotal='$'+str(total), total='$'+str(total))
 
 def get_cart_byid(id):
 	user = User.query.filter_by(UserID=id).first()
-	if user and user.UserType:
+	if user and user.UserType == 'Consumer':
 		consumer = Consumer.query.filter_by(ConsumerID=user.UserID).first()
 		order_forms = OrderForm.query.filter_by(UserID=user.UserID, OrderFormState="Waiting").all()
-		return user, consumer, order_forms
-	return None, None, None
+		goods = db.session.execute("select FurnitureImage,FurniturePrice,"
+								   "Furniture.FurnitureID,FurnitureName, OrderItemNum from Furniture, OrderItem, OrderForm where "
+								   "Furniture.FurnitureID=OrderItem.FurnitureID and OrderItem.OrderFormID=OrderForm.OrderFormID and "
+								   "OrderForm.UserID=%d and OrderFormState='Waiting' ")
+		return user, consumer, order_forms, goods
+	return None, None, None, None
 
 @consumer_.route("/orders", methods=['GET', 'POST'])
 #@login_required
@@ -122,20 +135,21 @@ def get_allorders_byid(id):
 @consumer_.route("/decoration", methods=['GET', 'POST'])
 #@login_required
 def consumer_decoration():
-
 	command = []
-	temp = {}
-	temp['command'] = 'fuygwixvwehcvgdhwxschjscjds'
-	temp['status'] = 'Finished'
-	temp['date'] = '2017/5/1'
-	command.append(temp)
-
+	consumer, dec_forms = get_decform_byid(g.user.UserID)
+	for item in dec_forms:
+		item = DecorationForm()
+		temp = {}
+		temp['command'] = item.DcFormDESC
+		temp['status'] = item.DcFormState
+		temp['date'] = str(item.DcFormCreateTime)
+		command.append(temp)
 	return render_template('consumer_decoration.html',command=command)
 
 def get_decform_byid(id):
 	user = User.query.filter_by(UserID=id).first()
-	if user and user.UserType:
+	if user and user.UserType == "Consumer":
 		consumer = Consumer.query.filter_by(ConsumerID=user.UserID).first()
 		dec_forms = DecorationForm.query.filter_by(ConsumerID=user.UserID).all()
-		return user, consumer, dec_forms
-	return None, None, None
+		return consumer, dec_forms
+	return None, None

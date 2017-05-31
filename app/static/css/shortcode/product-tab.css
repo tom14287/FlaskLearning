@@ -70,6 +70,8 @@ NOTE: This is product-tab style file. All product-tab related style included in 
   border-right: 1px solid #eeeeee;
   overflow: hidden;
   border-bottom: 1px solid#eeeeee;
+  border-top: 1px solid#eeeeee;
+  border-left: 1px solid#eeeeee;
 }
 .product-img{transition:all .4s;}
 .product-img a{
@@ -307,8 +309,8 @@ NOTE: This is product-tab style file. All product-tab related style included in 
   display: inline-block;
 }
 .product-tab-menu{
-  box-shadow: 1px 0 #eaeaea inset, -1px 1px #eaeaea inset;	
-} 
+  box-shadow: 1px 0 #eaeaea inset, -1px 1px #eaeaea inset;
+}
 .product-tab-menu ul li a {
   color: #444444;
   display: block;

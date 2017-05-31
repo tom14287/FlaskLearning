@@ -10,7 +10,7 @@
 			<div class="container">
 				<ol class="breadcrumb">
 				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-				  <li class="active">My Designers</li>
+				  <li class="active">My Merchandise</li>
 				</ol>
 			</div>
 		</div>
@@ -29,19 +29,18 @@
         </div>
         <div class="row">
           <div class="col-md-12" style="text-align:center;">
+            {% macro render_designer(designer) %}
+            <li class="designer-li">
+              <a href="{{ url_for('company.company_furniture_list') }}">
+              <img class="designer-avatar" src="{{designer.img}}" />
+              <p class="designer-p">{{designer.name}}</p>
+              </a>
+            </li>
+            {% endmacro %}
             <ul class = "am-comments-list am-comments-list-flip">
-    				  <li class="designer-li">
-                <img class="designer-avatar" src="/static/img/client/1.jpg" />
-                <p class="designer-p">My Designer intro</p>
-              </li>
-              <li class="designer-li">
-                <img class="designer-avatar" src="/static/img/client/1.jpg" />
-                <p class="designer-p">My Designer intro</p>
-              </li>
-              <li class="designer-li">
-                <img class="designer-avatar" src="/static/img/client/1.jpg" />
-                <p class="designer-p">My Designer intro</p>
-              </li>
+              {% for designer in designers %}
+                {{ render_designer(designer) }}
+              {% endfor %}
     				</ul>
           </div>
         </div>

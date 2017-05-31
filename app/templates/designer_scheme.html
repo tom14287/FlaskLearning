@@ -9,14 +9,14 @@
 <div class="breadcrumb-area">
 			<div class="container">
 				<ol class="breadcrumb">
-				  <li><a href="/company"><i class="fa fa-home"></i> Home</a></li>
-				  <li class="active">MY ORDER</li>
+				  <li><a href="/designer"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">MY DESIGN</li>
 				</ol>
 			</div>
 		</div>
 
 <div class = "container">
-{% include "company_side.html" %}
+{% include "designer_side.html" %}
 
 <div class="account-area pt-30 log" style="width: 102%;margin-bottom: 30px;">
 	<div class="container">
@@ -26,11 +26,11 @@
 					<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
   						<li class="am-active" style="font-size:20px;">
   							<a href="#">
-  							<span class="index-needs-dt-txt">Design Order</span></a>
+  							<span class="index-needs-dt-txt">Design Scheme</span></a>
   						</li>
                   		<li style="font-size:20px;" >
                    			<a href="#">
-                      		<span class="index-needs-dt-txt">Merchandise Order</span></a>
+                      		<span class="index-needs-dt-txt">New Design</span></a>
                   		</li>
                   		
   					</ul>
@@ -50,10 +50,7 @@
 														<thead>
 														<tr>
 															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
-															<th class="col-md-2 col-sm-2 col-xs-2">Design Scheme</th>
-															<th class="col-md-1 col-sm-1 col-xs-1">Designer</th>
-															<th class="col-md-1 col-sm-1 col-xs-1">User Name</th>
-															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															<th class="col-md-7 col-sm-7 col-xs-7">Design Scheme Name</th>
 															
 														</tr>
 														</thead>
@@ -62,9 +59,6 @@
 														<tr>	
 															<td >{{item['date']}}</td>
 															<td ><a href={{item['url']}}>{{item['name']}}</a></td>
-															<td >{{item['designer']}}</td>
-															<td >{{item['user']}}</td>
-															<td >{{item['price']}}</td>
 															
 														</tr>
 														{% endfor %}
@@ -94,30 +88,7 @@
 											<div class="col-md-8 col-sm-8 col-xs-8" style="width: 70%;">
 												<form action="#">				
 													<div class="table-content table-responsive">
-														<table>
-														<thead>
-														<tr>
-															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
-															<th class="col-md-2 col-sm-2 col-xs-2">Product Name</th>
-															<th class="col-md-1 col-sm-1 col-xs-1">User Name</th>
-															<th class="col-md-1 col-sm-1 col-xs-1">Quantity</th>
-															<th class="col-md-1 col-sm-1 col-xs-1">Total Price</th>
-															
-														</tr>
-														</thead>
-														<tbody>
-														{% for item in merchandise %}
-														<tr>	
-															<td >{{item['date']}}</td>
-															<td ><a href={{item['url']}}>{{item['name']}}</a></td>
-															<td >{{item['user']}}</td>
-															<td >{{item['quantity']}}</td>
-															<td >{{item['price']}}</td>
-															
-														</tr>
-														{% endfor %}
-														</tbody>
-														</table>
+														
 													</div>
 							
 												</form>	

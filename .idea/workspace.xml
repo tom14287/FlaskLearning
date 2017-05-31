@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84d910af-f823-40d3-9109-a75599ea1049" name="Default" comment="designer 简单测试 部分&#10;# Test ed 代表测试完的函数">
+    <list default="true" id="84d910af-f823-40d3-9109-a75599ea1049" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/consumer/views.py" afterPath="$PROJECT_DIR$/app/consumer/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/designer/views.py" afterPath="$PROJECT_DIR$/app/designer/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql_init_ljh.sql" afterPath="$PROJECT_DIR$/sql_init_ljh.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +33,8 @@
       <file leaf-file-name="mysql.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/sql_operation/mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="296" column="133" lean-forward="false" selection-start-line="296" selection-start-column="133" selection-end-line="296" selection-end-column="133" />
+            <state relative-caret-position="-362">
+              <caret line="166" column="14" lean-forward="false" selection-start-line="166" selection-start-column="6" selection-end-line="166" selection-end-column="14" />
               <folding>
                 <marker date="1496237793343" expanded="true" signature="0:18" ph="import ..." />
               </folding>
@@ -109,21 +110,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="5103">
+              <caret line="193" column="9" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/designer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-97">
-              <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+            <state relative-caret-position="173">
+              <caret line="69" column="6" lean-forward="false" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
               <folding>
                 <element signature="e#17#44#0" expanded="true" />
               </folding>
@@ -143,7 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main</find>
       <find>return render_template('index.html')</find>
       <find>return redirect(url_for('module_a'))</find>
       <find>return redirect(url_for('module_a.link_view'))</find>
@@ -173,6 +173,7 @@
       <find>designer</find>
       <find>designer/</find>
       <find>Scheme</find>
+      <find>Orderite</find>
     </findStrings>
     <replaceStrings>
       <replace>return redirect(url_for('module_a'))</replace>
@@ -247,8 +248,8 @@
         <option value="$PROJECT_DIR$/app/templates/product.html" />
         <option value="$PROJECT_DIR$/app/sql_operation/mysql.py" />
         <option value="$PROJECT_DIR$/app/company/views.py" />
-        <option value="$PROJECT_DIR$/app/consumer/views.py" />
         <option value="$PROJECT_DIR$/app/designer/views.py" />
+        <option value="$PROJECT_DIR$/app/consumer/views.py" />
       </list>
     </option>
   </component>
@@ -613,13 +614,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492604484752</updated>
     </task>
-    <task id="LOCAL-00001" summary="test">
-      <created>1494243460211</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1494243460211</updated>
-    </task>
     <task id="LOCAL-00002" summary="test">
       <created>1494243691834</created>
       <option name="number" value="00002" />
@@ -956,7 +950,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496240104238</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="designer orders 有bug">
+      <created>1496241806358</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1496241806360</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1067,7 +1068,8 @@
     <MESSAGE value="init mysql修改" />
     <MESSAGE value="company 简单测试&#10;# Test ed 代表测试完的函数" />
     <MESSAGE value="designer 简单测试 部分&#10;# Test ed 代表测试完的函数" />
-    <option name="LAST_COMMIT_MESSAGE" value="designer 简单测试 部分&#10;# Test ed 代表测试完的函数" />
+    <MESSAGE value="designer orders 有bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="designer orders 有bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1369,16 +1371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/sql_operation/mysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="296" column="133" lean-forward="false" selection-start-line="296" selection-start-column="133" selection-end-line="296" selection-end-column="133" />
-          <folding>
-            <marker date="1496237793343" expanded="true" signature="0:18" ph="import ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/company/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1393,21 +1385,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/designer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97">
-          <caret line="70" column="7" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
+        <state relative-caret-position="173">
+          <caret line="69" column="6" lean-forward="false" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
           <folding>
             <element signature="e#17#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/sql_operation/mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362">
+          <caret line="166" column="14" lean-forward="false" selection-start-line="166" selection-start-column="6" selection-end-line="166" selection-end-column="14" />
+          <folding>
+            <marker date="1496237793343" expanded="true" signature="0:18" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5103">
+          <caret line="193" column="9" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

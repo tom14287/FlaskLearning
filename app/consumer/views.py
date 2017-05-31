@@ -54,6 +54,7 @@ def insert_useraddress_item(uid, addr):
 	db.session.add(newAddr)
 	db.session.commit()
 
+# test ed
 @consumer_.route("/cart", methods=['GET', 'POST'])
 #@login_required
 def consumer_cart():
@@ -66,10 +67,12 @@ def consumer_cart():
 		user_addresses = UserAddress.query.filter_by(UserID=user.UserID).all()
 		order_forms = OrderForm.query.filter_by(UserID=user.UserID).all()
 	'''
+	# g.user = User.query.filter_by(UserID=1).first()
 	items = []
 	user, consumer, order_forms, goods = get_cart_byid(g.user.UserID)
 	total = 0
 	for item in goods:
+		print item
 		temp = {}
 		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
 		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
@@ -82,7 +85,7 @@ def consumer_cart():
 		temp['name'] = item[3]
 		temp['quantity'] = item[4]
 		temp['total'] = item[1] * item[4]
-		total += temp['total']
+		total += int(item[1]) * int(item[4])
 		items.append(temp)
 	return render_template('cart.html', items=items, subtotal='$'+str(total), total='$'+str(total))
 
@@ -94,13 +97,15 @@ def get_cart_byid(id):
 		goods = db.session.execute("select FurnitureImage,FurniturePrice,"
 								   "Furniture.FurnitureID,FurnitureName, OrderItemNum from Furniture, OrderItem, OrderForm where "
 								   "Furniture.FurnitureID=OrderItem.FurnitureID and OrderItem.OrderFormID=OrderForm.OrderFormID and "
-								   "OrderForm.UserID=%d and OrderFormState='Waiting' ")
+								   "OrderForm.UserID=%d and OrderFormState='Waiting' " % id)
 		return user, consumer, order_forms, goods
 	return None, None, None, None
 
+# test ed
 @consumer_.route("/orders", methods=['GET', 'POST'])
 #@login_required
 def consumer_orders():
+	# g.user = User.query.filter_by(UserID=1).first()
 	unpay = []
 	review = []
 	finish = []
@@ -112,7 +117,7 @@ def consumer_orders():
 		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
 		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
 		with open(path, "wb") as f:
-			f.write(base64.b64decode(item[0]))
+			f.write(base64.b64decode(item[1]))
 			f.close()
 		temp['img'] = path_img
 		temp['page'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[2])
@@ -130,7 +135,7 @@ def consumer_orders():
 		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
 		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
 		with open(path, "wb") as f:
-			f.write(base64.b64decode(item[0]))
+			f.write(base64.b64decode(item[1]))
 			f.close()
 		temp['img'] = path_img
 		temp['page'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[2])
@@ -141,13 +146,13 @@ def consumer_orders():
 		review.append(temp)
 	review_num = len(review) + 1
 
-	for item in rlist:
+	for item in flist:
 		temp = {}
 		temp['date'] = str(item[0])
 		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
 		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
 		with open(path, "wb") as f:
-			f.write(base64.b64decode(item[0]))
+			f.write(base64.b64decode(item[1]))
 			f.close()
 		temp['img'] = path_img
 		temp['page'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[2])
@@ -186,9 +191,11 @@ def get_allorders_byid(id):
 		return unpay, review, finish
 	return None, None, None
 
+# test ed
 @consumer_.route("/decoration", methods=['GET', 'POST'])
 #@login_required
 def consumer_decoration():
+	g.user = User.query.filter_by(UserID=1).first()
 	command = []
 	consumer, dec_forms = get_decform_byid(g.user.UserID)
 	for item in dec_forms:

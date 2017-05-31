@@ -63,11 +63,11 @@ def get_allscheme_byid(id):
         return designer, schemes
     return None, None
 
-
+# test ed
 @designer_.route("/orders", methods=['GET', 'POST'])
 # @login_required
 def designer_orders():
-    g.user = User.query.filter_by(UserID=2).first()
+    # g.user = User.query.filter_by(UserID=2).first()
     design = []
     schemes = get_all_success_scheme_byid(g.user.UserID)
     print schemes
@@ -88,15 +88,15 @@ def designer_orders():
 def get_all_success_scheme_byid(id):
     designer = Designer.query.filter_by(DesignerID=id).first()
     schemes = None
+    ret = []
     if designer:
-        schemes = db.session.execute(
+        scheme = db.session.execute(
             "select SubmitTime,DesignScheme.SchemeID,SchemePrice,SchemeDESC,UserName from DesignScheme, CompetitiveBid, DecorationForm, User where "
             "DesignScheme.SchemeID=CompetitiveBid.SchemeID and CompetitiveBid.DcFormID=DecorationForm.DcFormID "
             " and DecorationForm.ConsumerID = User.UserID and DesignScheme.DesignerID=%d" % id)
-        for item in schemes:
-            print item
-        print schemes
-        return schemes
+        for item in scheme:
+            ret.append(item)
+        return ret
     return None
 
 
@@ -124,7 +124,6 @@ def insert_design_scheme(did, desc, img):
 # Test ed
 @designer_.route("/scheme/<id>", methods=['GET', 'POST'])
 def designer_scheme(id):
-    g.user = User.query.filter_by(UserID=2).first()
     class Scheme():
         def __init__(self):
             self.id = "id_test"

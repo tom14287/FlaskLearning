@@ -37,7 +37,7 @@ def update_designer(id, cid, birth, truename, sex, intro):
 	db.session.commit()
 
 @designer_.route("/design_scheme", methods=['GET', 'POST'])
-@login_required
+#@login_required
 def designer_design_scheme():
 
 	design = []
@@ -61,7 +61,17 @@ def get_allscheme_byid(id):
 #@login_required
 def designer_orders():
 
-	return render_template("designer_order.html")
+	design = []
+	temp = {}
+	#链接到设计方案展示界面
+	temp['url'] = '/'
+	temp['name'] = 'first design'
+	temp['date'] = '2017/5/1'
+	temp['user'] = 'ljh'
+	temp['price'] = '$1.00'
+	design.append(temp)
+
+	return render_template("designer_order.html", design=design)
 
 def get_all_succeed_order(id):
 	user = User.query.filter_by(UserID=id).first()

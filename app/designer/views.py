@@ -1,3 +1,4 @@
+#encoding=utf-8
 from flask import Blueprint
 from flask import render_template, request, redirect, url_for
 from flask_login import login_required
@@ -67,6 +68,32 @@ def designer_add_scheme():
 
 def insert_design_scheme(did, desc, img):
 	# have encode
-	scheme = DesignerScheme(DesignerID=did, SchemeDESC=desc, SchemeImage=img)
+	scheme = DesignScheme(DesignerID=did, SchemeDESC=desc, SchemeImage=img)
 	db.session.add(scheme)
 	db.session.commit()
+
+#应该改成 "/scheme/<id>" 类似product
+@designer_.route("/scheme_test", methods=['GET', 'POST'])
+def designer_scheme_test():
+	class Scheme():
+		def __init__(self):
+			self.id = "id_test"
+			self.description = "des_test"
+			self.designer_id = "43248329"
+
+	class Comment():
+		def __init__(self):
+			self.name = "name_test"
+			self.time = "2013._date"
+			self.content = "is wrong"
+			self.img = "/static/img/client/1.jpg"
+	class De():
+		def __init__(self):
+			self.name = "jj"
+			self.img = "/static/img/client/1.jpg"
+	designer = De()
+	scheme_imgs = ["/static/img/product/2.jpg","/static/img/product/2.jpg","/static/img/product/2.jpg"]
+	scheme = Scheme()
+	comment = Comment()
+	comments = [comment]
+	return render_template('scheme.html', scheme=scheme, comments=comments, scheme_imgs=scheme_imgs, designer=designer)

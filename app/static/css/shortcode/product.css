@@ -17,6 +17,7 @@ text-transform: uppercase;}
 .sidebar-widget {
   margin-bottom: 20px;
 }
+
 .sidebar-title{border-bottom: 1px solid #ebebeb;
 color: #000;
 display: block;
@@ -591,4 +592,11 @@ text-transform: uppercase;}
 }
 .product-img.pt-20 img {
   width: 100%;
+}
+.scheme-img {
+  border-bottom: 1px solid #f7f7f7;
+  border-right: 1px solid #f7f7f7;
+  width: 30%;
+  margin-left: 2%;
+  float: left;
 }

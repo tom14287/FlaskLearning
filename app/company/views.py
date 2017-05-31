@@ -9,9 +9,9 @@ company_ = Blueprint('company', __name__)
 
 @company_.route("")
 @company_.route("/index")
-@login_required
+#@login_required
 def company_index():
-	return render_template("index.html")
+	return render_template("company.html")
 
 @company_.route("/info")
 @login_required

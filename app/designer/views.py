@@ -6,6 +6,14 @@ from app import db
 
 designer_ = Blueprint('designer', __name__)
 
+@designer_.route("")
+@designer_.route("/index")
+#@login_required
+def designer_index():
+	
+	return render_template("designer.html", user_name='dyftug')
+
+
 @designer_.route("/change_info", methods=['GET', 'POST'])
 @login_required
 def designer_change_info():

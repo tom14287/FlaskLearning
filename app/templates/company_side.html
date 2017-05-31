@@ -5,7 +5,7 @@
 
         <ul class="nav" id="main-menu">
             <li style="border-right: 1px solid rgba(240, 240, 240, 1)">
-            <a href="#"> &nbsp;&nbsp;MY VERIFICATION</a>
+            <a href="{{url_for('company.company_verify') }}"> &nbsp;&nbsp;MY VERIFICATION</a>
             </li>
             <li style="border-right: 1px solid rgba(240, 240, 240, 1)">
             <a href="{{url_for('company.company_orders') }}"> &nbsp;&nbsp;MY ORDER</a>
@@ -15,11 +15,11 @@
             </li>
 
             <li style="border-right: 1px solid rgba(240, 240, 240, 1)">
-            <a href=""> &nbsp;&nbsp;MY MERCHANDISE</a>
+            <a href="{{url_for('company.company_furniture_list') }}"> &nbsp;&nbsp;MY MERCHANDISE</a>
             </li>
 
             <li style="border-right: 1px solid rgba(240, 240, 240, 1)">
-            <a href="#"> &nbsp;&nbsp;MY DESIGNER</a>
+            <a href="{{url_for('company.company_my_designer') }}"> &nbsp;&nbsp;MY DESIGNER</a>
             </li>
 
         </ul>

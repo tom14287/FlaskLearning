@@ -52,28 +52,33 @@
 														<table>
 														<thead>
 														<tr>
-															<th class="order-date">Date</th>
-															<th class="product-thumbnail">Image</th>
-															<th class="product-name">Product</th>
-															<th class="product-price">Price</th>
-															<th class="product-quantity">Quantity</th>
-															<th class="product-subtotal">Total</th>
-															<th class="product-pay">Pay Now</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">Image</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Product</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Quantity</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Total</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Pay Now</th>
 														</tr>
 														</thead>
 														<tbody>
+														
 														{% for item in unpay %}
 														<tr>	
-															<td class="order-date">{{item['date']}}</td>
-															<td class="product-thumbnail"><a href="#"><img src={{item['img']}} alt="" /></a></td>
-															<td class="product-name"><a href={{item[
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>2017/2/2</td>{% endif %}
+															<td class="col-md-2 col-sm-2 col-xs-2"><a href="#"><img src={{item['img']}} alt="" /></a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><a href={{item[
 																'page']}}>{{item['name']}}</a></td>
-															<td class="product-price"><span class="amount">{{item['price']}}</span></td>
-															<td class="product-quantity"><span class="amount">{{item['quantity']}}</td>
-															<td class="product-subtotal">{{item['total']}}</td>
-															<td class="product-pay"><input type="submit" value="Pay"></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['price']}}</span></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['quantity']}}</td>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>{{item['total']}}</td>{% endif %}
+															{% if loop.index == 1 %}
+															<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}><input type="submit" value="Pay"></td>{% endif %}
 														</tr>
 														{% endfor %}
+														<tr>
+															
+														</tr>
 														</tbody>
 														</table>
 													</div>
@@ -101,26 +106,27 @@
 														<table>
 														<thead>
 														<tr>
-															<th class="order-date">Date</th>
-															<th class="product-thumbnail">Image</th>
-															<th class="product-name">Product</th>
-															<th class="product-price">Price</th>
-															<th class="product-quantity">Quantity</th>
-															<th class="product-subtotal">Total</th>
-															<th class="product-review">Review</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">Image</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Product</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Quantity</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Total</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Review</th>
 														</tr>
 														</thead>
 														<tbody>
 														{% for item in review %}
 														<tr>
-															<td class="order-date">{{item['date']}}</td>
-															<td class="product-thumbnail"><a href="#"><img src={{item['img']}} alt="" /></a></td>
-															<td class="product-name"><a href={{item[
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>2017/2/2</td>{% endif %}
+															<td class="col-md-2 col-sm-2 col-xs-2"><a href="#"><img src={{item['img']}} alt="" /></a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><a href={{item[
 																'page']}}>{{item['name']}}</a></td>
-															<td class="product-price"><span class="amount">{{item['price']}}</span></td>
-															<td class="product-quantity"><span class="amount">{{item['quantity']}}</td>
-															<td class="product-subtotal">{{item['total']}}</td>
-															<td class="product-review"><input type="submit" value="Review" style="width: 105%;"></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['price']}}</span></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['quantity']}}</td>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>{{item['total']}}</td>{% endif %}
+															{% if loop.index == 1 %}
+															<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{review_num}}><input type="submit" value="Review" style="width:105%;"></td>{% endif %}
 														</tr>
 														{% endfor %}
 														</tbody>
@@ -146,26 +152,28 @@
 														<table>
 														<thead>
 														<tr>
-															<th class="order-date">Date</th>
-															<th class="product-thumbnail">Image</th>
-															<th class="product-name">Product</th>
-															<th class="product-price">Price</th>
-															<th class="product-quantity">Quantity</th>
-															<th class="product-subtotal">Total</th>
-															<th class="product-review">Review</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">Image</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Product</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Quantity</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Total</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Review</th>
 														</tr>
 														</thead>
 														<tbody>
 														{% for item in finish %}
 														<tr>
-															<td class="order-date">{{item['date']}}</td>
-															<td class="product-thumbnail"><a href="#"><img src={{item['img']}} alt="" /></a></td>
-															<td class="product-name"><a href={{item[
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>2017/2/2</td>{% endif %}
+															<td class="col-md-2 col-sm-2 col-xs-2"><a href="#"><img src={{item['img']}} alt="" /></a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><a href={{item[
 																'page']}}>{{item['name']}}</a></td>
-															<td class="product-price"><span class="amount">{{item['price']}}</span></td>
-															<td class="product-quantity"><span class="amount">{{item['quantity']}}</td>
-															<td class="product-subtotal">{{item['total']}}</td>
-															<td class="product-review">{{item['review']}}</td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['price']}}</span></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['quantity']}}</td>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>{{item['total']}}</td>{% endif %}
+															{% if loop.index == 1 %}
+															<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{review_num}}>{{item['review']}}</td>{% endif %}
+															
 														</tr>
 														{% endfor %}
 														</tbody>

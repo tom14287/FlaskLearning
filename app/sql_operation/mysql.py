@@ -111,6 +111,7 @@ class CompetitiveBid(db.Model):
     DSDESC = db.Column(db.String(200))
     SubmitTime = db.Column(db.DateTime, default=datetime.now)
     DSState = db.Column(db.Enum('Waiting', 'Reject', 'Accept'))
+    DSPrice = db.Column(db.Integer)
 
 class UserAddress(db.Model):
     __tablename__ = 'UserAddress'
@@ -137,6 +138,7 @@ class DesignScheme(db.Model):
     CompanyID = db.Column(db.Integer)
     SchemeDESC = db.Column(db.String(200))
     SchemeImage = db.Column(db.BLOB)
+    SchemePrice = db.Column(db.Integer)
 
 class Furniture(db.Model):
     __tableanme__ = 'Furniture'

@@ -67,15 +67,15 @@ def company_orders():
 	design = []
 	merchandise = []
 
-	schemes = get_allscheme_byid(g.user.UserID)
+	schemes = get_all_success_scheme_byid(g.user.UserID)
 	for item in schemes:
 		temp = {}
-		temp['date'] = '2017/5/1'
-		temp['url'] = '/'
-		temp['price'] = '$1.00'
-		temp['name'] = 'Good Design'
-		temp['designer'] = 'asd'
-		temp['user'] = 'fyg'
+		temp['date'] = str(item[0])
+		temp['url'] = 'http://127.0.0.1:5000/company/scheme/' + str(item[1])
+		temp['price'] = '$' + str(item[2])
+		temp['name'] = str(item[1])
+		temp['designer'] = 'None'
+		temp['user'] = item[4]
 		design.append(temp)
 	order_forms = get_all_succeed_order(g.user.UserID)
 	for item in order_forms:
@@ -89,10 +89,12 @@ def company_orders():
 		merchandise.append(temp)
 	return render_template('company_order.html', design=design, merchandise=merchandise)
 
-def get_allscheme_byid(id):
+def get_all_success_scheme_byid(id):
 	company = Company.query.filter_by(CompanyID=id).first()
 	if company:
-		schemes = DesignScheme.query.filter_by(CompanyID=id).all()
+		schemes = db.session.execute("select SubmitTime,DesignScheme.SchemeID,SchemePrice,SchemeDESC,UserName from DesignScheme, CompetitiveBid, DecorationForm, User where "
+									 "DesignScheme.SchemeID=CompetitiveBid.SchemeID and CompetitiveBid.DcFormID=DecorationForm.DcFormID "
+									 " and DecorationForm.ConsumerID = User.UserID and DesignScheme.CompanyID=%d" % id)
 		return schemes
 	return None
 

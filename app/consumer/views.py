@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from flask import Blueprint
 from flask import render_template, request, redirect, url_for, g
 from flask_login import login_required
@@ -103,26 +104,41 @@ def consumer_orders():
 	review = []
 	finish = []
 
+	#每个商品信息
 	temp = {}
-	temp['date'] = '2017/5/1'
+	temp['date'] = '2017/5/1' #订单日期
 	temp['img'] = '$1.00'
 	temp['page'] = 'hhh.html'
 	temp['price'] = 1
 	temp['name'] = 'fuygdwyh'
 	temp['quantity'] = 1
-	temp['total'] = 1
+	temp['total'] = 1 #订单总价
 
 	unpay.append(temp)
 	unpay.append(temp)
-	unpay.append(temp)
-	unpay.append(temp)
-	unpay.append(temp)
+	unpay_num = len(unpay) + 1
+
+	#review与unpayed格式完全相同
 	review.append(temp)
+	review.append(temp)
+	review_num = len(review) + 1
 
-	temp['review'] = 'Good!'
+	#每个商品信息
+	temp = {}
+	temp['date'] = '2017/5/1' #订单日期
+	temp['img'] = '$1.00'
+	temp['page'] = 'hhh.html'
+	temp['price'] = 1
+	temp['name'] = 'fuygdwyh'
+	temp['quantity'] = 1
+	temp['total'] = 1 #订单总价
+	temp['review'] = 'Good!' #对整个订单的评价
 
 	finish.append(temp)
-	return render_template('consumer_order.html', unpay=unpay, review=review, finish=finish)
+	finish.append(temp)
+	finish_num = len(finish) + 1
+
+	return render_template('consumer_order.html', unpay=unpay, unpay_num=unpay_num, review=review, review_num=review_num ,finish=finish, finish_num=finish_num)
 
 def get_allorders_byid(id):
 	user = User.query.filter_by(UserID=id).first()

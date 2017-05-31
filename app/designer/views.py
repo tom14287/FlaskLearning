@@ -39,15 +39,15 @@ def update_designer(id, cid, birth, truename, sex, intro):
 @designer_.route("/design_scheme", methods=['GET', 'POST'])
 #@login_required
 def designer_design_scheme():
-
 	design = []
-	temp = {}
-	#链接到设计方案展示界面
-	temp['url'] = '/'
-	temp['name'] = 'first design'
-	temp['date'] = '2017/5/1'
-	design.append(temp)
-
+	designer, schemes = get_allscheme_byid(int(id))
+	for item in schemes:
+		temp = {}
+		# 链接到设计方案展示界面
+		temp['url'] = 'http://127.0.0.1:5000/designer/scheme/' + str(item.SchemeID)
+		temp['name'] = str(item.SchemeID)
+		temp['date'] = str(item.SchemePrice)
+		design.append(temp)
 	return render_template("designer_scheme.html", design=design)
 
 def get_allscheme_byid(id):

@@ -76,17 +76,16 @@ def company_orders():
 	temp['user'] = 'fyg'
 
 	design.append(temp)
-
-	temp = {}
-	temp['date'] = '2017/5/1'
-	temp['url'] = '/'
-	temp['price'] = '$1.00'
-	temp['name'] = 'Good Design'
-	temp['quantity'] = 1
-	temp['user'] = 'fyg'
-
-	merchandise.append(temp)
-
+	order_forms = get_all_succeed_order(g.user.UserID)
+	for item in order_forms:
+		temp = {}
+		temp['date'] = str(item[0])
+		temp['url'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[1])
+		temp['price'] = '$'+str(item[2])
+		temp['name'] = item[3]
+		temp['quantity'] = item[4]
+		temp['user'] = item[5]
+		merchandise.append(temp)
 	return render_template('company_order.html', design=design, merchandise=merchandise)
 
 def get_allscheme_byid(id):
@@ -98,10 +97,14 @@ def get_allscheme_byid(id):
 
 def get_all_succeed_order(id):
 	user = User.query.filter_by(UserID=id).first()
-	if user and user.UserType:
-		order_forms = OrderForm.query.filter_by(UserID=user.UserID, OrderFormState="Success").all()
-		return user, order_forms
-	return None, None
+	if user and user.UserType == 'Company':
+		order_forms = db.session.execute("select CreateTime,Furniture.FurnitureID,FurniturePrice,FurnitureName,"
+										 " OrderItemNum, UserName from Furniture, OrderItem, OrderForm, User where "
+										 "Furniture.FurnitureID=OrderItem.FurnitureID and OrderItem.OrderFormID=OrderForm.OrderFormID "
+										 " and OrderForm.UserID=User.UserID and Furniture.CompanyID=%d and OrderFormState='Success'" % id)
+
+		return order_forms
+	return None
 
 @company_.route("/advertisement", methods=['GET', 'POST'])
 @login_required

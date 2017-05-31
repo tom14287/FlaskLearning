@@ -103,49 +103,86 @@ def consumer_orders():
 	unpay = []
 	review = []
 	finish = []
-
+	ulist, rlist, flist = get_allorders_byid(g.user.UserID)
 	#每个商品信息
-	temp = {}
-	temp['date'] = '2017/5/1' #订单日期
-	temp['img'] = '$1.00'
-	temp['page'] = 'hhh.html'
-	temp['price'] = 1
-	temp['name'] = 'fuygdwyh'
-	temp['quantity'] = 1
-	temp['total'] = 1 #订单总价
-
-	unpay.append(temp)
-	unpay.append(temp)
+	for item in ulist:
+		temp = {}
+		temp['date'] = str(item[0])
+		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
+		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
+		with open(path, "wb") as f:
+			f.write(base64.b64decode(item[0]))
+			f.close()
+		temp['img'] = path_img
+		temp['page'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[2])
+		temp['price'] = item[3]
+		temp['name'] = item[4]
+		temp['quantity'] = item[5]
+		temp['total'] = item[5] * item[3]
+		unpay.append(temp)
 	unpay_num = len(unpay) + 1
 
 	#review与unpayed格式完全相同
-	review.append(temp)
-	review.append(temp)
+	for item in rlist:
+		temp = {}
+		temp['date'] = str(item[0])
+		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
+		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
+		with open(path, "wb") as f:
+			f.write(base64.b64decode(item[0]))
+			f.close()
+		temp['img'] = path_img
+		temp['page'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[2])
+		temp['price'] = item[3]
+		temp['name'] = item[4]
+		temp['quantity'] = item[5]
+		temp['total'] = item[5] * item[3]
+		review.append(temp)
 	review_num = len(review) + 1
 
-	#每个商品信息
-	temp = {}
-	temp['date'] = '2017/5/1' #订单日期
-	temp['img'] = '$1.00'
-	temp['page'] = 'hhh.html'
-	temp['price'] = 1
-	temp['name'] = 'fuygdwyh'
-	temp['quantity'] = 1
-	temp['total'] = 1 #订单总价
-	temp['review'] = 'Good!' #对整个订单的评价
-
-	finish.append(temp)
-	finish.append(temp)
+	for item in rlist:
+		temp = {}
+		temp['date'] = str(item[0])
+		path = 'app/static/img/product/' + str(item[2]) + '.jpg'
+		path_img = '/static/img/product/' + str(item[2]) + '.jpg'
+		with open(path, "wb") as f:
+			f.write(base64.b64decode(item[0]))
+			f.close()
+		temp['img'] = path_img
+		temp['page'] = 'http://127.0.0.1:5000/company/furniture/' + str(item[2])
+		temp['price'] = item[3]
+		temp['name'] = item[4]
+		temp['quantity'] = item[5]
+		temp['total'] = item[5] * item[3]
+		temp['review'] = 'Good!'
+		finish.append(temp)
 	finish_num = len(finish) + 1
 
 	return render_template('consumer_order.html', unpay=unpay, unpay_num=unpay_num, review=review, review_num=review_num ,finish=finish, finish_num=finish_num)
 
 def get_allorders_byid(id):
 	user = User.query.filter_by(UserID=id).first()
-	if user and user.UserType:
-		consumer = Consumer.query.filter_by(ConsumerID=user.UserID).first()
-		order_forms = OrderForm.query.filter_by(UserID=user.UserID).all()
-		return user, consumer, order_forms
+	if user and user.UserType == "Consumer":
+		unpay = db.session.execute("select CreateTime,FurnitureImage,Furniture.FurnitureID,FurniturePrice,FurnitureName,"
+								   "OrderItemNum"
+								   " from OrderForm, OrderItem, Furniture where "
+								   "OrderForm.OrderFormID=OrderItem.OrderFormID and OrderItem.FurnitureID="
+								   "Furniture.FurnitureID and OrderFormState='Waiting' and OrderForm.UserID=%d" % id)
+		review = db.session.execute(
+			"select CreateTime,FurnitureImage,Furniture.FurnitureID,FurniturePrice,FurnitureName,"
+			"OrderItemNum"
+			" from OrderForm, OrderItem, Furniture where "
+			"OrderForm.OrderFormID=OrderItem.OrderFormID and OrderItem.FurnitureID="
+			"Furniture.FurnitureID and OrderFormState='Success' and OrderForm.UserID=%d and OrderForm.OrderFormID not in ("
+			"select OrderFormID from Comments)" % id)
+		finish = db.session.execute(
+			"select CreateTime,FurnitureImage,Furniture.FurnitureID,FurniturePrice,FurnitureName,"
+			"OrderItemNum"
+			" from OrderForm, OrderItem, Furniture where "
+			"OrderForm.OrderFormID=OrderItem.OrderFormID and OrderItem.FurnitureID="
+			"Furniture.FurnitureID and OrderFormState='Success' and OrderForm.UserID=%d and OrderForm.OrderFormID in ("
+			"select OrderFormID from Comments)" % id)
+		return unpay, review, finish
 	return None, None, None
 
 @consumer_.route("/decoration", methods=['GET', 'POST'])
@@ -154,7 +191,6 @@ def consumer_decoration():
 	command = []
 	consumer, dec_forms = get_decform_byid(g.user.UserID)
 	for item in dec_forms:
-		item = DecorationForm()
 		temp = {}
 		temp['command'] = item.DcFormDESC
 		temp['status'] = item.DcFormState

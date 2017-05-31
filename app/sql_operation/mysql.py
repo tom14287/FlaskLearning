@@ -111,7 +111,7 @@ class CompetitiveBid(db.Model):
     DSDESC = db.Column(db.String(200))
     SubmitTime = db.Column(db.DateTime, default=datetime.now)
     DSState = db.Column(db.Enum('Waiting', 'Reject', 'Accept'))
-    DSPrice = db.Column(db.Integer)
+    DSPrice = db.Column(db.Integer, default=100)
 
 class UserAddress(db.Model):
     __tablename__ = 'UserAddress'
@@ -138,7 +138,7 @@ class DesignScheme(db.Model):
     CompanyID = db.Column(db.Integer)
     SchemeDESC = db.Column(db.String(200))
     SchemeImage = db.Column(db.BLOB)
-    SchemePrice = db.Column(db.Integer)
+    SchemePrice = db.Column(db.Integer, default=1111)
 
 class Furniture(db.Model):
     __tableanme__ = 'Furniture'
@@ -149,6 +149,7 @@ class Furniture(db.Model):
     FurniturePrice = db.Column(db.Integer)
     FurnitureDESC = db.Column(db.String(200))
     FurnitureImage = db.Column(db.BLOB)
+    FurnitureStyle = db.Column(db.Enum('C','J','E'), default='C')
 
     def insert(self, cid, name, num, price, desc, image):
         temp = Furniture(CompanyID=cid, FurnitureName=name, FurnitureNum=num, FurniturePrice=price, FurnitureDESC=desc, FurnitureImage=image)
@@ -241,6 +242,7 @@ def init_mysql():
     ds.CompanyID = 3
     ds.SchemeDESC = "desc234"
     ds.SchemeImage = img1
+    ds.SchemePrice = 100
     db.session.add(ds)
     db.session.commit()
     df = DecorationForm()
@@ -270,7 +272,19 @@ def init_mysql():
     oitm = OrderItem()
     oitm.OrderFormID = 1
     oitm.FurnitureID = 1
-    oitm.OrderItemNum = 1
+    oitm.OrderItemNum = 2
+    db.session.add(oitm)
+    db.session.commit()
+    of = OrderForm()
+    of.UserID = 1
+    of.OrderFormcol ='idontnow'
+    of.OrderFormState = 'Waiting'
+    db.session.add(of)
+    db.session.commit()
+    oitm = OrderItem()
+    oitm.OrderFormID = 2
+    oitm.FurnitureID = 1
+    oitm.OrderItemNum = 3
     db.session.add(oitm)
     db.session.commit()
     cm = Comments()
@@ -278,6 +292,9 @@ def init_mysql():
     cm.Rank = '1'
     cm.OrderFormID = 1
     db.session.add(cm)
+    db.session.commit()
+    db.session.execute("insert into DesignScheme(DesignerID,SchemeDESC,SchemeImage,SchemePrice)value(2,'sdesc111','%s',111)" % img1)
+    db.session.execute("insert into DesignScheme(CompanyID,SchemeDESC,SchemeImage,SchemePrice)value(3,'sdesc1121','%s',1121)" % img1)
     db.session.commit()
 
 if __name__ == '__main__':

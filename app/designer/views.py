@@ -45,7 +45,7 @@ def designer_design_scheme():
 	#链接到设计方案展示界面
 	temp['url'] = '/'
 	temp['name'] = 'first design'
-	temp['date'] = '2017/5/1'
+	temp['price'] = '$1.00'
 	design.append(temp)
 
 	return render_template("designer_scheme.html", design=design)

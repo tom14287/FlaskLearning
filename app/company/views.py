@@ -71,7 +71,7 @@ def company_orders():
 	for item in schemes:
 		temp = {}
 		temp['date'] = str(item[0])
-		temp['url'] = 'http://127.0.0.1:5000/company/scheme/' + str(item[1])
+		temp['url'] = 'http://127.0.0.1:5000/designer/scheme/' + str(item[1])
 		temp['price'] = '$' + str(item[2])
 		temp['name'] = str(item[1])
 		temp['designer'] = 'None'
@@ -188,7 +188,6 @@ def company_my_designer():
     if g.user and g.user.UserType == "Company":
         people = get_all_designer_byid(g.user.UserID)
         for row in people:
-            row = Designer()
             temp = PDeg()
             cpath = 'app/static/img/client/' + str(row.DesignerID) + '.jpg'
             cpath_img = '/static/img/client/' + str(row.DesignerID) + '.jpg'

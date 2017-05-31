@@ -1,6 +1,6 @@
 #encoding=utf-8
 from flask import Blueprint
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, g
 from flask_login import login_required
 from app.sql_operation.mysql import *
 from app import db
@@ -40,7 +40,7 @@ def update_designer(id, cid, birth, truename, sex, intro):
 #@login_required
 def designer_design_scheme():
 	design = []
-	designer, schemes = get_allscheme_byid(int(id))
+	designer, schemes = get_allscheme_byid(g.user.UserID)
 	for item in schemes:
 		temp = {}
 		# 链接到设计方案展示界面
@@ -60,18 +60,27 @@ def get_allscheme_byid(id):
 @designer_.route("/orders", methods=['GET', 'POST'])
 #@login_required
 def designer_orders():
-
 	design = []
-	temp = {}
-	#链接到设计方案展示界面
-	temp['url'] = '/'
-	temp['name'] = 'first design'
-	temp['date'] = '2017/5/1'
-	temp['user'] = 'ljh'
-	temp['price'] = '$1.00'
-	design.append(temp)
-
+	schemes = get_all_success_scheme_byid(g.user.UserID)
+	for item in schemes:
+		temp = {}
+		# 链接到设计方案展示界面
+		temp['url'] = 'http://127.0.0.1:5000/designer/scheme/' + str(item[1])
+		temp['name'] = str(item[1])
+		temp['date'] = str(item[0])
+		temp['user'] = str(item[4])
+		temp['price'] = '$' + str(item[2])
+		design.append(temp)
 	return render_template("designer_order.html", design=design)
+
+def get_all_success_scheme_byid(id):
+	designer = Designer.query.filter_by(DesignerID=id).first()
+	if designer:
+		schemes = db.session.execute("select SubmitTime,DesignScheme.SchemeID,SchemePrice,SchemeDESC,UserName from DesignScheme, CompetitiveBid, DecorationForm, User where "
+									 "DesignScheme.SchemeID=CompetitiveBid.SchemeID and CompetitiveBid.DcFormID=DecorationForm.DcFormID "
+									 " and DecorationForm.ConsumerID = User.UserID and DesignScheme.DesignerID=%d" % id)
+		return schemes
+	return None
 
 def get_all_succeed_order(id):
 	user = User.query.filter_by(UserID=id).first()

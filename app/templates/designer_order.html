@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>MY TYMT</title>
+{% endblock %}
+
+{% block page_content %}
+
+<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="/designer"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">MY ORDER</li>
+				</ol>
+			</div>
+		</div>
+
+<div class = "container">
+{% include "designer_side.html" %}
+
+<div class="account-area pt-30 log" style="width: 102%;margin-bottom: 30px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-lg-9 col-sm-9">
+				<div class="account-info pb-30 am-tabs" data-am-tabs>
+					<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
+  						<li class="am-active" style="font-size:20px;">
+  							<a href="#">
+  							<span class="index-needs-dt-txt">Design Order</span></a>
+  						</li>
+                  		<li style="font-size:20px;" >
+                   			<a href="#">
+                      		<span class="index-needs-dt-txt">Competitive Bid</span></a>
+                  		</li>
+                  		
+  					</ul>
+
+
+
+  					<div class="am-tabs-bd">
+                  		<div class="am-tab-panel am-fade am-in am-active">
+  							<div class="J_Brand">
+  								<div class="cart-main-area pt-0">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-sm-8 col-xs-8" style="width: 70%;">
+												<form action="#">				
+													<div class="table-content table-responsive">
+														<table>
+														<thead>
+														<tr>
+															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">Design Scheme</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">User Name</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															
+														</tr>
+														</thead>
+														<tbody>
+														{% for item in design %}
+														<tr>	
+															<td >{{item['date']}}</td>
+															<td ><a href={{item['url']}}>{{item['name']}}</a></td>
+															<td >{{item['user']}}</td>
+															<td >{{item['price']}}</td>
+															
+														</tr>
+														{% endfor %}
+														</tbody>
+														</table>
+													</div>
+							
+												</form>	
+											</div>
+										</div>
+									</div>
+								</div>
+  								<div class="clear"></div>
+  								<div class="clear"></div>
+  							</div>
+  								<div class="clear"></div>
+  						</div>
+
+  						<div class="clear"></div>
+
+  					
+
+  					<div class="am-tab-panel am-fade">
+  							<div class="cart-main-area pt-0">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-sm-8 col-xs-8" style="width: 70%;">
+												<form action="#">				
+													<div class="table-content table-responsive">
+														
+													</div>
+							
+												</form>	
+											</div>
+										</div>
+									</div>
+								</div>
+  							<div class="clear"></div>
+  							<div class="clear"></div>
+  						</div>
+
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+</div>
+</div>
+{% endblock %}

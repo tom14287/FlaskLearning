@@ -1,0 +1,164 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+{% extends "base.html" %}
+
+{% block title %}
+<title>LOGIN IN FOR TYMT</title>
+{% endblock %}
+
+
+
+{% block page_content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li style="
+    
+    center: initial;
+    font-weight: bold;
+    color: #a22525;
+    text-align: center;
+">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+		<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">Login</li>
+				</ol>			
+			</div>
+		</div>
+		
+
+		<div class="account-area pt-30 log">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-lg-6 col-sm-6" style="margin-left: 25%;">
+						<div class="account-info pb-30 am-tabs" data-am-tabs>
+							<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
+  								<li  {% if page == 'login' %}class="am-active"{% endif %} style="font-size:20px;">
+  									<a href="#">
+  									<span class="index-needs-dt-txt">LOGIN</span></a>
+  								</li>
+                  				<li {% if page == 'register' %}class="am-active"{% endif %} style="font-size:20px;" >
+                    				<a href="#">
+                      				<span class="index-needs-dt-txt">REGISTER</span></a>
+                  				</li>
+  							</ul>
+
+
+
+  							<div class="am-tabs-bd">
+                  				<div {% if page == 'login' %}class="am-tab-panel am-fade am-in am-active"{% endif %} {% if page == 'register' %}class="am-tab-panel am-fade"{% endif %}>
+  									<div class="J_Brand">
+  										<form method="post" action="">
+											<div class="form-fields">
+  												<div class="attr-list-hd tm-clear" style="margin-top:20px">
+  												<p>
+												<label>
+													邮箱
+													<span class="required">*</span>
+												</label>
+												{{ form.email(placeholder="email") }}
+												</p>
+												<p>
+												<label>
+												密码
+													<span class="required">*</span>
+												</label>
+												{{ form.password(placeholder="password") }}
+												</p>
+												<div class="form-action">
+												<label>
+													<a href="#" class="lost_password">Lost your password?</a>								
+													<input type="checkbox">
+													Remember Me
+												</label>								
+												<input name = 'action' value="login" type="submit">
+
+												</div>	
+                      							</div>
+                      						</div>
+															
+								</form>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+  								</div>
+
+  					
+
+  							<div {% if page == 'register' %}class="am-tab-panel am-fade am-in am-active"{% endif %} {% if page == 'login' %}class="am-tab-panel am-fade"{% endif %}>
+  									
+							<div class="J_Brand">
+  										<form method="post" action="">
+								<div class="form-fields">
+  										<div class="attr-list-hd tm-clear" style="margin-top:20px">
+  											<p>
+										<label>
+											邮箱
+											<span class="required">*</span>
+										</label>
+										{{ form.email(placeholder="email") }}
+									</p>
+  											<p>
+										<label>
+											用户名
+											<span class="required">*</span>
+										</label>
+										{{ form.username(placeholder="user name") }}
+									</p>
+									</p>
+  											<p>
+										<label>
+											类型
+											<span class="required">*</span>
+										</label>
+										{{ form.type(placeholder="类型") }}
+									</p>
+									<p>
+										<label>
+											密码
+											<span class="required">*</span>
+										</label>
+										{{ form.password(placeholder="password") }}
+									</p>
+									<p>
+										<label>
+											确认密码
+											<span class="required">*</span>
+										</label>
+										{{ form.confirm(placeholder="confirm password") }}
+									</p>
+									<div class="form-action">
+									<input type="checkbox" value="forever" id="rememberme" name="rememberme">
+									<label class="inline" for="rememberme">同意 <a href="#">上述条款</a></label>	
+									<input name = 'action' value="register" type="submit">
+
+								</div>	
+                      					</div>
+                      					</div>
+															
+							</form>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+
+
+  								</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+{% endblock %}
+

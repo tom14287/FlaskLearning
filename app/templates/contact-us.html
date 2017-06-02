@@ -1,0 +1,76 @@
+﻿{% extends "base.html" %}
+
+{% block title %}
+<title>TYMT</title>
+{% endblock %}
+
+{% block page_content %}
+		<!-- breadcrumb start -->
+		<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">Contact Us</li>
+				</ol>			
+			</div>
+		</div>
+		<!-- breadcrumb end -->	
+
+		<!-- map-area start -->
+		<div class="map-area">
+			<div id="googleMap" style="width:100%;height:410px;"></div>
+		</div>
+		<!-- map-area end -->
+		<!-- contact-area start -->
+		<div class="contact-area contuct-us-page">
+			<div class="container">
+				<div class="row">
+					<!-- contact-info start -->
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="contact-info">
+							<h3>Contact info</h3>
+							<ul>
+								<li>
+									<i class="fa fa-map-marker"></i> <strong>Address</strong>
+									1234 Pall Mall Street, London England
+								</li>
+								<li>
+									<i class="fa fa-envelope"></i> <strong>Phone</strong>
+									(800) 0123 4567 890
+								</li>
+								<li>
+									<i class="fa fa-mobile"></i> <strong>Email</strong>
+									<a href="#">info@bootexperts.com</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- contact-info end -->
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="contact-form res">
+							<h3><i class="fa fa-envelope-o"></i> Leave a Message</h3>
+							<div class="row">
+								<form id="contact-form" action="mail.php" method="post">
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input name="name" placeholder="Name (required)" type="text">
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<input name="email" placeholder="Email (required)" type="email">
+									</div>
+									<div class="col-md-12 col-sm-12 col-xs-12">
+										<input name="subject" placeholder="Subject" type="text">
+									</div>
+									<div class="col-md-12 col-sm-12 col-xs-12">
+										<textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+										<button type="submit">Submit</button>
+									</div>
+								</form>
+								<p class="form-messege"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
+		

@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>MY TYMT</title>
+{% endblock %}
+
+{% block page_content %}
+
+<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="/consumer"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">My Order</li>
+				</ol>			
+			</div>
+		</div>
+
+<div class = "container">
+{% include "consumer_side.html" %}
+
+<div class="account-area pt-30 log" style="width: 102%;margin-bottom: 30px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-lg-9 col-sm-9">
+				<div class="account-info pb-30 am-tabs" data-am-tabs>
+					<ul class="am-avg-sm-3 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
+  						<li class="am-active" style="font-size:20px;">
+  							<a href="#">
+  							<span class="index-needs-dt-txt">Unpay</span></a>
+  						</li>
+                  		<li style="font-size:20px;" >
+                   			<a href="#">
+                      		<span class="index-needs-dt-txt">Review</span></a>
+                  		</li>
+                  		<li style="font-size:20px;" >
+                   			<a href="#">
+                      		<span class="index-needs-dt-txt">Finish</span></a>
+                  		</li>
+  					</ul>
+
+
+
+  					<div class="am-tabs-bd">
+                  		<div class="am-tab-panel am-fade am-in am-active">
+  							<div class="J_Brand">
+  								<div class="cart-main-area pt-0">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-sm-8 col-xs-8" style="width: 70%;">
+												<form action="#">				
+													<div class="table-content table-responsive">
+														<table>
+														<thead>
+														<tr>
+															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">Image</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Product</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Quantity</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Total</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Pay Now</th>
+														</tr>
+														</thead>
+														<tbody>
+														
+														{% for item in unpay %}
+														<tr>	
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>2017/2/2</td>{% endif %}
+															<td class="col-md-2 col-sm-2 col-xs-2"><a href="#"><img src={{item['img']}} alt="" /></a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><a href={{item[
+																'page']}}>{{item['name']}}</a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['price']}}</span></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['quantity']}}</td>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>{{item['total']}}</td>{% endif %}
+															{% if loop.index == 1 %}
+															<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}><input type="submit" value="Pay"></td>{% endif %}
+														</tr>
+														{% endfor %}
+														<tr>
+															
+														</tr>
+														</tbody>
+														</table>
+													</div>
+							
+												</form>	
+											</div>
+										</div>
+									</div>
+								</div>
+  								<div class="clear"></div>
+  								<div class="clear"></div>
+  							</div>
+  								<div class="clear"></div>
+  						</div>
+
+  					
+
+  						<div class="am-tab-panel am-fade">
+  							<div class="cart-main-area pt-0">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-sm-8 col-xs-8" style="width: 70%;">
+												<form action="#">				
+													<div class="table-content table-responsive">
+														<table>
+														<thead>
+														<tr>
+															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">Image</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Product</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Quantity</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Total</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Review</th>
+														</tr>
+														</thead>
+														<tbody>
+														{% for item in review %}
+														<tr>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>2017/2/2</td>{% endif %}
+															<td class="col-md-2 col-sm-2 col-xs-2"><a href="#"><img src={{item['img']}} alt="" /></a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><a href={{item[
+																'page']}}>{{item['name']}}</a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['price']}}</span></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['quantity']}}</td>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>{{item['total']}}</td>{% endif %}
+															{% if loop.index == 1 %}
+															<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{review_num}}><input type="submit" value="Review" style="width:105%;"></td>{% endif %}
+														</tr>
+														{% endfor %}
+														</tbody>
+														</table>
+													</div>
+							
+												</form>	
+											</div>
+										</div>
+									</div>
+								</div>
+  							<div class="clear"></div>
+  							<div class="clear"></div>
+  						</div>
+
+  						<div class="am-tab-panel am-fade">
+  							<div class="cart-main-area pt-0">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 col-sm-8 col-xs-8" style="width: 70%;">
+												<form action="#">				
+													<div class="table-content table-responsive">
+														<table>
+														<thead>
+														<tr>
+															<th class="col-md-1 col-sm-1 col-xs-1">Date</th>
+															<th class="col-md-2 col-sm-2 col-xs-2">Image</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Product</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Price</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Quantity</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Total</th>
+															<th class="col-md-1 col-sm-1 col-xs-1">Review</th>
+														</tr>
+														</thead>
+														<tbody>
+														{% for item in finish %}
+														<tr>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>2017/2/2</td>{% endif %}
+															<td class="col-md-2 col-sm-2 col-xs-2"><a href="#"><img src={{item['img']}} alt="" /></a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><a href={{item[
+																'page']}}>{{item['name']}}</a></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['price']}}</span></td>
+															<td class="col-md-1 col-sm-1 col-xs-1"><span class="amount">{{item['quantity']}}</td>
+															{% if loop.index == 1 %}<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{unpay_num}}>{{item['total']}}</td>{% endif %}
+															{% if loop.index == 1 %}
+															<td class="col-md-1 col-sm-1 col-xs-1" rowspan={{review_num}}>{{item['review']}}</td>{% endif %}
+															
+														</tr>
+														{% endfor %}
+														</tbody>
+														</table>
+													</div>
+							
+												</form>	
+											</div>
+										</div>
+									</div>
+								</div>
+  							<div class="clear"></div>
+  							<div class="clear"></div>
+  						</div>
+
+  						<div class="clear"></div>
+
+  					</div>						
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+</div>
+{% endblock %}

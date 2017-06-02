@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>DESIGN SCHEME</title>
+{% endblock %}
+
+<!doctype html>
+
+{% block page_content %}
+		<!-- breadcrumb start -->
+		<div class="breadcrumb-area">
+			<div class="container">
+				<ol class="breadcrumb">
+				  <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+				  <li class="active">Scheme</li>
+				</ol>
+			</div>
+		</div>
+		<!-- breadcrumb end -->
+		<!-- shop-area start -->
+		<div class="shop-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-8">
+            <div style="text-align:center; margin-top:30px;">
+              <h4 style="font-size:3em">{{scheme.id}}</h4>
+            </div>
+            <div class="single-product  shop-single-product mb-30 white-bg" style="margin-top: 25px">
+                {% macro render_scheme_img(scheme_img) %}
+                  <div class="scheme-img pt-20 " >
+                    <a href="#"><img src="{{scheme_img}}" alt="" /></a>
+                  </div>
+                {% endmacro %}
+                {% for scheme_img in scheme_imgs %}
+                  {{ render_scheme_img(scheme_img) }}
+                {% endfor %}
+            </div>
+            <div class="single-product  shop-single-product mb-30 white-bg" >
+                  <p style="padding-top: 10px; padding-left:10px; font-size:20px">{{scheme.description}}</p>
+            </div>
+              <div class="am-tabs" data-am-tabs style="margin-bottom:40px">
+  							<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs" style="max-width:100%;width:100%">
+  								<li class="am-active" style="font-size:20px;">
+  									<a href="#">
+  										<span class="index-needs-dt-txt">设计者信息</span></a>
+  								</li>
+                  <li style="font-size:20px;">
+                    <a href="#">
+                      <span class="index-needs-dt-txt">评价</span></a>
+                  </li>
+  							</ul>
+
+  							<div class="am-tabs-bd">
+                  <div class="am-tab-panel am-fade am-in am-active">
+  									<div class="J_Brand">
+
+  										<div class="attr-list-hd tm-clear" style="margin-top:20px">
+                        <a href="{{ url_for('company.company_furniture_list') }}">
+                          <img class="designer-avatar" src="{{designer.img}}" />
+                          <p class="designer-p" style="margin-left: 50%">{{designer.name}}</p>
+                        </a>
+                      </div>
+  										<div class="clear"></div>
+
+  										<div class="clear"></div>
+  									</div>
+  									<div class="clear"></div>
+  							</div>
+  							<div class="am-tab-panel am-fade">
+                  {% macro render_comment(comment) %}
+                    <li class="am-comment">
+                    <!-- 评论容器 -->
+                    <a href="">
+                      <img class="am-comment-avatar" src="{{comment.img}}" />
+                      <!-- 评论者头像 -->
+                    </a>
+
+                    <div class="am-comment-main">
+                      <!-- 评论内容容器 -->
+                      <header class="am-comment-hd">
+                        <!--<h3 class="am-comment-title">评论标题</h3>-->
+                        <div class="am-comment-meta">
+                          <!-- 评论元数据 -->
+                          <a href="#link-to-user" class="am-comment-author">{{comment.name}}</a>
+                          <!-- 评论者 -->
+                          评论于
+                          <time datetime="">{{comment.time}}</time>
+                        </div>
+                      </header>
+
+                      <div class="am-comment-bd">
+                        <div class="tb-rev-item " data-id="255776406962">
+                          <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
+                            {{comment.content}}
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 评论内容 -->
+                    </div>
+                  </li>
+                  {% endmacro %}
+  								<ul class="am-comments-list am-comments-list-flip">
+                      {% for comment in comments %}
+                        {{ render_comment(comment) }}
+                      {% endfor %}
+                  </ul>
+  								<div class="clear"></div>
+  								</div>
+  							</div>
+  						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- shop-area end -->
+{% endblock %}

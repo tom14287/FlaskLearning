@@ -9,7 +9,7 @@ company_ = Blueprint('company', __name__)
 
 @company_.route("")
 @company_.route("/index")
-#@login_required
+@login_required
 def company_index():
 	return render_template("company.html")
 
@@ -49,7 +49,7 @@ def update_company(id, type, auth, addr, intro):
 
 # Test ed
 @company_.route("/verify", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def company_verify():
 	if g.user :
 		db.session.execute("update Company set CompanyAuth='Y' where CompanyID=%d" % g.user.UserID)
@@ -63,7 +63,7 @@ def company_design_scheme():
 
 #Test ed
 @company_.route("/company_orders", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def company_orders():
 	design = []
 	merchandise = []
@@ -121,7 +121,7 @@ def get_ad_bycompanyid(id):
 
 # Test ed
 @company_.route("/furniture_list", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def company_furniture_list():
 
 	return render_template('company_merchandise.html')
@@ -179,7 +179,7 @@ def get_furniture_byid(id):
 
 # Test ed
 @company_.route("/my_designer", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def company_my_designer():
     class PDeg():
         def __init__(self):

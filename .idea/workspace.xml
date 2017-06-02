@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="84d910af-f823-40d3-9109-a75599ea1049" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/company/views.py" afterPath="$PROJECT_DIR$/app/company/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/consumer/views.py" afterPath="$PROJECT_DIR$/app/consumer/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/designer/views.py" afterPath="$PROJECT_DIR$/app/designer/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,20 +102,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="845">
-              <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="197" column="6" lean-forward="false" selection-start-line="197" selection-start-column="6" selection-end-line="197" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/designer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1863">
+            <state relative-caret-position="-243">
               <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
               <folding>
                 <element signature="e#17#44#0" expanded="true" />
@@ -166,8 +164,8 @@
       <find>designer/</find>
       <find>Scheme</find>
       <find>Orderite</find>
-      <find># @login_required</find>
       <find>#@login_required</find>
+      <find># @login_required</find>
     </findStrings>
     <replaceStrings>
       <replace>return redirect(url_for('module_a'))</replace>
@@ -242,9 +240,9 @@
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/app/templates/product.html" />
         <option value="$PROJECT_DIR$/app/sql_operation/mysql.py" />
-        <option value="$PROJECT_DIR$/app/consumer/views.py" />
         <option value="$PROJECT_DIR$/app/company/views.py" />
         <option value="$PROJECT_DIR$/app/designer/views.py" />
+        <option value="$PROJECT_DIR$/app/consumer/views.py" />
       </list>
     </option>
   </component>
@@ -1260,13 +1258,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492604484752</updated>
     </task>
-    <task id="LOCAL-00002" summary="test">
-      <created>1494243691834</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1494243691834</updated>
-    </task>
     <task id="LOCAL-00003" summary="test">
       <created>1494244625321</created>
       <option name="number" value="00003" />
@@ -1603,7 +1594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496241806360</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="还行">
+      <created>1496396827181</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1496396827181</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1726,7 +1724,8 @@
     <MESSAGE value="company 简单测试&#10;# Test ed 代表测试完的函数" />
     <MESSAGE value="designer 简单测试 部分&#10;# Test ed 代表测试完的函数" />
     <MESSAGE value="designer orders 有bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="designer orders 有bug" />
+    <MESSAGE value="还行" />
+    <option name="LAST_COMMIT_MESSAGE" value="还行" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2038,14 +2037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="845">
-          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/company/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -2056,11 +2047,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/designer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1863">
+        <state relative-caret-position="-243">
           <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
           <folding>
             <element signature="e#17#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/consumer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="197" column="6" lean-forward="false" selection-start-line="197" selection-start-column="6" selection-end-line="197" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

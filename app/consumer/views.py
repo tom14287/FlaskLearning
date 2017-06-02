@@ -195,7 +195,7 @@ def get_allorders_byid(id):
 @consumer_.route("/decoration", methods=['GET', 'POST'])
 @login_required
 def consumer_decoration():
-	g.user = User.query.filter_by(UserID=1).first()
+	# g.user = User.query.filter_by(UserID=1).first()
 	command = []
 	consumer, dec_forms = get_decform_byid(g.user.UserID)
 	for item in dec_forms:

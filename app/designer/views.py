@@ -10,7 +10,7 @@ designer_ = Blueprint('designer', __name__)
 
 @designer_.route("")
 @designer_.route("/index")
-# @login_required
+@login_required
 def designer_index():
     return render_template("designer.html", user_name='dyftug')
 
@@ -39,7 +39,7 @@ def update_designer(id, cid, birth, truename, sex, intro):
 
 # Test ed
 @designer_.route("/design_scheme", methods=['GET', 'POST'])
-# @login_required
+@login_required
 def designer_design_scheme():
 	g.user = User.query.filter_by(UserID=2).first()
 	design = []
@@ -65,7 +65,7 @@ def get_allscheme_byid(id):
 
 # test ed
 @designer_.route("/orders", methods=['GET', 'POST'])
-# @login_required
+@login_required
 def designer_orders():
     # g.user = User.query.filter_by(UserID=2).first()
     design = []

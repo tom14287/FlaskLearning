@@ -10,7 +10,7 @@ consumer_ = Blueprint('consumer', __name__)
 
 @consumer_.route("")
 @consumer_.route("/index")
-#@login_required
+@login_required
 def consumer_index():
 	'''
 	user = g.user
@@ -25,7 +25,7 @@ def consumer_index():
 
 
 @consumer_.route("/change_info", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def consumer_change_info():
 
 	return render_template('consumer_profile.html')
@@ -45,7 +45,7 @@ def update_consumer(id, birth, truename, sex, resident):
 	db.session.commit()
 
 @consumer_.route("/add_rec_addr", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def consumer_add_rec_addr():
 	return
 
@@ -56,7 +56,7 @@ def insert_useraddress_item(uid, addr):
 
 # test ed
 @consumer_.route("/cart", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def consumer_cart():
 	'''
 	user = g.user
@@ -103,7 +103,7 @@ def get_cart_byid(id):
 
 # test ed
 @consumer_.route("/orders", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def consumer_orders():
 	# g.user = User.query.filter_by(UserID=1).first()
 	unpay = []
@@ -193,9 +193,9 @@ def get_allorders_byid(id):
 
 # test ed
 @consumer_.route("/decoration", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def consumer_decoration():
-	g.user = User.query.filter_by(UserID=1).first()
+	# g.user = User.query.filter_by(UserID=1).first()
 	command = []
 	consumer, dec_forms = get_decform_byid(g.user.UserID)
 	for item in dec_forms:

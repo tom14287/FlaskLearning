@@ -114,9 +114,15 @@ def login():
                     return redirect(url_for('module_a.index_view'))
         elif request.form['action'] == 'register':
             if form.validate_on_submit():
-                print "reg"
                 ret = register_func(form.username.data, form.email.data, form.password.data, form.confirm.data, form.type.data)
-                print ret
+                if ret == "INPUTERR":
+                    flash('the input to few')
+                elif ret == "TYPEERR":
+                    flash('No such Type Account')
+                elif ret == "PWDERR":
+                    flash('Two password are not the same')
+                elif ret == "REPEAT":
+                    flash('The email have been register')
                 if ret == "SUCCEED":
                     return redirect(url_for("auth.unconfirmed"))
 

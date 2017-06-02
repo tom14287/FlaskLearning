@@ -4,17 +4,25 @@
 <title>LOGIN IN FOR TYMT</title>
 {% endblock %}
 
+
+
+{% block page_content %}
+
 {% with messages = get_flashed_messages() %}
   {% if messages %}
     <ul class=flashes>
     {% for message in messages %}
-      <li>{{ message }}</li>
+      <li style="
+    
+    center: initial;
+    font-weight: bold;
+    color: #a22525;
+    text-align: center;
+">{{ message }}</li>
     {% endfor %}
     </ul>
   {% endif %}
 {% endwith %}
-
-{% block page_content %}
 		<div class="breadcrumb-area">
 			<div class="container">
 				<ol class="breadcrumb">

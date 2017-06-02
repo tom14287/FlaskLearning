@@ -98,6 +98,7 @@ def unconfirmed():
 
 @auth_.route('/login', methods=['GET', 'POST'])
 def login():
+    
     form = RegisterForm(request.form)
     if request.form:
         if request.form['action'] == 'login':

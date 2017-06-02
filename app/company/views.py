@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask import render_template, request, redirect, url_for, g
-from flask_login import login_required
+from flask_login import login_required,current_user
 from app.sql_operation.mysql import *
 import base64
 from app import db
@@ -133,6 +133,12 @@ def get_all_furniture_list(id):
 # Test ed
 @company_.route("/furniture/<id>", methods=['GET', 'POST'])
 def company_furniture(id):
+	login_type=''
+	g.user = current_user
+	if (g.user != None and g.user.is_authenticated):
+		login_type = g.user.UserType
+	else:
+		login_type = None
 	# from app.sql_operation.mysql import init_mysql
 	# init_mysql()
 	class Product():
@@ -165,7 +171,7 @@ def company_furniture(id):
 		comment = Comment(row[2], "NO date", row[3], cpath_img)
 		comments.append(comment)
 	test = "Test"
-	return render_template('product.html', product=product, comments=comments, test=test,Type = g.user.UserType)
+	return render_template('product.html', product=product, comments=comments, test=test,Type = login_type)
 
 def get_furniture_byid(id):
 	item = Furniture.query.filter_by(FurnitureID=id).first()

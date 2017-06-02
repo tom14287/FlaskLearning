@@ -20,7 +20,8 @@ main_ = Blueprint('main', __name__)
 FurnitureImgCachePath = 'app/static'
 
 class Furniture_item_show:
-	def __init__(self, name, price, desc, imgsrc):
+	def __init__(self, id, name, price, desc, imgsrc):
+		self.FurnitureID = id
 		self.FurnitureName = name
 		self.FurniturePrice = price
 		self.FurnitureDESC = desc
@@ -39,7 +40,7 @@ def FurnitureShowList(Furniture_list, page_num, limits, res_num):
 			with open(path, "wb") as f:
 				f.write(image)
 			imgsrc_path = 'img/cache/furniture/' + str(it.FurnitureID) + '.jpg'
-			show_item = Furniture_item_show(it.FurnitureName, it.FurniturePrice, it.FurnitureDESC, imgsrc_path)
+			show_item = Furniture_item_show(it.FurnitureID, it.FurnitureName, it.FurniturePrice, it.FurnitureDESC, imgsrc_path)
 			show_list.append(show_item)
 		cnt = cnt + 1
 		if(cnt > end):

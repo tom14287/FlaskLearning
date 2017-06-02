@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84d910af-f823-40d3-9109-a75599ea1049" name="Default" comment="改了 consumer decoration">
+    <list default="true" id="84d910af-f823-40d3-9109-a75599ea1049" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/auth/views.py" afterPath="$PROJECT_DIR$/app/auth/views.py" />
     </list>
@@ -53,8 +53,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/auth/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="110" column="69" lean-forward="false" selection-start-line="110" selection-start-column="69" selection-end-line="110" selection-end-column="69" />
+            <state relative-caret-position="216">
+              <caret line="119" column="40" lean-forward="false" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -76,8 +76,50 @@
         <entry file="file://$PROJECT_DIR$/app/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4158">
-              <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-              <folding />
+              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+              <folding>
+                <marker date="1496400739991" expanded="true" signature="461:656" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="488:647" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="516:634" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="699:4692" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="726:4682" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="748:4671" ph="..." />
+                <marker date="1496400739991" expanded="false" signature="802:819" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="820:4659" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="880:4641" ph="..." />
+                <marker date="1496400739991" expanded="false" signature="951:976" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="977:1438" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1094:1155" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1316:1395" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1475:2796" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1683:2742" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1726:2647" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1763:2615" ph="..." />
+                <marker date="1496400739991" expanded="false" signature="1821:1836" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1837:2580" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1855:2035" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="1875:1968" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="2051:2231" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="2071:2158" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="2269:2543" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="2289:2451" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3009:4585" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3052:4490" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3086:4459" ph="..." />
+                <marker date="1496400739991" expanded="false" signature="3142:3157" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3158:4425" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3175:3342" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3193:3280" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3359:3529" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3377:3460" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3560:3716" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3578:3656" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3729:3897" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3747:3829" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3910:4093" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="3928:4018" ph="..." />
+                <marker date="1496400739991" expanded="true" signature="4128:4390" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,7 +158,7 @@
         <entry file="file://$PROJECT_DIR$/app/designer/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-243">
-              <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
+              <caret line="69" column="53" lean-forward="false" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
               <folding>
                 <element signature="e#17#44#0" expanded="true" />
               </folding>
@@ -1258,13 +1300,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492604484752</updated>
     </task>
-    <task id="LOCAL-00004" summary="test">
-      <created>1494244651861</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1494244651861</updated>
-    </task>
     <task id="LOCAL-00005" summary="ljh push test">
       <created>1494246617222</created>
       <option name="number" value="00005" />
@@ -1601,7 +1636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496397007946</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="加了提示">
+      <created>1496400721342</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1496400721342</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1700,7 +1742,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ljh push test" />
     <MESSAGE value="ReadME.mmp" />
     <MESSAGE value="写了邮箱验证和登录注册的问题" />
     <MESSAGE value="mysql.py修改" />
@@ -1725,7 +1766,8 @@
     <MESSAGE value="designer orders 有bug" />
     <MESSAGE value="还行" />
     <MESSAGE value="改了 consumer decoration" />
-    <option name="LAST_COMMIT_MESSAGE" value="改了 consumer decoration" />
+    <MESSAGE value="加了提示" />
+    <option name="LAST_COMMIT_MESSAGE" value="加了提示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1949,8 +1991,50 @@
     <entry file="file://$PROJECT_DIR$/app/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4158">
-          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding>
+            <marker date="1496400739991" expanded="true" signature="461:656" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="488:647" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="516:634" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="699:4692" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="726:4682" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="748:4671" ph="..." />
+            <marker date="1496400739991" expanded="false" signature="802:819" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="820:4659" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="880:4641" ph="..." />
+            <marker date="1496400739991" expanded="false" signature="951:976" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="977:1438" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1094:1155" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1316:1395" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1475:2796" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1683:2742" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1726:2647" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1763:2615" ph="..." />
+            <marker date="1496400739991" expanded="false" signature="1821:1836" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1837:2580" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1855:2035" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="1875:1968" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="2051:2231" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="2071:2158" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="2269:2543" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="2289:2451" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3009:4585" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3052:4490" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3086:4459" ph="..." />
+            <marker date="1496400739991" expanded="false" signature="3142:3157" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3158:4425" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3175:3342" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3193:3280" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3359:3529" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3377:3460" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3560:3716" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3578:3656" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3729:3897" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3747:3829" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3910:4093" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="3928:4018" ph="..." />
+            <marker date="1496400739991" expanded="true" signature="4128:4390" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2030,7 +2114,7 @@
     <entry file="file://$PROJECT_DIR$/app/designer/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-243">
-          <caret line="69" column="53" lean-forward="true" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
+          <caret line="69" column="53" lean-forward="false" selection-start-line="69" selection-start-column="53" selection-end-line="69" selection-end-column="53" />
           <folding>
             <element signature="e#17#44#0" expanded="true" />
           </folding>
@@ -2057,8 +2141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/auth/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="110" column="69" lean-forward="false" selection-start-line="110" selection-start-column="69" selection-end-line="110" selection-end-column="69" />
+        <state relative-caret-position="216">
+          <caret line="119" column="40" lean-forward="false" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
           <folding />
         </state>
       </provider>

@@ -117,7 +117,7 @@ def login():
             if form.validate_on_submit():
                 ret = register_func(form.username.data, form.email.data, form.password.data, form.confirm.data, form.type.data)
                 if ret == "INPUTERR":
-                    flash('the input to few')
+                    flash('the input too few')
                 elif ret == "TYPEERR":
                     flash('No such Type Account')
                 elif ret == "PWDERR":

@@ -22,7 +22,8 @@ def create_app(configfile=None):
 	app.config['MAIL_USERNAME'] = 'tymt_test_1@163.com'
 	app.config['MAIL_PASSWORD'] = '888qqq'
 	app.config['SECURITY_PASSWORD_SALT'] = 'my_precious_two'
-	app.config['SECRET_KEY'] = 'notsecret'
+	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+	app.config['SECRET_KEY'] = 'sekrit!'
 	bootstrap.init_app(app)
 	mail.init_app(app)
 	moment.init_app(app)

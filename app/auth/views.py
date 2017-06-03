@@ -38,7 +38,6 @@ def register():
 
 
 def register_func(username, email, password, confirm, type):
-	print 'register func'
 	if not username or not email or not password or not type or not confirm:
 		flash('UnComplete Input!', 'error')
 		return "INPUTERR"

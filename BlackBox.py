@@ -33,11 +33,11 @@ class BlackBoxTest(unittest.TestCase):
 	def test_Register(self):
 		with app.test_request_context():
 
-			self.assertEqual(register_func(None, "blackbox@qq.com", "test", "test", "Consumer"), "INPUTERR", "BlackBox-register inputerr failed")
+			self.assertEqual(register_func(None, "blackbox_consumer@qq.com", "test", "test", "Consumer"), "INPUTERR", "BlackBox-register inputerr failed")
 			self.assertEqual(register_func("blackbox", None, "test", "test","Consumer"), "INPUTERR", "BlackBox-register inputerr failed")
-			self.assertEqual(register_func("blackbox", "blackbox@qq.com", None, "test", "Consumer"), "INPUTERR","BlackBox-register inputerr failed")
-			self.assertEqual(register_func("blackbox", "blackbox@qq.com", "test", None, "Consumer"), "INPUTERR","BlackBox-register inputerr failed")
-			self.assertEqual(register_func("blackbox", "blackbox@qq.com", "test", "test", None), "INPUTERR","BlackBox-register inputerr failed")
+			self.assertEqual(register_func("blackbox", "blackbox_consumer@qq.com", None, "test", "Consumer"), "INPUTERR","BlackBox-register inputerr failed")
+			self.assertEqual(register_func("blackbox", "blackbox_consumer@qq.com", "test", None, "Consumer"), "INPUTERR","BlackBox-register inputerr failed")
+			self.assertEqual(register_func("blackbox", "blackbox_consumer@qq.com", "test", "test", None), "INPUTERR","BlackBox-register inputerr failed")
 
 			self.assertEqual(register_func("blackbox_designer", "blackbox_designer@qq.com", "test", "test", "Designer"), "SUCCEED", "BlackBox-register(designer) success failed")
 			self.assertEqual(register_func("blackbox_company", "blackbox_company@qq.com", "test", "test", "Company"), "SUCCEED", "BlackBox-register(company) success failed")
